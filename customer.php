@@ -129,7 +129,7 @@
             $query1 = "UPDATE TABLE products SET amount = amount - ".$num." WHERE Product_id = '".$id."'";
             $query2 = "SELECT * FROM products WHERE Product_id = '".$$id."'";
             $query3 = "SELECT type_name WHERE Product_key = ";
-            $query4 = "INSERT INTO transaction_history(username, type_name, product_name, destination_id, amount, trans_date, sell_price, total) VALUES(? ? ? ? ? ? ? ? ?)";
+            $query4 = "INSERT INTO transaction_history(username, type_name, product_name, destination_id, amount, trans_date, sell_price, total) VALUES(? ? ? ? ? ? ? ?)";
             $res1 = sqlsrv_query($conn, $query1);
             $res2 = sqlsrv_query($conn, $query2, array(), array("Scrollable" => 'static'));
             if($res1 != false && sqlsrv_num_rows($res2) > 0){
@@ -137,8 +137,29 @@
                 $res3 = sqlsrv_query($conn, $query3."'".$row["Product_key"]."'", array(), array("Scrollable" => 'static'));
                 if(sqlsrv_num_rows($res3) > 0){
                     $row2 = sqlsrv_fetch_array($res3, SQLSRV_FETCH_ASSOC);
-                    $param = array();
+                    $query5 = "SELECT GETDATE() AS CurrentDate";
+                    $res5 = sqlsrv_query($conn, $query5);
+                    if($res5 != false){
+                        $date = sqlsrv_get_field($res5, 0);
+                        $param = array($this->username, $row2["type_name"], $row["Product_name"], $row["Destination_id"], $row["Amount"], $date, $row["Selling_price"], $num);
+                        $res4 = sqlsrv_query($conn, $query4, $param);
+                        if($res4 != false){
+                            echo "<script>alert(\"Purchase Succesful\")</script>";
+                        }else{
+                            echo "<script>alert(\"Failure in connecting to database\")</script>";
+                            die(print_r(sqlsrv_errors(), true));
+                        }
+                    }else{
+                        echo "<script>alert(\"Failure in connecting to database\")</script>";
+                        die(print_r(sqlsrv_errors(), true));
+                    }  
+                }else{
+                    echo "<script>alert(\"Failure in connecting to database\")</script>";
+                    die(print_r(sqlsrv_errors(), true));
                 }
+            }else{
+                echo "<script>alert(\"Failure in connecting to database\")</script>";
+                die(print_r(sqlsrv_errors(), true));
             }
         }
     }
