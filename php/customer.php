@@ -38,8 +38,9 @@
                if($username == $identity["username"]){
                 if(password_verify($password, $identity["password"])){
                     $this->username = $username;
-                    echo "<script>window.location.href = \"index.php\";</script>";
+                    echo "<script>window.location.href = \"../index.html\";</script>";
                 }else{
+                    echo $identity["password"];
                     echo "<script>alert(\"Password is wrong\")</script>";
                 }
                }else{
@@ -55,28 +56,40 @@
             }
         }
 
-        function signin($username, $password, $nama, $alamat, $email){
+        function signin($username, $password, $nama){
             $conn = $this->conn;
             $hash_pw = password_hash($password, PASSWORD_DEFAULT);
-            $query = "INSERT INTO customer (username, nama, alamat, email) VALUES (?, ?, ?, ?)";
-            $params = array($username, $hash_pw, $nama, $alamat, $email);
+            $query = "SELECT username FROM customer WHERE username = ?";
+            $params = array($username);
             $result = sqlsrv_query($conn, $query, $params);
             if($result == false){
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
+            }else if(sqlsrv_num_rows($result) > 0){
+                echo "<script>alert(\"Username already exists\")</script>";
+            }else{
+                $query = "INSERT INTO customer (username, password, nama) VALUES (?, ?, ?)";
+                $params = array($username, $hash_pw, $nama);
+                $result = sqlsrv_query($conn, $query, $params);
+                if($result == false){
+                    echo "<script>alert(\"Failure in connecting to database\")</script>";
+                    die(print_r(sqlsrv_errors(), true));
+                }
             }
         }
+        
 
         function checkusername($username){
             $conn = $this->conn;
             $query = "SELECT username FROM customer WHERE username = '".$username."'";
             $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
             if($result != false){
-                if(sqlsrv_num_rows($result) = 0){
+                if(sqlsrv_num_rows($result) == 0){
                     return true;
                 }else{
                     return false;
                 }
+                
             }else{
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
@@ -116,8 +129,8 @@
                     $i++;
                 }
                 echo "</table>";
-            }else if(sqlsrv_num_rows($result) = 0){
-                echo "<h3> You haven't made any transaction";
+            }else if(sqlsrv_num_rows($result) == 0){
+                echo "<h3> You haven't made any transaction</h3>";  
             }else{
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
@@ -126,33 +139,40 @@
 
         function purchase($num, $id){
             $conn = $this->conn;
-            $query1 = "UPDATE TABLE products SET amount = amount - ".$num." WHERE Product_id = '".$id."'";
-            $query2 = "SELECT * FROM products WHERE Product_id = '".$$id."'";
-            $query3 = "SELECT type_name WHERE Product_key = ";
-            $query4 = "INSERT INTO transaction_history(username, type_name, product_name, destination_id, amount, trans_date, sell_price, total) VALUES(? ? ? ? ? ? ? ?)";
+            $query1 = "UPDATE products SET amount = amount - ".$num." WHERE Product_id = '".$id."'";
+            $query2 = "SELECT * FROM products WHERE Product_id = '".$id."'";
+            $query3 = "SELECT type_name FROM product_types WHERE Product_key = '".$id."'";
+            $query4 = "INSERT INTO transaction_history(username, type_name, product_name, destination_id, amount, trans_date, sell_price, total) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
             $res1 = sqlsrv_query($conn, $query1);
             $res2 = sqlsrv_query($conn, $query2, array(), array("Scrollable" => 'static'));
-            if($res1 != false && sqlsrv_num_rows($res2) > 0){
-                $row = sqlsrv_fetch_array($res2, SQLSRV_FETCH_ASSOC);
-                $res3 = sqlsrv_query($conn, $query3."'".$row["Product_key"]."'", array(), array("Scrollable" => 'static'));
-                if(sqlsrv_num_rows($res3) > 0){
-                    $row2 = sqlsrv_fetch_array($res3, SQLSRV_FETCH_ASSOC);
-                    $query5 = "SELECT GETDATE() AS CurrentDate";
-                    $res5 = sqlsrv_query($conn, $query5);
-                    if($res5 != false){
-                        $date = sqlsrv_get_field($res5, 0);
-                        $param = array($this->username, $row2["type_name"], $row["Product_name"], $row["Destination_id"], $row["Amount"], $date, $row["Selling_price"], $num);
-                        $res4 = sqlsrv_query($conn, $query4, $param);
-                        if($res4 != false){
-                            echo "<script>alert(\"Purchase Succesful\")</script>";
+            if($res1 != false){
+                $rows = sqlsrv_num_rows($res2);
+                if($rows > 0){
+                    $row = sqlsrv_fetch_array($res2, SQLSRV_FETCH_ASSOC);
+                    $res3 = sqlsrv_query($conn, $query3, array(), array("Scrollable" => 'static'));
+                    $rows2 = sqlsrv_num_rows($res3);
+                    if($rows2 > 0){
+                        $row2 = sqlsrv_fetch_array($res3, SQLSRV_FETCH_ASSOC);
+                        $query5 = "SELECT GETDATE() AS CurrentDate";
+                        $res5 = sqlsrv_query($conn, $query5);
+                        if($res5 != false){
+                            $date = sqlsrv_get_field($res5, 0);
+                            $param = array($this->username, $row2["type_name"], $row["Product_name"], $row["Destination_id"], $num, $date, $row["Selling_price"], $num * $row["Selling_price"]);
+                            $res4 = sqlsrv_query($conn, $query4, $param);
+                            if($res4 != false){
+                                echo "<script>alert(\"Purchase Successful\")</script>";
+                            }else{
+                                echo "<script>alert(\"Failure in connecting to database\")</script>";
+                                die(print_r(sqlsrv_errors(), true));
+                            }
                         }else{
                             echo "<script>alert(\"Failure in connecting to database\")</script>";
                             die(print_r(sqlsrv_errors(), true));
-                        }
+                        }  
                     }else{
                         echo "<script>alert(\"Failure in connecting to database\")</script>";
                         die(print_r(sqlsrv_errors(), true));
-                    }  
+                    }
                 }else{
                     echo "<script>alert(\"Failure in connecting to database\")</script>";
                     die(print_r(sqlsrv_errors(), true));
@@ -161,6 +181,6 @@
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
             }
-        }
+        }        
     }
 ?>

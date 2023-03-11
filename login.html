@@ -24,9 +24,15 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your email for registration</span>
-          <input type="text" placeholder="Name" required />
-          <input type="email" placeholder="Email" required />
-          <input type="password" placeholder="Password" required />
+          <input type="hidden" name="submit_type" value="signup" />
+          <input type="text" placeholder="Your Name" name="name" required />
+          <input type="text" placeholder="Username" name="username" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
           <input type="submit" value="sign up" class="button" />
         </form>
       </div>

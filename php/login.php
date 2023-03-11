@@ -8,10 +8,13 @@
         $sub_type = $_POST['submit_type'];
         $username = $_POST['username'];
         $password_get = $_POST['password'];
-        $password = password_hash($password_get, PASSWORD_DEFAULT);
+        $password = strval($password_get);
 
         if($sub_type === 'login'){
             $cust->login($username, $password);
+        }else if($sub_type === 'signup'){
+            $nama = $_POST['name'];
+            $cust->signin($username, $password, $nama);
         }
     }
 ?>
