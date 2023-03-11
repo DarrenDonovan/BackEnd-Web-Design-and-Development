@@ -12,7 +12,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="php/login.php" method="post" onsubmit="return signup()">
+        <form action="php/login.php" method="post">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -27,7 +27,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="php/login.php" method="post" onsubmit="return login()">
+        <form action="php/login.php" method="post">
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -35,8 +35,9 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
+          <input type="hidden" name="submit_type" value="login" />
+          <input type="text" placeholder="Username" required />
+          <input type="password" placeholder="Password" required />
           <a href="#">Forgot your password?</a>
           <input type="submit" value="sign in" class="button" />
         </form>
