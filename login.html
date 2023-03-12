@@ -33,7 +33,7 @@
             id="username"
             required
           />
-          <div id="username-error" style="display: none">
+          <div id="username-error" class="usiror" style="display: none">
             Username already exists.
           </div>
           <input
@@ -46,7 +46,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="php/login.php" method="post">
+        <form action="php/check_password.php" method="post" id="form2">
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -55,15 +55,25 @@
           </div>
           <span>or use your account</span>
           <input type="hidden" name="submit_type" value="login" />
-          <input type="text" placeholder="Username" name="username" required />
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username1"
+            required
+          />
           <input
             type="password"
             placeholder="Password"
             name="password"
+            id="password"
             required
           />
+          <div id="username-error" class="useror" style="display: none">
+            Wrong password.
+          </div>
           <a href="#">Forgot your password?</a>
-          <input type="submit" value="sign in" class="button" />
+          <input type="submit" value="sign in" class="button" id="sub-btn" />
         </form>
       </div>
       <div class="overlay-container">
