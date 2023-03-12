@@ -62,21 +62,31 @@
             $query = "SELECT username FROM customer WHERE username = ?";
             $params = array($username);
             $result = sqlsrv_query($conn, $query, $params);
-            if($result == false){
+            if($result === false){
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
-            }else if(sqlsrv_num_rows($result) > 0){
-                echo "<script>alert(\"Username already exists\")</script>";
-            }else{
-                $query = "INSERT INTO customer (username, password, nama) VALUES (?, ?, ?)";
-                $params = array($username, $hash_pw, $nama);
-                $result = sqlsrv_query($conn, $query, $params);
-                if($result == false){
-                    echo "<script>alert(\"Failure in connecting to database\")</script>";
-                    die(print_r(sqlsrv_errors(), true));
+            }
+            else{
+                $num_rows = sqlsrv_num_rows($result);
+                if($num_rows > 0){
+                    echo "<script>alert(\"Username already exists\")</script>";
+                }
+                else{
+                    $query = "INSERT INTO customer (username, password, nama) VALUES (?, ?, ?)";
+                    $params = array($username, $hash_pw, $nama);
+                    $result = sqlsrv_query($conn, $query, $params);
+                    if($result === false){
+                        echo "<script>alert(\"Failure in connecting to database\")</script>";
+                        die(print_r(sqlsrv_errors(), true));
+                    }
+                    else{
+                        echo "<script>alert(\"Registration successful\")</script>";
+                        echo "<script>window.location.href = \"../index.html\";</script>";
+                    }
                 }
             }
         }
+        
         
 
         function checkusername($username){
@@ -84,12 +94,11 @@
             $query = "SELECT username FROM customer WHERE username = '".$username."'";
             $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
             if($result != false){
-                if(sqlsrv_num_rows($result) == 0){
+                if(sqlsrv_num_rows($result) > 0){
                     return true;
                 }else{
                     return false;
                 }
-                
             }else{
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));

@@ -14,7 +14,7 @@
             $cust->login($username, $password);
         }else if($sub_type === 'signup'){
             $nama = $_POST['name'];
-            $cust->signin($username, $password, $nama);
+            $cust->signin($username,$password,$nama);
         }
     }
 ?>

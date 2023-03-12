@@ -16,7 +16,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="php/login.php" method="post">
+        <form action="php/check_username.php" method="post" id="form1">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -26,14 +26,23 @@
           <span>or use your email for registration</span>
           <input type="hidden" name="submit_type" value="signup" />
           <input type="text" placeholder="Your Name" name="name" required />
-          <input type="text" placeholder="Username" name="username" required />
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username"
+            required
+          />
+          <div id="username-error" style="display: none">
+            Username already exists.
+          </div>
           <input
             type="password"
             placeholder="Password"
             name="password"
             required
           />
-          <input type="submit" value="sign up" class="button" />
+          <input type="submit" value="sign up" class="button" id="submit-btn" />
         </form>
       </div>
       <div class="form-container sign-in-container">

@@ -226,6 +226,16 @@ input {
   width: 40px;
 }
 
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-bottom: 1em;
+}
+
+.error-message-container {
+  margin-top: 1em;
+}
+
 footer {
   background-color: #222;
   color: #fff;
