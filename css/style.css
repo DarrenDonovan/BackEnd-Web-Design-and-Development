@@ -19,7 +19,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #7AB730;
+  --primary: #5CB5E5;
   --secondary: #f4faec;
   --success: #28a745;
   --info: #17a2b8;
@@ -152,7 +152,7 @@ sup {
 }
 
 a {
-  color: #7AB730;
+  color: #5CB5E5;
   text-decoration: none;
   background-color: transparent;
 }
@@ -2366,19 +2366,19 @@ fieldset:disabled a.btn {
 .btn-primary {
   color: #fff;
   background-color: #5CB5E5;
-  border-color: #5CB5E5;
+  border-color: #4597c3;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #669928;
-  border-color: #5f8f25;
+  background-color: #27739c;
+  border-color: #347395;
 }
 
 .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #669928;
-  border-color: #5f8f25;
+  background-color: #27739c;
+  border-color: #347395;
   box-shadow: 0 0 0 0.2rem rgba(142, 194, 79, 0.5);
 }
 
@@ -2391,7 +2391,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #fff;
-  background-color: #5f8f25;
+  background-color: #347395;
   border-color: #588423;
 }
 
@@ -2917,7 +2917,7 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #7AB730;
+  color: #5CB5E5;
   text-decoration: none;
 }
 
@@ -3503,8 +3503,8 @@ input[type="button"].btn-block {
 
 .custom-control-input:checked ~ .custom-control-label::before {
   color: #fff;
-  border-color: #7AB730;
-  background-color: #7AB730;
+  border-color: #5CB5E5;
+  background-color: #5CB5E5;
 }
 
 .custom-control-input:focus ~ .custom-control-label::before {
@@ -3564,8 +3564,8 @@ input[type="button"].btn-block {
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::before {
-  border-color: #7AB730;
-  background-color: #7AB730;
+  border-color: #5CB5E5;
+  background-color: #5CB5E5;
 }
 
 .custom-checkbox .custom-control-input:indeterminate ~ .custom-control-label::after {
@@ -3789,7 +3789,7 @@ input[type="button"].btn-block {
   width: 1rem;
   height: 1rem;
   margin-top: -0.25rem;
-  background-color: #7AB730;
+  background-color: #5CB5E5;
   border: 0;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
@@ -3817,7 +3817,7 @@ input[type="button"].btn-block {
 .custom-range::-moz-range-thumb {
   width: 1rem;
   height: 1rem;
-  background-color: #7AB730;
+  background-color: #5CB5E5;
   border: 0;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
@@ -3848,7 +3848,7 @@ input[type="button"].btn-block {
   margin-top: 0;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
-  background-color: #7AB730;
+  background-color: #5CB5E5;
   border: 0;
   transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   appearance: none;
@@ -4608,8 +4608,8 @@ input[type="button"].btn-block {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color: #7AB730;
-  border-color: #7AB730;
+  background-color: #5CB5E5;
+  border-color: #5CB5E5;
 }
 
 .page-item.disabled .page-link {
@@ -4675,7 +4675,7 @@ a.badge:hover, a.badge:focus {
 
 a.badge-primary:hover, a.badge-primary:focus {
   color: #fff;
-  background-color: #5f8f25;
+  background-color: #347395;
 }
 
 a.badge-primary:focus, a.badge-primary.focus {
@@ -4971,7 +4971,7 @@ a.badge-dark:focus, a.badge-dark.focus {
   color: #fff;
   text-align: center;
   white-space: nowrap;
-  background-color: #7AB730;
+  background-color: #5CB5E5;
   transition: width 0.6s ease;
 }
 
@@ -5047,8 +5047,8 @@ a.badge-dark:focus, a.badge-dark.focus {
 .list-group-item.active {
   z-index: 2;
   color: #fff;
-  background-color: #7AB730;
-  border-color: #7AB730;
+  background-color: #5CB5E5;
+  border-color: #5CB5E5;
 }
 
 .list-group-item + .list-group-item {
@@ -6100,7 +6100,7 @@ a.close.disabled {
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #5f8f25 !important;
+  background-color: #347395 !important;
 }
 
 .bg-secondary {
@@ -9759,7 +9759,7 @@ h6,
   top: -15px;
   left: 0;
   border: 8px solid;
-  border-color: transparent #5f8f25 #5f8f25 transparent;
+  border-color: transparent #347395 #347395 transparent;
   z-index: -1;
 }
 
