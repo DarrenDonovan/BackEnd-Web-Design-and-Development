@@ -6,7 +6,7 @@ const btn = document
   .addEventListener("click", checkUsername);
 const btn2 = document
   .getElementById("sub-btn")
-  .addEventListener("click", checkPassword);
+  .addEventListener("click", checkUsername2);
 
 signUpButton.addEventListener("click", () => {
   container.classList.add("right-panel-active");
@@ -44,6 +44,35 @@ function checkUsername(event) {
           .setAttribute("action", "php/login.php");
         document.getElementById("form1").submit();
         console.log("form submitted");
+      }
+    }
+  };
+}
+
+function checkUsername2(event) {
+  console.log("checkUsername2() called");
+  event.preventDefault();
+  let usernameInput = document.getElementById("username1");
+  let username = usernameInput.value;
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "php/check_username.php", true);
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.send(JSON.stringify({ username: username }));
+  console.log(username);
+  console.log(JSON.stringify({ username: username }));
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      console.log(xhr.responseText);
+      let response = JSON.parse(xhr.responseText);
+      let errorMessage = document.querySelector(".userir");
+      if (response.exists == true) {
+        console.log("Username correct!");
+        errorMessage.style.display = "none";
+        checkPassword(event);
+      } else {
+        console.log("Username wrong!");
+        errorMessage.style.display = "block";
       }
     }
   };
