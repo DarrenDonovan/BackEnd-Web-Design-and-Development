@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="loginstyle.css" />
+    <link rel="stylesheet" href="css/loginstyle.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -16,7 +16,7 @@
   <body>
     <div class="container" id="container">
       <div class="form-container sign-up-container">
-        <form action="php/login.php" method="post">
+        <form action="php/check_username.php" method="post" id="form1">
           <h1>Create Account</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -26,18 +26,27 @@
           <span>or use your email for registration</span>
           <input type="hidden" name="submit_type" value="signup" />
           <input type="text" placeholder="Your Name" name="name" required />
-          <input type="text" placeholder="Username" name="username" required />
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username"
+            required
+          />
+          <div id="username-error" class="usiror" style="display: none">
+            Username already exists.
+          </div>
           <input
             type="password"
             placeholder="Password"
             name="password"
             required
           />
-          <input type="submit" value="sign up" class="button" />
+          <input type="submit" value="sign up" class="button" id="submit-btn" />
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="php/login.php" method="post">
+        <form action="php/check_password.php" method="post" id="form2">
           <h1>Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -46,15 +55,28 @@
           </div>
           <span>or use your account</span>
           <input type="hidden" name="submit_type" value="login" />
-          <input type="text" placeholder="Username" name="username" required />
+          <input
+            type="text"
+            placeholder="Username"
+            name="username"
+            id="username1"
+            required
+          />
+          <div id="username-error" class="userir" style="display: none">
+            Wrong username.
+          </div>
           <input
             type="password"
             placeholder="Password"
             name="password"
+            id="password"
             required
           />
+          <div id="username-error" class="useror" style="display: none">
+            Wrong password.
+          </div>
           <a href="#">Forgot your password?</a>
-          <input type="submit" value="sign in" class="button" />
+          <input type="submit" value="sign in" class="button" id="sub-btn" />
         </form>
       </div>
       <div class="overlay-container">

@@ -14,42 +14,24 @@
             global $conn;
             $this->conn = $conn;
         }
-
-        function load(){
-            $conn = $this->conn;
-            $query = "SELECT * FROM customer WHERE username = '".$this->username."'";
-            $result = sqlsrv_query($conn, $query, array(), array("Scrollable" => 'static'));
-            $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-            if(sqlsrv_num_rows($result) > 0){
-               $this->nama = $row["nama"];
-               $this->email = $row["email"];
-               $this->alamat = $row["alamat"];
-               $this->notelp = $row["notelp"];
-               $this->ultah = $row["birthdate"];
-            }
-        }
-
+        
         function login($username, $password){
             $conn = $this->conn;
             $query = "SELECT username, password FROM customer WHERE username = '".$username."'";
             $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
             if(sqlsrv_num_rows($result) > 0){
-               $identity = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
-               if($username == $identity["username"]){
-                if(password_verify($password, $identity["password"])){
-                    $this->username = $username;
-                    echo "<script>window.location.href = \"../index.html\";</script>";
-                }else{
-                    echo $identity["password"];
-                    echo "<script>alert(\"Password is wrong\")</script>";
+                $this->username = $username;
+                $query2 = "SELECT * FROM customer WHERE username = '".$this->username."'";
+                $result = sqlsrv_query($conn, $query2, array(), array("Scrollable" => 'static'));
+                $row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC);
+                if(sqlsrv_num_rows($result) > 0){
+                    $this->nama = $row["nama"];
+                    $this->email = $row["email"];
+                    $this->alamat = $row["alamat"];
+                    $this->notelp = $row["notelp"];
+                    $this->ultah = $row["birthdate"];
                 }
-               }else{
-                if($password != $identity["password"]){
-                    echo "<script>alert(\"Username and password is wrong\")</script>";
-                }else{
-                    echo "<script>alert(\"Username is wrong\")</script>";
-                }
-               }
+                echo "<script>window.location.href = \"../index.html\";</script>";
             }else{
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
@@ -62,21 +44,24 @@
             $query = "SELECT username FROM customer WHERE username = ?";
             $params = array($username);
             $result = sqlsrv_query($conn, $query, $params);
-            if($result == false){
+            if($result === false){
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
-            }else if(sqlsrv_num_rows($result) > 0){
-                echo "<script>alert(\"Username already exists\")</script>";
-            }else{
+            }
+            else{
                 $query = "INSERT INTO customer (username, password, nama) VALUES (?, ?, ?)";
                 $params = array($username, $hash_pw, $nama);
                 $result = sqlsrv_query($conn, $query, $params);
-                if($result == false){
-                    echo "<script>alert(\"Failure in connecting to database\")</script>";
-                    die(print_r(sqlsrv_errors(), true));
+                if($result === false){
+                    echo "<script>alert(\"Failure in connecting to database\")</script>";                        die(print_r(sqlsrv_errors(), true));
                 }
+                else{
+                    echo "<script>alert(\"Registration successful\")</script>";
+                    echo "<script>window.location.href = \"../index.html\";</script>";
+                }                
             }
         }
+        
         
 
         function checkusername($username){
@@ -84,12 +69,28 @@
             $query = "SELECT username FROM customer WHERE username = '".$username."'";
             $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
             if($result != false){
-                if(sqlsrv_num_rows($result) == 0){
+                if(sqlsrv_num_rows($result) > 0){
                     return true;
                 }else{
                     return false;
                 }
-                
+            }else{
+                echo "<script>alert(\"Failure in connecting to database\")</script>";
+                die(print_r(sqlsrv_errors(), true));
+            }
+        }
+
+        function checkpassword($password, $username){
+            $conn = $this->conn;
+            $query = "SELECT password FROM customer WHERE username = '".$username."'";
+            $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
+            if($result != false){
+                $row = sqlsrv_fetch_array($result);
+                if(password_verify($password, $row["password"])){
+                    return false;
+                }else{
+                    return true;
+                }
             }else{
                 echo "<script>alert(\"Failure in connecting to database\")</script>";
                 die(print_r(sqlsrv_errors(), true));
