@@ -3,6 +3,6 @@
     $connectionInfo = array("Database" => "ezgo");
     $conn = sqlsrv_connect($serverName, $connectionInfo);
     if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
+        die("Connection failed: " . sqlsrv_errors());
     }
 ?>
