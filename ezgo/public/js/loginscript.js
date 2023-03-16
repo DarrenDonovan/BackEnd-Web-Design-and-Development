@@ -21,15 +21,18 @@ $(document).ready(function () {
             headers: {
                 "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
             },
-            code: function (response) {
-                switch (response.code) {
+            success: function (response) {
+                switch (response.success) {
                     case 1:
+                        console.log("titid");
                         window.location.href = "/home";
                         break;
                     case 2:
+                        console.log("titio");
                         $(".useror").style.display = "block";
                         break;
                     case 3:
+                        console.log("titia");
                         $(".userir").style.display = "block";
                         break;
                 }

@@ -53,15 +53,14 @@ return [
 
         'sqlsrv' => [
             'driver' => 'sqlsrv',
-            'host' => env('DB_HOST', 'localhost'),
-            'port' => env('DB_PORT', '1433'),
+            'host' => env('DB_HOST', 'DELL\\SQLEXPRESS'),
+            'port' => env('DB_PORT', '49755'),
             'database' => env('DB_DATABASE', 'ezgo'),
-            'username' => env('DB_USERNAME', ''),
-            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
             'authentication' => 'ActiveDirectoryIntegrated',
+            'trust_server_certificate' => true,
         ],
 
     ],

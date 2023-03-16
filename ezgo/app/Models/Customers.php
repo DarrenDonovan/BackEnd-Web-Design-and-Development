@@ -27,7 +27,7 @@ class Customers extends Model
     }
     
     function login($username, $password){
-        $customer = DB::table('customers')->where('username', $username)->first();
+        $customer = DB::table('customer')->where('username', $username)->first();
         if ($customer && Hash::check($password, $customer->password)) {
             $this->username = $customer->username;
             $this->nama = $customer->nama;
