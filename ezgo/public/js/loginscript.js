@@ -29,11 +29,39 @@ $(document).ready(function () {
                         break;
                     case 2:
                         console.log("titio");
-                        $(".useror").style.display = "block";
+                        $(".useror").css("display", "block");
                         break;
                     case 3:
                         console.log("titia");
-                        $(".userir").style.display = "block";
+                        $(".userir").css("display", "block");
+                        break;
+                }
+            },
+            error: function (xhr, status, error) {
+                console.log(error);
+            },
+        });
+    });
+
+    $("#submit-btn").click(function (e) {
+        e.preventDefault();
+        let formData = $("#form1").serialize();
+        $.ajax({
+            type: "POST",
+            url: "/signup",
+            data: formData,
+            headers: {
+                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+            },
+            success: function (response) {
+                switch (response.success) {
+                    case 1:
+                        console.log("titid");
+                        $(".usiror").css("display", "block");
+                        break;
+                    case 2:
+                        console.log("titio");
+                        window.location.href = "/home";
                         break;
                 }
             },

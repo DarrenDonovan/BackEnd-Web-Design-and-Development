@@ -43,28 +43,18 @@ class Customers extends Model
         }
     }
 
-    function signin($username, $password, $nama){
-        $conn = $this->conn;
-        $hash_pw = password_hash($password, PASSWORD_DEFAULT);
-        $query = "SELECT username FROM customer WHERE username = ?";
-        $params = array($username);
-        $result = sqlsrv_query($conn, $query, $params);
-        if($result === false){
-            echo "<script>alert(\"Failure in connecting to database\")</script>";
-            die(print_r(sqlsrv_errors(), true));
-        }
-        else{
-            $query = "INSERT INTO customer (username, password, nama) VALUES (?, ?, ?)";
-            $params = array($username, $hash_pw, $nama);
-            $result = sqlsrv_query($conn, $query, $params);
-            if($result === false){
-                echo "<script>alert(\"Failure in connecting to database\")</script>";                        die(print_r(sqlsrv_errors(), true));
-            }
-            else{
-                echo "<script>alert(\"Registration successful\")</script>";
-                echo "<script>window.location.href = \"../index.html\";</script>";
-            }                
-        }
+    function signup($username, $password, $nama){
+       $cust = DB::table('customer')->where('username', $username)->first();
+       if($cust){
+            return 1;
+       }else{
+            DB::table('customer')->insert([
+                'username' => $username,
+                'password' => Hash::make($password),
+                'nama' => $nama
+            ]);
+            return 2;
+       }
     }
     
     

@@ -34,4 +34,21 @@ class Controller extends BaseController
                 break;
         }
     }
+
+    public function signup(Request $req){
+        $username = $req->input('username');
+        $password = $req->input('password');
+        $name = $req->input('name');
+
+        $customer = new Customers();
+        $result = $customer->signup($username,$password,$name);
+        switch($result){
+            case 1:
+                return response()->json(['success' => 1]);
+                break;
+            case 2:
+                return response()->json(['success' => 2]);
+                break;
+        }
+    }
 }
