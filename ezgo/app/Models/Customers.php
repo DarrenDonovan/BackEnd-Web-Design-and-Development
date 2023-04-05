@@ -27,7 +27,7 @@ class Customers extends Model
     }
     
     function login($username, $password){
-        $customer = DB::table('customer')->where('username', $username)->first();
+        $customer = DB::table('Customer')->where('userID', $username)->first();
         if ($customer && Hash::check($password, $customer->password)) {
             $this->username = $customer->username;
             $this->nama = $customer->nama;
@@ -44,14 +44,14 @@ class Customers extends Model
     }
 
     function signup($username, $password, $nama){
-       $cust = DB::table('customer')->where('username', $username)->first();
+       $cust = DB::table('Customer')->where('userID', $username)->first();
        if($cust){
             return 1;
        }else{
-            DB::table('customer')->insert([
-                'username' => $username,
-                'password' => Hash::make($password),
-                'nama' => $nama
+            DB::table('Customer')->insert([
+                'userID' => $username,
+                'cpassword' => Hash::make($password),
+                'cName' => $nama
             ]);
             return 2;
        }
