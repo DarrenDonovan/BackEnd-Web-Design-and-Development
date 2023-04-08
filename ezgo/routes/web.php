@@ -12,7 +12,7 @@ Route::post('/signup', 'App\Http\Controllers\Controller@signup');
 
 Route::get('/home', function(){
     return view('index');
-});
+})->name('home');
 
 Route::get('/account', function(){
     return view('account');
