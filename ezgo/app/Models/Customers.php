@@ -28,13 +28,9 @@ class Customers extends Model
     
     function login($username, $password){
         $customer = DB::table('Customer')->where('userID', $username)->first();
-        if ($customer && Hash::check($password, $customer->password)) {
-            $this->username = $customer->username;
-            $this->nama = $customer->nama;
-            $this->email = $customer->email;
-            $this->alamat = $customer->alamat;
-            $this->notelp = $customer->notelp;
-            $this->ultah = $customer->birthdate;
+        if ($customer && Hash::check($password, $customer->cpassword)) {
+            $this->username = $customer->userID;
+            $this->nama = $customer->cName;
             return 1;
         } elseif ($customer) {
             return 2;
