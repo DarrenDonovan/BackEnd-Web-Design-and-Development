@@ -10,5 +10,6 @@
 </head>
 <body>
     <h1>Blog</h1>
+    @include('components.navbar')
 </body>
 </html>

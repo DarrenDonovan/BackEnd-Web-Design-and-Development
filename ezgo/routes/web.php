@@ -16,32 +16,32 @@ Route::get('/home', function(){
 
 Route::get('/account', function(){
     return view('account');
-});
+})->name('account');
 
 Route::get('/about', function(){
     return view('about');
-});
+})->name('about');
 
 Route::get('/blog', function(){
     return view('blog');
-});
+})->name('blog');
 
 Route::get('/destinations', function(){
     return view('destinations');
-});
+})->name('destinations');
 
 Route::get('/services', function(){
     return view('services');
-});
+})->name('services');
 
 Route::get('/product', function(){
     return view('product');
-});
+})->name('product');
 
 Route::get('/city', function(){
     return view('city');
-});
+})->name('city');
 
 Route::get('/location', function(){
     return view('location');
-});
+})->name('location');

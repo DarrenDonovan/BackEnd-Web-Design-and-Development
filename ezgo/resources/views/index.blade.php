@@ -5,5 +5,6 @@
 </head>
 <body>
     <h1>Home</h1>
+    @include('components.navbar')
 </body>
 </html>
