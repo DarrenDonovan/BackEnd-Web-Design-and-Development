@@ -15,8 +15,6 @@
 <body>
     <h1>City</h1>
     @include('components.navbar')
-    @include('components.city-comp')
-
 
     <?php
         echo $num;
@@ -24,7 +22,7 @@
     
     @switch($num)
         @case(1)
-            @yield('city1')
+            @include('components.jakarta')
             @break
         @case(2)
             @break
