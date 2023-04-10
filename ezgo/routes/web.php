@@ -14,6 +14,8 @@ Route::get('/home', function(){
     return view('index');
 })->name('home');
 
+//Main Page
+
 Route::get('/home/account', function(){
     return view('account');
 })->name('account');
@@ -38,6 +40,8 @@ Route::get('/home/product', function(){
     return view('product');
 })->name('product');
 
+//Cities
+
 Route::get('/home/destinations/jakarta', function(){
     $post = 1;
     return view('city', ['post' => $post]);
@@ -57,6 +61,8 @@ Route::get('/home/destinations/denpasar', function(){
     $post = 4;
     return view('city', ['post' => $post]);
 })->name('city4');
+
+//Jakarta
 
 Route::get('/home/destinations/jakarta/monas', function(){
     $lokasi = 1;
@@ -93,6 +99,8 @@ Route::get('/home/destinations/jakarta/tmii', function(){
     $kota = 1;
     return view('location', compact('lokasi', 'kota'));
 })->name('tmii');
+
+//Bandung
 
 Route::get('/home/destinations/bandung/cigadung', function(){
     $lokasi = 1;
