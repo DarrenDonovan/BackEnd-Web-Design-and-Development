@@ -58,6 +58,36 @@ Route::get('/denpasar', function(){
     return view('city', ['post' => $post]);
 })->name('city4');
 
+Route::get('/monas', function(){
+    $post = 1;
+    return view('city', ['post' => $post]);
+})->name('city4');
+ 
+Route::get('/ancol', function(){
+    $post = 4;
+    return view('city', ['post' => $post]);
+})->name('city4');
+ 
+Route::get('/istiqlal', function(){
+    $post = 4;
+    return view('city', ['post' => $post]);
+})->name('city4');
+ 
+Route::get('/glodok', function(){
+    $post = 4;
+    return view('city', ['post' => $post]);
+})->name('city4');
+
+Route::get('/cathedral', function(){
+    $post = 4;
+    return view('city', ['post' => $post]);
+})->name('city4');
+
+Route::get('/tmii', function(){
+    $post = 4;
+    return view('city', ['post' => $post]);
+})->name('city4');
+
 Route::get('/location', function(){
     return view('location');
 })->name('location');
