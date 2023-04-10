@@ -6,6 +6,21 @@
         $num = $lokasi;
         $sect = $kota;
     }
+
+    switch($sect){
+        case 1:
+            $city = "city1";
+            break;
+        case 2:
+            $city = "city2";
+            break;
+        case 3:
+            $city = "city3";
+            break;
+        case 4:
+            $city = "city4";
+            break;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,15 +42,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.monas')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.cigandung')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
@@ -47,15 +56,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.ancol')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.kiara')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
@@ -67,15 +70,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.istiqlal')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.kuliner')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
@@ -87,15 +84,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.glodok')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.siliwangi')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
@@ -107,15 +98,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.cathedral')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.tangga')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
@@ -127,15 +112,9 @@
             @switch($sect)
                 @case(1)
                     @include('components.lokasi.jkt.tmii')
-                    <?php
-                        $city = "city1";
-                    ?>
                     @break
                 @case(2)
                     @include('components.lokasi.bdg.wetland')
-                    <?php
-                        $city = "city2";
-                    ?>
                     @break
                 @case(3)
                     @break
