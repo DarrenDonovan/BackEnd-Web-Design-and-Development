@@ -15,21 +15,24 @@
 <body>
     <h1>City</h1>
     @include('components.navbar')
+    @include('components.city-comp')
+
+
     <?php
-        switch($num){
-            case 1:
-                echo "1";
-                break;
-            case 2:
-                echo "2";
-                break;
-            case 3:
-                echo "3";
-                break;
-            case 4:
-                echo "4";
-                break;
-        }
+        echo $num;
     ?>
+    
+    @switch($num)
+        @case(1)
+            @yield('city1')
+            @break
+        @case(2)
+            @break
+        @case(3)
+            @break
+        @case(4)
+            @break
+    @endswitch
+    <script src="{{ asset('js/city.js') }}"></script>
 </body>
 </html>
