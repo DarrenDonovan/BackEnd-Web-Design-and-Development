@@ -14,80 +14,76 @@ Route::get('/home', function(){
     return view('index');
 })->name('home');
 
-Route::get('/account', function(){
+Route::get('/home/account', function(){
     return view('account');
 })->name('account');
 
-Route::get('/about', function(){
+Route::get('/home/about', function(){
     return view('about');
 })->name('about');
 
-Route::get('/blog', function(){
+Route::get('/home/blog', function(){
     return view('blog');
 })->name('blog');
 
-Route::get('/destinations', function(){
+Route::get('/home/destinations', function(){
     return view('destinations');
 })->name('destinations');
 
-Route::get('/services', function(){
+Route::get('/home/services', function(){
     return view('services');
 })->name('services');
 
-Route::get('/product', function(){
+Route::get('/home/product', function(){
     return view('product');
 })->name('product');
 
-Route::get('/jakarta', function(){
+Route::get('/home/destinations/jakarta', function(){
     $post = 1;
     return view('city', ['post' => $post]);
 })->name('city1');
 
-Route::get('/bandung', function(){
+Route::get('/home/destinations/bandung', function(){
     $post = 2;
     return view('city', ['post' => $post]);
 })->name('city2');
 
-Route::get('/surabaya', function(){
+Route::get('/home/destinations/surabaya', function(){
     $post = 3;
     return view('city', ['post' => $post]);
 })->name('city3');
 
-Route::get('/denpasar', function(){
+Route::get('/home/destinations/denpasar', function(){
     $post = 4;
     return view('city', ['post' => $post]);
 })->name('city4');
 
-Route::get('/monas', function(){
+Route::get('/home/destinations/jakarta/monas', function(){
     $post = 1;
     return view('location', ['post' => $post]);
 })->name('monas');
  
-Route::get('/ancol', function(){
+Route::get('/home/destinations/jakarta/ancol', function(){
     $post = 2;
     return view('location', ['post' => $post]);
 })->name('ancol');
  
-Route::get('/istiqlal', function(){
+Route::get('/home/destinations/jakarta/istiqlal', function(){
     $post = 3;
     return view('location', ['post' => $post]);
 })->name('istiqlal');
  
-Route::get('/glodok', function(){
+Route::get('/home/destinations/jakarta/glodok', function(){
     $post = 4;
     return view('location', ['post' => $post]);
 })->name('glodok');
 
-Route::get('/cathedral', function(){
+Route::get('/home/destinations/jakarta/cathedral', function(){
     $post = 5;
     return view('location', ['post' => $post]);
 })->name('cathedral');
 
-Route::get('/tmii', function(){
+Route::get('/home/destinations/jakarta/tmii', function(){
     $post = 6;
     return view('location', ['post' => $post]);
 })->name('tmii');
-
-Route::get('/location', function(){
-    return view('location');
-})->name('location');

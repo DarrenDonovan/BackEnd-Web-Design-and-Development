@@ -11,5 +11,11 @@
 <body>
     <h1>Services</h1>
     @include('components.navbar')
+
+    <script>
+        window.addEventListener("popstate", function () {
+            window.location.href = '{{ route('home') }}';
+        });
+    </script>
 </body>
 </html>

@@ -14,19 +14,19 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="{{ route('account') }}">Account</a>
+        <a class="nav-link" href="{{ route('account') }}" onclick="history.pushState(null, null, '{{ route('account') }}');">Account</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('services') }}">Services</a>
+        <a class="nav-link" href="{{ route('services') }}" onclick="history.pushState(null, null, '{{ route('services') }}');">Services</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('blog') }}">Blog</a>
+        <a class="nav-link" href="{{ route('blog') }}" onclick="history.pushState(null, null, '{{ route('blog') }}');">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('destinations') }}">Destinations</a>
+        <a class="nav-link" href="{{ route('destinations') }}" onclick="history.pushState(null, null, '{{ route('destinations') }}');">Destinations</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{{ route('about') }}">About</a>
+        <a class="nav-link" href="{{ route('about') }}" onclick="history.pushState(null, null, '{{ route('about') }}');">About</a>
       </li>
     </ul>
   </div>

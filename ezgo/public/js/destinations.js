@@ -2,6 +2,8 @@ document.querySelectorAll(".obj").forEach((ob) => {
     ob.addEventListener("click", function () {
         switch (ob.getAttribute("name")) {
             case "jkt":
+                event.preventDefault();
+                history.pushState(null, null, cityRoutes.city1);
                 $.ajax({
                     url: cityRoutes.city1,
                     type: "GET",
@@ -12,6 +14,8 @@ document.querySelectorAll(".obj").forEach((ob) => {
                 });
                 break;
             case "bdg":
+                event.preventDefault();
+                history.pushState(null, null, cityRoutes.city2);
                 $.ajax({
                     url: cityRoutes.city2,
                     type: "GET",
@@ -22,6 +26,8 @@ document.querySelectorAll(".obj").forEach((ob) => {
                 });
                 break;
             case "srby":
+                event.preventDefault();
+                history.pushState(null, null, cityRoutes.city3);
                 $.ajax({
                     url: cityRoutes.city3,
                     type: "GET",
@@ -32,6 +38,8 @@ document.querySelectorAll(".obj").forEach((ob) => {
                 });
                 break;
             case "dpsr":
+                event.preventDefault();
+                history.pushState(null, null, cityRoutes.city4);
                 $.ajax({
                     url: cityRoutes.city4,
                     type: "GET",
