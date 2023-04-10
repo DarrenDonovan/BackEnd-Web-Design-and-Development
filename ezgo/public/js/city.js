@@ -76,3 +76,82 @@ document.querySelectorAll(".city1").forEach((ct) => {
         }
     });
 });
+
+document.querySelectorAll(".city2").forEach((ct) => {
+    ct.addEventListener("click", function () {
+        switch (ct.getAttribute("name")) {
+            case "cgd":
+                event.preventDefault();
+                history.pushState(null, null, city2.cigadung);
+                $.ajax({
+                    url: city2.cigadung,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.cigadung);
+                    },
+                });
+                break;
+            case "kar":
+                event.preventDefault();
+                history.pushState(null, null, city2.kiara);
+                $.ajax({
+                    url: city2.kiara,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.kiara);
+                    },
+                });
+                break;
+            case "kln":
+                event.preventDefault();
+                history.pushState(null, null, city2.kuliner);
+                $.ajax({
+                    url: city2.kuliner,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.kuliner);
+                    },
+                });
+                break;
+            case "slw":
+                event.preventDefault();
+                history.pushState(null, null, city2.siliwangi);
+                $.ajax({
+                    url: city2.siliwangi,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.siliwangi);
+                    },
+                });
+                break;
+            case "tng":
+                event.preventDefault();
+                history.pushState(null, null, city2.tangga);
+                $.ajax({
+                    url: city2.tangga,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.tangga);
+                    },
+                });
+                break;
+            case "wtl":
+                event.preventDefault();
+                history.pushState(null, null, city2.wetland);
+                $.ajax({
+                    url: city2.wetland,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city2.wetland);
+                    },
+                });
+                break;
+        }
+    });
+});

@@ -28,6 +28,7 @@
             @include('components.jakarta')
             @break
         @case(2)
+            @include('components.bandung')
             @break
         @case(3)
             @break
@@ -47,6 +48,15 @@
             glodok: '{{ route('glodok') }}',
             cathedral: '{{ route('cathedral') }}',
             tmii: '{{ route('tmii') }}',
+        };
+
+        const city2 = {
+            cigadung: '{{ route('cigadung') }}',
+            kiara: '{{ route('kiara') }}',
+            kuliner: '{{ route('kuliner') }}',
+            siliwangi: '{{ route('siliwangi') }}',
+            tangga: '{{ route('tangga') }}',
+            wetland: '{{ route('wetland') }}',
         };
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

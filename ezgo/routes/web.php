@@ -59,31 +59,73 @@ Route::get('/home/destinations/denpasar', function(){
 })->name('city4');
 
 Route::get('/home/destinations/jakarta/monas', function(){
-    $post = 1;
-    return view('location', ['post' => $post]);
+    $lokasi = 1;
+    $kota = 1;
+    return view('location', compact('lokasi', 'kota'));
 })->name('monas');
  
 Route::get('/home/destinations/jakarta/ancol', function(){
-    $post = 2;
+    $lokasi = 2;
+    $kota = 1;
     return view('location', ['post' => $post]);
 })->name('ancol');
  
 Route::get('/home/destinations/jakarta/istiqlal', function(){
-    $post = 3;
-    return view('location', ['post' => $post]);
+    $lokasi = 3;
+    $kota = 1;
+    return view('location', compact('lokasi', 'kota'));
 })->name('istiqlal');
  
 Route::get('/home/destinations/jakarta/glodok', function(){
-    $post = 4;
-    return view('location', ['post' => $post]);
+    $lokasi = 4;
+    $kota = 1;
+    return view('location', compact('lokasi', 'kota'));
 })->name('glodok');
 
 Route::get('/home/destinations/jakarta/cathedral', function(){
-    $post = 5;
-    return view('location', ['post' => $post]);
+    $lokasi = 5;
+    $kota = 1;
+    return view('location', compact('lokasi', 'kota'));
 })->name('cathedral');
 
 Route::get('/home/destinations/jakarta/tmii', function(){
-    $post = 6;
-    return view('location', ['post' => $post]);
+    $lokasi = 6;
+    $kota = 1;
+    return view('location', compact('lokasi', 'kota'));
 })->name('tmii');
+
+Route::get('/home/destinations/bandung/cigadung', function(){
+    $lokasi = 1;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('cigadung');
+
+Route::get('/home/destinations/bandung/kiara', function(){
+    $lokasi = 2;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('kiara');
+
+Route::get('/home/destinations/bandung/kuliner', function(){
+    $lokasi = 3;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('kuliner');
+
+Route::get('/home/destinations/bandung/siliwangi', function(){
+    $lokasi = 4;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('siliwangi');
+
+Route::get('/home/destinations/bandung/tangga', function(){
+    $lokasi = 5;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('tangga');
+
+Route::get('/home/destinations/bandung/wetland', function(){
+    $lokasi = 6;
+    $kota = 2;
+    return view('location', compact('lokasi', 'kota'));
+})->name('wetland');

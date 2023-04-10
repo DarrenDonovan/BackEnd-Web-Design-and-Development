@@ -1,8 +1,10 @@
 <?php
     $num;
+    $sect;
     $city;
-    if(isset($post)){
-        $num = $post;
+    if(isset($lokasi) && isset($kota)){
+        $num = $lokasi;
+        $sect = $kota;
     }
 ?>
 <!DOCTYPE html>
@@ -22,78 +24,124 @@
 
     @switch($num)
         @case(1)
-            @include('components.lokasi.monas')
-            <?php
-                $city = "city1";
-            ?>
-            @break;
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.monas')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.cigandung')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
+            @break
         @case(2)
-            @include('components.lokasi.ancol')
-            <?php
-                $city = "city1";
-            ?>
-            @break;
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.ancol')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.kiara')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
+            @break
         @case(3)
-            @include('components.lokasi.istiqlal')
-            <?php
-                $city = "city1";
-            ?>
-            @break;
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.istiqlal')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.kuliner')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
+            @break
         @case(4)
-            @include('components.lokasi.glodok')
-            <?php
-                $city = "city1";
-            ?>
-            @break;
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.glodok')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.siliwangi')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
+            @break
         @case(5)
-            @include('components.lokasi.cathedral')
-            <?php
-                $city = "city1";
-            ?>
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.cathedral')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.tangga')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
             @break;
         @case(6)
-            @include('components.lokasi.tmii')
-            <?php
-                $city = "city1";
-            ?>
-            @break;
-        @case(7)
-            @break;
-        @case(8)
-            @break;
-        @case(9)
-            @break;
-        @case(10)
-            @break;
-        @case(11)
-            @break;
-        @case(12)
-            @break;
-        @case(13)
-            @break;
-        @case(14)
-            @break;
-        @case(15)
-            @break;
-        @case(16)
-            @break;
-        @case(17)
-            @break;
-        @case(18)
-            @break;
-        @case(19)
-            @break;
-        @case(19)
-            @break;
-        @case(20)
-            @break;
-        @case(21)
-            @break;
-        @case(22)
-            @break;
-        @case(23)
-            @break;
-        @case(24)
+            @switch($sect)
+                @case(1)
+                    @include('components.lokasi.jkt.tmii')
+                    <?php
+                        $city = "city1";
+                    ?>
+                    @break
+                @case(2)
+                    @include('components.lokasi.bdg.wetland')
+                    <?php
+                        $city = "city2";
+                    ?>
+                    @break
+                @case(3)
+                    @break
+                @case(4)
+                    @break
+            @endswitch
             @break;
     @endswitch
 
