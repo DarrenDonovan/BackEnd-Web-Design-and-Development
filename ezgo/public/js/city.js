@@ -3,61 +3,61 @@ document.querySelectorAll(".city1").forEach((ct) => {
         switch (ct.getAttribute("name")) {
             case "acl":
                 $.ajax({
-                    url: cityRoutes.city1,
+                    url: city1.monas,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city1);
+                        window.location.replace(city1.monas);
                     },
                 });
                 break;
             case "ist":
                 $.ajax({
-                    url: cityRoutes.city2,
+                    url: city1.ancol,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city2);
+                        window.location.replace(city1.ancol);
                     },
                 });
                 break;
             case "mns":
                 $.ajax({
-                    url: cityRoutes.city3,
+                    url: city1.istiqlal,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city3);
+                        window.location.replace(city1.istiqlal);
                     },
                 });
                 break;
             case "gdk":
                 $.ajax({
-                    url: cityRoutes.city4,
+                    url: city1.glodok,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city4);
+                        window.location.replace(city1.glodok);
                     },
                 });
                 break;
             case "jct":
                 $.ajax({
-                    url: cityRoutes.city4,
+                    url: city1.cathedral,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city4);
+                        window.location.replace(city1.cathedral);
                     },
                 });
                 break;
             case "tmi":
                 $.ajax({
-                    url: cityRoutes.city4,
+                    url: city1.tmii,
                     type: "GET",
                     async: true,
                     complete: function (xhr, status) {
-                        window.location.replace(cityRoutes.city4);
+                        window.location.replace(city1.tmii);
                     },
                 });
                 break;

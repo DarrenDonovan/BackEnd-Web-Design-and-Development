@@ -60,33 +60,33 @@ Route::get('/denpasar', function(){
 
 Route::get('/monas', function(){
     $post = 1;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    return view('location', ['post' => $post]);
+})->name('monas');
  
 Route::get('/ancol', function(){
-    $post = 4;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    $post = 2;
+    return view('location', ['post' => $post]);
+})->name('ancol');
  
 Route::get('/istiqlal', function(){
-    $post = 4;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    $post = 3;
+    return view('location', ['post' => $post]);
+})->name('istiqlal');
  
 Route::get('/glodok', function(){
     $post = 4;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    return view('location', ['post' => $post]);
+})->name('glodok');
 
 Route::get('/cathedral', function(){
-    $post = 4;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    $post = 5;
+    return view('location', ['post' => $post]);
+})->name('cathedral');
 
 Route::get('/tmii', function(){
-    $post = 4;
-    return view('city', ['post' => $post]);
-})->name('city4');
+    $post = 6;
+    return view('location', ['post' => $post]);
+})->name('tmii');
 
 Route::get('/location', function(){
     return view('location');

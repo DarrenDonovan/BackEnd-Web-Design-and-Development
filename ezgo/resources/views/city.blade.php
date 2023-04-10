@@ -32,5 +32,16 @@
             @break
     @endswitch
     <script src="{{ asset('js/city.js') }}"></script>
+    <script>
+        const city1 = {
+            monas: '{{ route('monas') }}',
+            ancol: '{{ route('ancol') }}',
+            istiqlal: '{{ route('istiqlal') }}',
+            glodok: '{{ route('glodok') }}',
+            cathedral: '{{ route('cathedral') }}',
+            tmii: '{{ route('tmii') }}',
+        };
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
