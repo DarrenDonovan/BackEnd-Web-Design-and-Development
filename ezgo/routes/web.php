@@ -14,7 +14,7 @@ Route::get('/home', function(){
     $currentUrl = url()->current();
     return response()
         ->view('index')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('home');
 
 //Main Page
@@ -23,42 +23,42 @@ Route::get('/home/account', function(){
     $currentUrl = url()->current();
     return response()
         ->view('account')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('account');
 
 Route::get('/home/about', function(){
     $currentUrl = url()->current();
     return response()
         ->view('about')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('about');
 
 Route::get('/home/blog', function(){
     $currentUrl = url()->current();
     return response()
         ->view('blog')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('blog');
 
 Route::get('/home/destinations', function(){
     $currentUrl = url()->current();
     return response()
         ->view('destinations')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('destinations');
 
 Route::get('/home/services', function(){
     $currentUrl = url()->current();
     return response()
         ->view('services')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('services');
 
 Route::get('/home/product', function(){
     $currentUrl = url()->current();
     return response()
         ->view('product')
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('product');
 
 //Cities
@@ -68,7 +68,7 @@ Route::get('/home/destinations/jakarta', function(){
     $currentUrl = url()->current();
     return response()
         ->view('city', ['post' => $post])
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('city1');
 
 Route::get('/home/destinations/bandung', function(){
@@ -76,7 +76,7 @@ Route::get('/home/destinations/bandung', function(){
     $currentUrl = url()->current();
     return response()
         ->view('city', ['post' => $post])
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('city2');
 
 Route::get('/home/destinations/surabaya', function(){
@@ -84,7 +84,7 @@ Route::get('/home/destinations/surabaya', function(){
     $currentUrl = url()->current();
     return response()
         ->view('city', ['post' => $post])
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('city3');
 
 Route::get('/home/destinations/denpasar', function(){
@@ -92,7 +92,7 @@ Route::get('/home/destinations/denpasar', function(){
     $currentUrl = url()->current();
     return response()
         ->view('city', ['post' => $post])
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('city4');
 
 //Jakarta
@@ -103,7 +103,7 @@ Route::get('/home/destinations/jakarta/monas', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('monas');
  
 Route::get('/home/destinations/jakarta/ancol', function(){
@@ -112,7 +112,7 @@ Route::get('/home/destinations/jakarta/ancol', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('ancol');
  
 Route::get('/home/destinations/jakarta/istiqlal', function(){
@@ -121,7 +121,7 @@ Route::get('/home/destinations/jakarta/istiqlal', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('istiqlal');
  
 Route::get('/home/destinations/jakarta/glodok', function(){
@@ -130,7 +130,7 @@ Route::get('/home/destinations/jakarta/glodok', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('glodok');
 
 Route::get('/home/destinations/jakarta/cathedral', function(){
@@ -139,7 +139,7 @@ Route::get('/home/destinations/jakarta/cathedral', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('cathedral');
 
 Route::get('/home/destinations/jakarta/tmii', function(){
@@ -148,7 +148,7 @@ Route::get('/home/destinations/jakarta/tmii', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('tmii');
 
 //Bandung
@@ -159,7 +159,7 @@ Route::get('/home/destinations/bandung/cigadung', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('cigadung');
 
 Route::get('/home/destinations/bandung/kiara', function(){
@@ -168,7 +168,7 @@ Route::get('/home/destinations/bandung/kiara', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('kiara');
 
 Route::get('/home/destinations/bandung/kuliner', function(){
@@ -177,7 +177,7 @@ Route::get('/home/destinations/bandung/kuliner', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('kuliner');
 
 Route::get('/home/destinations/bandung/siliwangi', function(){
@@ -186,7 +186,7 @@ Route::get('/home/destinations/bandung/siliwangi', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('siliwangi');
 
 Route::get('/home/destinations/bandung/tangga', function(){
@@ -195,7 +195,7 @@ Route::get('/home/destinations/bandung/tangga', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('tangga');
 
 Route::get('/home/destinations/bandung/wetland', function(){
@@ -204,7 +204,7 @@ Route::get('/home/destinations/bandung/wetland', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('wetland');
 
 //Surabaya
@@ -215,7 +215,7 @@ Route::get('/home/destinations/surabaya/10november', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('10november');
 
 Route::get('/home/destinations/surabaya/arab', function(){
@@ -224,7 +224,7 @@ Route::get('/home/destinations/surabaya/arab', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('arab');
 
 Route::get('/home/destinations/surabaya/kelenteng', function(){
@@ -233,7 +233,7 @@ Route::get('/home/destinations/surabaya/kelenteng', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('kelenteng');
 
 Route::get('/home/destinations/surabaya/pakuwon', function(){
@@ -242,7 +242,7 @@ Route::get('/home/destinations/surabaya/pakuwon', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('pakuwon');
 
 Route::get('/home/destinations/surabaya/sampoerna', function(){
@@ -251,7 +251,7 @@ Route::get('/home/destinations/surabaya/sampoerna', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('sampoerna');
 
 Route::get('/home/destinations/surabaya/tugu', function(){
@@ -260,5 +260,5 @@ Route::get('/home/destinations/surabaya/tugu', function(){
     $currentUrl = url()->current();
     return response()
         ->view('location', compact('lokasi', 'kota'))
-        ->cookie('currentUrl', $currentUrl);
+        ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('tugu');
