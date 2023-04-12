@@ -41,10 +41,10 @@
         @case(1)
             @switch($sect)
                 @case(1)
-                    @yield('monas')
+                    @yield('mns')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.cigandung')
+                    @yield('cgd')
                     @break
                 @case(3)
                     @break
@@ -58,7 +58,7 @@
                     @yield('acl')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.kiara')
+                    @yield('kra')
                     @break
                 @case(3)
                     @break
@@ -69,10 +69,10 @@
         @case(3)
             @switch($sect)
                 @case(1)
-                    @include('components.lokasi.jkt.istiqlal')
+                    @yield('ist')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.kuliner')
+                    @yield('kln')
                     @break
                 @case(3)
                     @break
@@ -83,10 +83,10 @@
         @case(4)
             @switch($sect)
                 @case(1)
-                    @include('components.lokasi.jkt.glodok')
+                    @yield('gld')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.siliwangi')
+                    @yield('slw')
                     @break
                 @case(3)
                     @break
@@ -97,10 +97,10 @@
         @case(5)
             @switch($sect)
                 @case(1)
-                    @include('components.lokasi.jkt.cathedral')
+                    @yield('ctd')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.tangga')
+                    @yield('tng')
                     @break
                 @case(3)
                     @break
@@ -111,10 +111,10 @@
         @case(6)
             @switch($sect)
                 @case(1)
-                    @include('components.lokasi.jkt.tmii')
+                    @yield('tmi')
                     @break
                 @case(2)
-                    @include('components.lokasi.bdg.wetland')
+                    @yield('wtl')
                     @break
                 @case(3)
                     @break
