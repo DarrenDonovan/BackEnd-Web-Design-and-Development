@@ -137,3 +137,41 @@ Route::get('/home/destinations/bandung/wetland', function(){
     $kota = 2;
     return view('location', compact('lokasi', 'kota'));
 })->name('wetland');
+
+//Surabaya
+
+Route::get('/home/destinations/surabaya/10november', function(){
+    $lokasi = 1;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('10november');
+
+Route::get('/home/destinations/surabaya/arab', function(){
+    $lokasi = 2;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('arab');
+
+Route::get('/home/destinations/surabaya/kelenteng', function(){
+    $lokasi = 3;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('kelenteng');
+
+Route::get('/home/destinations/surabaya/pakuwon', function(){
+    $lokasi = 4;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('pakuwon');
+
+Route::get('/home/destinations/surabaya/sampoerna', function(){
+    $lokasi = 5;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('sampoerna');
+
+Route::get('/home/destinations/surabaya/tugu', function(){
+    $lokasi = 1;
+    $kota = 3;
+    return view('location', compact('lokasi', 'kota'));
+})->name('tugu');

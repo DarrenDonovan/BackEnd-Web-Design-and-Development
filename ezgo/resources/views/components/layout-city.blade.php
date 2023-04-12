@@ -59,6 +59,15 @@
             tangga: '{{ route('tangga') }}',
             wetland: '{{ route('wetland') }}',
         };
+
+        const city3 = {
+            sepnovember: '{{ route('10november') }}',
+            arab: '{{ route('arab') }}',
+            kelenteng: '{{ route('kelenteng') }}',
+            pakuwon: '{{ route('pakuwon') }}',
+            sampoerna: '{{ route('sampoerna') }}',
+            tugu: '{{ route('tugu') }}',
+        };
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>

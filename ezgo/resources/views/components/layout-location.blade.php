@@ -47,6 +47,7 @@
                     @yield('cgd')
                     @break
                 @case(3)
+                    @yield('10n')
                     @break
                 @case(4)
                     @break
@@ -61,6 +62,7 @@
                     @yield('kra')
                     @break
                 @case(3)
+                    @yield('arb')
                     @break
                 @case(4)
                     @break
@@ -75,6 +77,7 @@
                     @yield('kln')
                     @break
                 @case(3)
+                    @yield('klt')
                     @break
                 @case(4)
                     @break
@@ -89,6 +92,7 @@
                     @yield('slw')
                     @break
                 @case(3)
+                    @yield('pkw')
                     @break
                 @case(4)
                     @break
@@ -103,6 +107,7 @@
                     @yield('tng')
                     @break
                 @case(3)
+                    @yield('smp')
                     @break
                 @case(4)
                     @break
@@ -117,6 +122,7 @@
                     @yield('wtl')
                     @break
                 @case(3)
+                    @yield('tgu')
                     @break
                 @case(4)
                     @break
@@ -130,7 +136,5 @@
             window.location.reload();
         });
     </script>
-
-    
 </body>
 </html>

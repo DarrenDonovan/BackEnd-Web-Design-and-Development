@@ -155,3 +155,82 @@ document.querySelectorAll(".city2").forEach((ct) => {
         }
     });
 });
+
+document.querySelectorAll(".city3").forEach((ct) => {
+    ct.addEventListener("click", function () {
+        switch (ct.getAttribute("name")) {
+            case "10n":
+                event.preventDefault();
+                history.pushState(null, null, city3.sepnovember);
+                $.ajax({
+                    url: city3.sepnovember,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.sepnovember);
+                    },
+                });
+                break;
+            case "arb":
+                event.preventDefault();
+                history.pushState(null, null, city3.arab);
+                $.ajax({
+                    url: city3.arab,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.arab);
+                    },
+                });
+                break;
+            case "klt":
+                event.preventDefault();
+                history.pushState(null, null, city3.kelenteng);
+                $.ajax({
+                    url: city3.kelenteng,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.kelenteng);
+                    },
+                });
+                break;
+            case "pkw":
+                event.preventDefault();
+                history.pushState(null, null, city3.pakuwon);
+                $.ajax({
+                    url: city3.pakuwon,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.pakuwon);
+                    },
+                });
+                break;
+            case "smp":
+                event.preventDefault();
+                history.pushState(null, null, city3.sampoerna);
+                $.ajax({
+                    url: city3.sampoerna,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.sampoerna);
+                    },
+                });
+                break;
+            case "tgu":
+                event.preventDefault();
+                history.pushState(null, null, city3.tugu);
+                $.ajax({
+                    url: city3.tugu,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.location.replace(city3.tugu);
+                    },
+                });
+                break;
+        }
+    });
+});
