@@ -131,9 +131,14 @@
     @endswitch
 
     <script>
-        window.addEventListener('popstate', function () {
-            window.location.href = '{{ route($city) }}';
-            window.location.reload();
+        window.addEventListener("popstate", function(event) {
+            if (event.state && event.state.forward) {
+                alert(Cookies.get('currentUrl'));
+                window.location.href = Cookies.get('currentUrl');
+            } else {
+                alert("yes");
+                window.location.href = '{{ route($city) }}';
+            }
         });
     </script>
 </body>

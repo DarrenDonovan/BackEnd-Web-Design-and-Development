@@ -14,8 +14,6 @@ document.querySelectorAll(".city1").forEach((ct) => {
                 });
                 break;
             case "ist":
-                event.preventDefault();
-                history.pushState(null, null, city1.istiqlal);
                 $.ajax({
                     url: city1.istiqlal,
                     type: "GET",
@@ -26,8 +24,6 @@ document.querySelectorAll(".city1").forEach((ct) => {
                 });
                 break;
             case "mns":
-                event.preventDefault();
-                history.pushState(null, null, city1.monas);
                 $.ajax({
                     url: city1.monas,
                     type: "GET",
@@ -38,8 +34,6 @@ document.querySelectorAll(".city1").forEach((ct) => {
                 });
                 break;
             case "gdk":
-                event.preventDefault();
-                history.pushState(null, null, city1.glodok);
                 $.ajax({
                     url: city1.glodok,
                     type: "GET",
@@ -50,8 +44,6 @@ document.querySelectorAll(".city1").forEach((ct) => {
                 });
                 break;
             case "jct":
-                event.preventDefault();
-                history.pushState(null, null, city1.cathedral);
                 $.ajax({
                     url: city1.cathedral,
                     type: "GET",
@@ -62,8 +54,6 @@ document.querySelectorAll(".city1").forEach((ct) => {
                 });
                 break;
             case "tmi":
-                event.preventDefault();
-                history.pushState(null, null, city1.tmii);
                 $.ajax({
                     url: city1.tmii,
                     type: "GET",
@@ -81,8 +71,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
     ct.addEventListener("click", function () {
         switch (ct.getAttribute("name")) {
             case "cgd":
-                event.preventDefault();
-                history.pushState(null, null, city2.cigadung);
                 $.ajax({
                     url: city2.cigadung,
                     type: "GET",
@@ -93,8 +81,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
                 });
                 break;
             case "kar":
-                event.preventDefault();
-                history.pushState(null, null, city2.kiara);
                 $.ajax({
                     url: city2.kiara,
                     type: "GET",
@@ -105,8 +91,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
                 });
                 break;
             case "kln":
-                event.preventDefault();
-                history.pushState(null, null, city2.kuliner);
                 $.ajax({
                     url: city2.kuliner,
                     type: "GET",
@@ -117,8 +101,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
                 });
                 break;
             case "slw":
-                event.preventDefault();
-                history.pushState(null, null, city2.siliwangi);
                 $.ajax({
                     url: city2.siliwangi,
                     type: "GET",
@@ -129,8 +111,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
                 });
                 break;
             case "tng":
-                event.preventDefault();
-                history.pushState(null, null, city2.tangga);
                 $.ajax({
                     url: city2.tangga,
                     type: "GET",
@@ -141,8 +121,6 @@ document.querySelectorAll(".city2").forEach((ct) => {
                 });
                 break;
             case "wtl":
-                event.preventDefault();
-                history.pushState(null, null, city2.wetland);
                 $.ajax({
                     url: city2.wetland,
                     type: "GET",
@@ -160,8 +138,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
     ct.addEventListener("click", function () {
         switch (ct.getAttribute("name")) {
             case "10n":
-                event.preventDefault();
-                history.pushState(null, null, city3.sepnovember);
                 $.ajax({
                     url: city3.sepnovember,
                     type: "GET",
@@ -172,8 +148,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
                 });
                 break;
             case "arb":
-                event.preventDefault();
-                history.pushState(null, null, city3.arab);
                 $.ajax({
                     url: city3.arab,
                     type: "GET",
@@ -184,8 +158,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
                 });
                 break;
             case "klt":
-                event.preventDefault();
-                history.pushState(null, null, city3.kelenteng);
                 $.ajax({
                     url: city3.kelenteng,
                     type: "GET",
@@ -196,8 +168,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
                 });
                 break;
             case "pkw":
-                event.preventDefault();
-                history.pushState(null, null, city3.pakuwon);
                 $.ajax({
                     url: city3.pakuwon,
                     type: "GET",
@@ -208,8 +178,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
                 });
                 break;
             case "smp":
-                event.preventDefault();
-                history.pushState(null, null, city3.sampoerna);
                 $.ajax({
                     url: city3.sampoerna,
                     type: "GET",
@@ -220,8 +188,6 @@ document.querySelectorAll(".city3").forEach((ct) => {
                 });
                 break;
             case "tgu":
-                event.preventDefault();
-                history.pushState(null, null, city3.tugu);
                 $.ajax({
                     url: city3.tugu,
                     type: "GET",

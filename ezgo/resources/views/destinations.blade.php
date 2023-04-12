@@ -25,8 +25,12 @@
         };
     </script>
     <script>
-        window.addEventListener("popstate", function () {
-            window.location.href = '{{ route('home') }}';
+        window.addEventListener("popstate", function(event) {
+            if (event.state && event.state.forward) {
+                window.location.href = Cookies.get('currentUrl');
+            } else {
+                window.location.href = '{{ route('home') }}';
+            }
         });
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

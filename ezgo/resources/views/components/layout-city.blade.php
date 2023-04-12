@@ -38,8 +38,12 @@
     @endswitch
     <script src="{{ asset('js/city.js') }}"></script>
     <script>
-        window.addEventListener("popstate", function () {
-            window.location.href = '{{ route('destinations') }}';
+        window.addEventListener("popstate", function(event) {
+            if (event.state && event.state.forward) {
+                window.location.href = Cookies.get('currentUrl');
+            } else {
+                window.location.href = '{{ route('destinations') }}';
+            }
         });
 
         const city1 = {
