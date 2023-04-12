@@ -73,7 +73,7 @@ Route::get('/home/destinations/jakarta/monas', function(){
 Route::get('/home/destinations/jakarta/ancol', function(){
     $lokasi = 2;
     $kota = 1;
-    return view('location', ['post' => $post]);
+    return view('location', compact('lokasi', 'kota'));
 })->name('ancol');
  
 Route::get('/home/destinations/jakarta/istiqlal', function(){

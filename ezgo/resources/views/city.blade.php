@@ -1,64 +1,56 @@
-<?php
-    $num;
-    if(isset($post)){
-        $num = $post;
-    }
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ezgo City Page</title>
-</head>
-<body>
-    <h1>City</h1>
-    @include('components.navbar')
+@extends('components.layout-city')
 
-    <?php
-        echo $num;
-    ?>
-    
-    @switch($num)
-        @case(1)
-            @include('components.jakarta')
-            @break
-        @case(2)
-            @include('components.bandung')
-            @break
-        @case(3)
-            @break
-        @case(4)
-            @break
-    @endswitch
-    <script src="{{ asset('js/city.js') }}"></script>
-    <script>
-        window.addEventListener("popstate", function () {
-            window.location.href = '{{ route('destinations') }}';
-        });
-
-        const city1 = {
-            monas: '{{ route('monas') }}',
-            ancol: '{{ route('ancol') }}',
-            istiqlal: '{{ route('istiqlal') }}',
-            glodok: '{{ route('glodok') }}',
-            cathedral: '{{ route('cathedral') }}',
-            tmii: '{{ route('tmii') }}',
-        };
-
-        const city2 = {
-            cigadung: '{{ route('cigadung') }}',
-            kiara: '{{ route('kiara') }}',
-            kuliner: '{{ route('kuliner') }}',
-            siliwangi: '{{ route('siliwangi') }}',
-            tangga: '{{ route('tangga') }}',
-            wetland: '{{ route('wetland') }}',
-        };
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-</body>
+@section('jkt')
+<html>
+    <table>
+        <tr>
+            <td><img src="{{ asset('img/ancol.jpg') }}" alt="" width="300" height="300" class="city1" name="acl"></td>
+            <td><img src="{{ asset('img/istiqlal-mosque.jpg') }}" alt="" width="300" height="300" class="city1" name="ist"></td>
+            <td><img src="{{ asset('img/monas.jpg') }}" alt="" width="300" height="300" class="city1" name="mns"></td>
+        </tr>
+        <tr>
+            <td><img src="{{ asset('img/glodok.jpeg') }}" alt="" width="300" height="300" class="city1" name="gdk"></td>
+            <td><img src="{{ asset('img/jakarta-cathedral.jpg') }}" alt="" width="300" height="300" class="city1" name="jct"></td>
+            <td><img src="{{ asset('img/tmii.jpeg') }}" alt="" width="300" height="300" class="city1" name="tmi"></td>
+        </tr>
+    </table>
 </html>
+@endsection
+
+@section('bdg')
+<html>
+    <table>
+        <tr>
+            <td><img src="{{ asset('img/cigadung.jpg') }}" alt="" width="300" height="300" class="city2" name="cgd"></td>
+            <td><img src="{{ asset('img/kiara.jpg') }}" alt="" width="300" height="300" class="city2" name="kar"></td>
+            <td><img src="{{ asset('img/kuliner.jpeg') }}" alt="" width="300" height="300" class="city2" name="kln"></td>
+        </tr>
+        <tr>
+            <td><img src="{{ asset('img/siliwangi.jpg') }}" alt="" width="300" height="300" class="city2" name="slw"></td>
+            <td><img src="{{ asset('img/tangga.jpg') }}" alt="" width="300" height="300" class="city2" name="tng"></td>
+            <td><img src="{{ asset('img/wetland.jpeg') }}" alt="" width="300" height="300" class="city2" name="wtl"></td>
+        </tr>
+    </table>
+</html>
+@endsection
+
+@section('srby')
+<html>
+    <table>
+        <tr>
+            <td><img src="{{ asset('img/10november.jpg') }}" alt="" width="300" height="300" class="city3" name="10n"></td>
+            <td><img src="{{ asset('img/arab.jpg') }}" alt="" width="300" height="300" class="city3" name="arb"></td>
+            <td><img src="{{ asset('img/kelenteng.jpg') }}" alt="" width="300" height="300" class="city3" name="klt"></td>
+        </tr>
+        <tr>
+            <td><img src="{{ asset('img/pakuwon.jpg') }}" alt="" width="300" height="300" class="city3" name="pkw"></td>
+            <td><img src="{{ asset('img/sampoerna.jpg') }}" alt="" width="300" height="300" class="city3" name="smp"></td>
+            <td><img src="{{ asset('img/tugu.jpg') }}" alt="" width="300" height="300" class="city3" name="tgu"></td>
+        </tr>
+    </table>
+</html>
+@endsection
+
+@section('dpsr')
+
+@endsection
