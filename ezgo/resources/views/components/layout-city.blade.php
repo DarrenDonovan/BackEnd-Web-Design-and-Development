@@ -36,16 +36,30 @@
         @case(4)
             @break
     @endswitch
-    <script src="{{ asset('js/city.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('js/city.js') }}"></script>   
     <script>
-        window.addEventListener("popstate", function(event) {
-            if (event.state && event.state.forward) {
-                window.location.href = Cookies.get('currentUrl');
-            } else {
-                window.location.href = '{{ route('destinations') }}';
-            }
-        });
+        $(document).ready(function() {
+            window.addEventListener("popstate", function(event) {
+                let cookie;
+                if (event.state && event.state.forward) {
+                    cookie = Cookies.get('nextUrl');
+                } else {
+                    Cookies.set('nextUrl', Cookies.get('currentUrl'), { expires: 0.25, path: '/' });
+                    cookie = '{{ route('destinations') }}';
+                }
 
+                $.ajax({
+                        url: cookie,
+                        type: "GET",
+                        async: true,
+                        complete: function (xhr, status) {
+                            window.location.href = cookie;
+                        },
+                    });
+            });
+        }
+        
         const city1 = {
             monas: '{{ route('monas') }}',
             ancol: '{{ route('ancol') }}',
@@ -73,6 +87,5 @@
             tugu: '{{ route('tugu') }}',
         };
     </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>

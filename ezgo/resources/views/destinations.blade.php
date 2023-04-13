@@ -27,9 +27,11 @@
     <script>
         window.addEventListener("popstate", function(event) {
             if (event.state && event.state.forward) {
-                window.location.href = Cookies.get('currentUrl');
+                window.location.href = Cookies.get('nextUrl');
             } else {
+                Cookies.set('nextUrl', Cookies.get('currentUrl'), { expires: 0.25, path: '/' });
                 window.location.href = '{{ route('home') }}';
+                location.reload(true)
             }
         });
     </script>
