@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezgo City Page</title>
 </head>
-<body>
+<body id="html">
     <h1>City</h1>
     @include('components.navbar')
 
@@ -39,27 +39,34 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/city.js') }}"></script>   
     <script>
-        $(document).ready(function() {
-            window.addEventListener("popstate", function(event) {
+        $(document).ready(function () {
+            window.addEventListener("popstate", function (event) {
+                alert("yes");
                 let cookie;
                 if (event.state && event.state.forward) {
-                    cookie = Cookies.get('nextUrl');
+                    alert("1");
+                    cookie = Cookies.get("nextUrl");
                 } else {
-                    Cookies.set('nextUrl', Cookies.get('currentUrl'), { expires: 0.25, path: '/' });
-                    cookie = '{{ route('destinations') }}';
+                    alert("2");
+                    Cookies.set("nextUrl", Cookies.get("currentUrl"), {
+                        expires: 0.25,
+                        path: "/",
+                    });
+                    cookie = '{{ route('home') }}';
                 }
 
                 $.ajax({
-                        url: cookie,
-                        type: "GET",
-                        async: true,
-                        complete: function (xhr, status) {
-                            window.location.href = cookie;
-                        },
-                    });
+                    url: cookie,
+                    type: "GET",
+                    async: true,
+                    complete: function (xhr, status) {
+                        window.history.pushState({ forward: true }, '', '{{ route('home') }}');
+                        window.location.href = '{{ route('home') }}';
+                    },
+                });
             });
-        }
-        
+        });
+            
         const city1 = {
             monas: '{{ route('monas') }}',
             ancol: '{{ route('ancol') }}',
