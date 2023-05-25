@@ -9,12 +9,53 @@
     <title>Ezgo Destinations Page</title>
 </head>
 <body>
-    <h1>Destinations</h1>
     @include('components.navbar')
-    <img src="{{ asset('img/jakarta.jpg') }}" alt="Jakarta" width="300" height="300" class="obj" name="jkt">
-    <img src="{{ asset('img/bandung.jpg') }}" alt="Bandung" width="300" height="300" class="obj" name="bdg">
-    <img src="{{ asset('img/surabaya.jpg') }}" alt="Surabaya" width="300" height="300" class="obj" name="srby">
-    <img src="{{ asset('img/denpasar.jpg') }}" alt="Denpasar" width="300" height="300" class="obj" name="dpsr">
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
+                <h1>Provided Destination</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
+                        <img class="img-fluid" src="{{ asset('img/jakarta.jpg') }}" alt="" style="width: 100%;">
+                        <a class="destination-overlay text-white text-decoration-none obj" name="jkt">
+                            <h4 class="text-white">Jakarta</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
+                        <img class="img-fluid" src="{{ asset('img/bandung.jpg') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none obj" name="bdg">
+                            <h4 class="text-white">Bandung</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
+                        <img class="img-fluid" src="{{ asset('img/surabaya.jpg') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none obj" name="srby">
+                            <h4 class="text-white">Surabaya</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
+                        <img class="img-fluid" src="{{ asset('img/denpasar.jpg') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none obj" name="dpsr">
+                            <h4 class="text-white">Denpasar</h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
+
+    @include('components.footer')
+
     <script src="{{ asset('js/destinations.js') }}"></script>
     <script>
         const cityRoutes = {
