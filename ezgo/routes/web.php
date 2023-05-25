@@ -61,6 +61,32 @@ Route::get('/home/product', function(){
         ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('product');
 
+//services
+
+Route::get('/home/services/tickets', function(){
+    $post = 1;
+    $currentUrl = url()->current();
+    return response()
+        ->view('product', ['post' => $post])
+        ->cookie('currentUrl', $currentUrl, 6*60);
+})->name('ticket');
+
+Route::get('/home/services/hotels', function(){
+    $post = 2;
+    $currentUrl = url()->current();
+    return response()
+        ->view('product', ['post' => $post])
+        ->cookie('currentUrl', $currentUrl, 6*60);
+})->name('hotel');
+
+Route::get('/home/services/tours', function(){
+    $post = 3;
+    $currentUrl = url()->current();
+    return response()
+        ->view('product', ['post' => $post])
+        ->cookie('currentUrl', $currentUrl, 6*60);
+})->name('tour');
+
 //Cities
 
 Route::get('/home/destinations/jakarta', function(){

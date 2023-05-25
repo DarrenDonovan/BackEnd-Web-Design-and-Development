@@ -27,9 +27,9 @@ class Customers extends Model
     }
     
     function login($username, $password){
-        $customer = DB::table('Customer')->where('userID', $username)->first();
-        if ($customer && Hash::check($password, $customer->cpassword)) {
-            $this->username = $customer->userID;
+        $customer = DB::table('Customer')->where('custID', $username)->first();
+        if ($customer && Hash::check($password, $customer->cPassword)) {
+            $this->username = $customer->custID;
             $this->nama = $customer->cName;
             return 1;
         } elseif ($customer) {
@@ -40,24 +40,22 @@ class Customers extends Model
     }
 
     function signup($username, $password, $nama){
-       $cust = DB::table('Customer')->where('userID', $username)->first();
+       $cust = DB::table('Customer')->where('custID', $username)->first();
        if($cust){
             return 1;
        }else{
             DB::table('Customer')->insert([
-                'userID' => $username,
-                'cpassword' => Hash::make($password),
+                'custID' => $username,
+                'cPassword' => Hash::make($password),
                 'cName' => $nama
             ]);
             return 2;
        }
     }
-    
-    
 
     function checkusername($username){
         $conn = $this->conn;
-        $query = "SELECT username FROM customer WHERE username = '".$username."'";
+        $query = "SELECT custID FROM Customer WHERE custID = '".$username."'";
         $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
         if($result != false){
             if(sqlsrv_num_rows($result) > 0){
@@ -73,11 +71,11 @@ class Customers extends Model
 
     function checkpassword($password, $username){
         $conn = $this->conn;
-        $query = "SELECT password FROM customer WHERE username = '".$username."'";
+        $query = "SELECT cPassword FROM Customer WHERE custID = '".$username."'";
         $result = sqlsrv_query($conn, $query, array(), array( "Scrollable" => 'static' ));
         if($result != false){
             $row = sqlsrv_fetch_array($result);
-            if(password_verify($password, $row["password"])){
+            if(password_verify($password, $row["cPassword"])){
                 return false;
             }else{
                 return true;
