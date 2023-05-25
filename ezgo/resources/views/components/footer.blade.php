@@ -28,7 +28,7 @@
                 <a href="{{ route('home') }}" class="navbar-brand">
                     <h1 class="text-primary"><span class="text-white">EZ</span>GO</h1>
                 </a>
-                <p>Sed ipsum clita tempor ipsum ipsum amet sit ipsum lorem amet labore rebum lorem ipsum dolor. No sed vero lorem dolor dolor</p>
+                <p>Experience travel made effortless with EZGO,captures the essence of seamless exploration. Let us take care of the details while you embrace unforgettable journeys with absolute ease. Easy come easy go EZGO.</p>
                 <h6 class="text-white text-uppercase mt-4 mb-3" style="letter-spacing: 5px;">Follow Us</h6>
                 <div class="d-flex justify-content-start">
                     <a class="btn btn-outline-primary btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
@@ -58,7 +58,7 @@
             <div class="col-lg-3 col-md-6 mb-5">
                 <h5 class="text-white text-uppercase mb-4" style="letter-spacing: 5px;">Contact Us</h5>
                 <p><i class="fa fa-map-marker-alt mr-2"></i>Rt 6 rw 9, jalan planet 69, Pondok Cina, Depok, Indonesia</p>
-                <p><i class="fa fa-phone-alt mr-2"></i>+012 345 67890</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+62 813-8061-1660</p>
                 <p><i class="fa fa-envelope mr-2"></i>ezgo@skystar.umn.ac.id</p>
             </div>
         </div>

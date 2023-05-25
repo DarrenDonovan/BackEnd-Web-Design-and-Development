@@ -36,8 +36,5 @@
         @case(4)
             @break
     @endswitch
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{{ asset('js/city.js') }}"></script>   
-
 </body>
 </html>

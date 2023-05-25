@@ -69,13 +69,13 @@
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
                         <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
                         <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                        <p>Embark on unforgettable adventures with our exclusive tour packages, where dreams come to life and memories are made.</p>
                         <div class="row mb-4">
                             <div class="col-6">
-                                <img class="img-fluid" src="img/about-1.jpg" alt="">
+                                <img class="img-fluid" src="img/pasar baru.png" alt="">
                             </div>
                             <div class="col-6">
-                                <img class="img-fluid" src="img/about-2.jpg" alt="">
+                                <img class="img-fluid" src="img/tangkuban perahu.png" alt="">
                             </div>
                         </div>
                         <a href="{{ route('tour') }}" onclick="history.pushState(null, null, '{{ route('tour') }}');" class="btn btn-primary mt-1">Book Now</a>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <h5 class="">Competitive Pricing</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                            <p class="m-0">Discover budget-friendly tours offering unbeatable destinations and unforgettable experiences.</p>
                         </div>
                     </div>
                 </div>
@@ -109,7 +109,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <h5 class="">Best Services</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                            <p class="m-0">Unmatched service awaits at our travel website, where your journey is our top priority.</p>
                         </div>
                     </div>
                 </div>
@@ -120,7 +120,7 @@
                         </div>
                         <div class="d-flex flex-column">
                             <h5 class="">Worldwide Coverage</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
+                            <p class="m-0">Discover the world effortlessly with our travel website, covering famous landmarks and hidden gems.</p>
                         </div>
                     </div>
                 </div>
