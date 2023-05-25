@@ -1,4 +1,5 @@
 <?php
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +14,6 @@
     @include('components.navbar')
     
 
-    
+
 </body>
 </html>

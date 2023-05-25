@@ -4,32 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    <!-- Favicon -->
+    <link href="{{ asset('img/favicon.ico') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+     
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('tempusdominus/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="{{ route('home') }}">My Website</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ route('account') }}" onclick="history.pushState(null, null, '{{ route('account') }}');">Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('services') }}" onclick="history.pushState(null, null, '{{ route('services') }}');">Services</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('blog') }}" onclick="history.pushState(null, null, '{{ route('blog') }}');">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('destinations') }}" onclick="history.pushState(null, null, '{{ route('destinations') }}');">Destinations</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ route('about') }}" onclick="history.pushState(null, null, '{{ route('about') }}');">About</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+<!-- Topbar Start -->
+<div class="container-fluid bg-light pt-3 d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <p class="text-body px-3">|</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a class="text-primary px-3" href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-primary pl-3" href="">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">EZ</span>GO</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="{{ route('home') }}" class="nav-item nav-link active">Home</a>
+                        <a href="{{ route('destinations') }}" onclick="history.pushState(null, null, '{{ route('destinations') }}');" class="nav-item nav-link">Destination</a>
+                        <a href="{{ route('blog') }}" onclick="history.pushState(null, null, '{{ route('blog') }}');" class="nav-item nav-link">Blog</a>
+                        <div class="nav-item dropdown">
+                            <a href="{{ route('services') }}" onclick="history.pushState(null, null, '{{ route('services') }}');" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="{{ route('ticket') }}" onclick="history.pushState(null, null, '{{ route('ticket') }}');" class="dropdown-item">Ticketing</a>
+                                <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" class="dropdown-item">Hotel Booking</a>
+                                <a href="{{ route('tour') }}" onclick="history.pushState(null, null, '{{ route('tour') }}');" class="dropdown-item">Tour Packages</a>
+                            </div>
+                        </div>
+                        <a href="{{ route('about') }}" onclick="history.pushState(null, null, '{{ route('about') }}');" class="nav-item nav-link">About</a>
+                        <div style="padding: 5px; margin-top: 18px;">
+                            <a href="{{ route('account') }}" onclick="history.pushState(null, null, '{{ route('account') }}');" class="btn btn-primary">Account</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
 </body>
 </html>
