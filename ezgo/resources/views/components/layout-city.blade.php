@@ -29,6 +29,7 @@
             @yield('srby')
             @break
         @case(4)
+            @yield('dpsr')
             @break
     @endswitch
 

@@ -802,5 +802,266 @@
 @endsection
 
 @section('dpsr')
+<!-- Destination Start -->
+<div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
+                <h1>DENPASAR</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal1">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/bajra sandhi.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none">
+                            <h5 class="text-white">Monumen Bajra Sandhi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal2">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/museum bali.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Museum Bali</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal3">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/jagatnatha.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Pura Jagatnatha</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/pasar badung.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Pasar Badung</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal5">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/taman werdhi.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Taman Werdhi</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal6">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/gatotkaca.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Satria Gatotkaca</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
 
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Monumen Bajra Sandhi</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/bajra sandhi.png') }}" class="mw-100" alt="Monas">
+                    </div>
+                    <div>
+                        <p>Standing tall in the heart of Denpasar, the Bajra Sandhi Monument is a 
+                            striking landmark that commemorates the struggles and triumphs of the 
+                            Balinese people throughout history. This majestic monument features a 
+                            towering structure adorned with intricate carvings and reliefs depicting 
+                            Balinese mythology and important historical events. Inside the monument, 
+                            visitors can explore the museum that showcases artifacts, photographs, 
+                            and interactive exhibits that provide insights into Bali's rich cultural 
+                            heritage.
+                            The monument's top floor offers panoramic views of Denpasar, allowing 
+                            visitors to appreciate the city's urban landscape. Bajra Sandhi Monument 
+                            serves as a symbolic reminder of the Balinese people's resilience and is 
+                            a significant site for learning about Bali's history and cultural identity.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Museum Bali</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/museum bali.png') }}" class="mw-100" alt="Pasar Baru">
+                    </div>
+                    <div>
+                        <p>Located in the heart of Denpasar, the Bali Museum offers a fascinating 
+                            journey through the island's art, history, and cultural heritage. The 
+                            museum houses a vast collection of artifacts, traditional costumes, 
+                            ancient sculptures, ceremonial objects, and paintings that depict Bali's 
+                            rich artistic traditions. Visitors can explore the various pavilions, each 
+                            representing different aspects of Balinese culture, including dance, textiles, 
+                            religious rituals, and craftsmanship.
+                            The museum provides a comprehensive understanding of the island's diverse 
+                            cultural practices, making it a must-visit destination for those seeking to 
+                            delve deeper into Bali's cultural heritage. With its extensive collection 
+                            and informative exhibits, the Bali Museum offers a captivating experience 
+                            that allows visitors to appreciate the artistic and cultural richness of the 
+                            island.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Pura Jagatnatha</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/jagatnatha.png') }}" class="mw-100" alt="Taman Mini Indonesia Indah">
+                    </div>
+                    <div>
+                        <p>Discover the spiritual heart of Denpasar at Pura Jagatnatha, the city's main 
+                            Hindu temple dedicated to Sanghyang Widi Wasa, the supreme god of the Balinese 
+                            Hindu religion. This grand temple features stunning Balinese architecture, 
+                            intricate stone carvings, and elaborate gateways. Inside the temple, visitors 
+                            can witness Hindu rituals and ceremonies performed by devotees, immersing 
+                            themselves in the spiritual ambiance.
+                            The temple is especially vibrant during religious festivals and full moon 
+                            ceremonies, when locals gather to offer prayers and participate in traditional 
+                            dances and music performances. Pura Jagatnatha provides a peaceful and authentic 
+                            glimpse into the religious and cultural traditions that are deeply rooted in 
+                            Balinese society.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Pasar Badung</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/pasar badung.png') }}" class="mw-100" alt="Taman Ragunan">
+                    </div>
+                    <div>
+                        <p>Immerse yourself in the vibrant atmosphere of traditional Balinese markets at Pasar Badung, Denpasar's 
+                            largest and busiest market. Here, visitors can explore a labyrinth of stalls offering a wide range of 
+                            goods, including fresh produce, spices, textiles, handicrafts, and souvenirs. The market is a sensory 
+                            delight, with colorful displays of fruits and vegetables, the aroma of spices filling the air, and the 
+                            bustling energy of locals going about their daily shopping.
+                            Pasar Badung offers a unique opportunity to experience the local way of life and engage in bargaining 
+                            with friendly vendors. It's also a great place to sample traditional Balinese snacks and street food. 
+                            Whether you're seeking to purchase authentic Balinese products or simply soak up the lively ambiance, 
+                            Pasar Badung provides an authentic and immersive market experience.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Taman Werdhi</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/taman werdhi.png') }}" class="mw-100" alt="Dunia Fantasi">
+                    </div>
+                    <div>
+                        <p>Located in Denpasar's Taman Budaya cultural complex, the Bali Art Center is a 
+                            hub of artistic and cultural activities. This sprawling complex features 
+                            traditional Balinese architecture and serves as a venue for various performances, 
+                            exhibitions, and festivals that showcase the rich artistic traditions of the 
+                            island. Visitors can catch mesmerizing Balinese dance performances, theater shows, 
+                            music concerts, and art exhibitions throughout the year.
+                            The complex also houses a library, art galleries, and workshop spaces where 
+                            visitors can learn traditional arts and crafts. The Bali Art Center offers a 
+                            vibrant and dynamic atmosphere where visitors can fully immerse themselves in 
+                            Bali's artistic and cultural scene. Whether you're watching a captivating Balinese 
+                            dance performance, admiring intricate artworks, or participating in a traditional 
+                            arts workshop, the Bali Art Center provides a platform for artists and enthusiasts 
+                            to come together and celebrate Bali's artistic heritage.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Satria Gatotkaca</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/gatotkaca.png') }}" class="mw-100" alt="Kota Tua">
+                    </div>
+                    <div>
+                        <p>Standing proudly in the heart of Denpasar, the Satria Gatotkaca Statue pays tribute 
+                            to one of the legendary characters from the Hindu epic, Mahabharata. This 
+                            magnificent bronze statue depicts Gatotkaca, a warrior known for his bravery and 
+                            strength. The statue is a symbol of heroism and valor, embodying the Balinese spirit 
+                            of courage and resilience.
+                            Visitors can admire the intricate details of the statue and learn about the story of 
+                            Gatotkaca through informative plaques. The surrounding park offers a serene 
+                            environment, with beautiful gardens and seating areas where visitors can relax and 
+                            enjoy the ambiance. The Satria Gatotkaca Statue is not only a significant cultural 
+                            landmark but also serves as an inspiring reminder of the noble qualities celebrated 
+                            in Balinese mythology.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
 @endsection
