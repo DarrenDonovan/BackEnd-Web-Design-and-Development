@@ -16,7 +16,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Ticketing</h4>
                             <h1 class="display-3 text-white mb-md-4">Embrace Adventure with Effortless ticketing.</h1>
-                            <a href="ticket.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Hotel Booking</h4>
                             <h1 class="display-3 text-white mb-md-4">Find Your Perfect stay with seamless booking.</h1>
-                            <a href="hotel.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
                 </div> 
@@ -35,8 +35,8 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tour Packages</h4>
-                            <h1 class="display-3 text-white mb-md-4">Discover.Explore.Experience Unforgettable tour packages.</h1>
-                            <a href="package.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <h1 class="display-3 text-white mb-md-4">Discover. Explore. Experience Unforgettable tour packages.</h1>
+                            <a href="{{ route('tour') }}" onclick="history.pushState(null, null, '{{ route('tour') }}');" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
                 </div> 
@@ -140,32 +140,32 @@
             <div class="row">
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
-                        <img class="img-fluid" src="img/destination-3.jpg" alt="" style="width: 100%;">
-                        <a class="destination-overlay text-white text-decoration-none" href="destinationdetail.html">
+                        <img class="img-fluid" src="{{ asset('img/jakarta2.png') }}" alt="" style="width: 100%;">
+                        <a class="destination-overlay text-white text-decoration-none" href="{{ route('city1') }}" onclick="history.pushState(null, null, '{{ route('city1') }}');">
                             <h4 class="text-white">Jakarta</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
-                        <img class="img-fluid" src="img/destination-4.jpg" alt="" style="width: 100%;">>
-                        <a class="destination-overlay text-white text-decoration-none" href="destinationdetail.html">
+                        <img class="img-fluid" src="{{ asset('img/bandung2.png') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none" href="{{ route('city2') }}" onclick="history.pushState(null, null, '{{ route('city2') }}');">
                             <h4 class="text-white">Bandung</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
-                        <img class="img-fluid" src="img/destination-5.jpg" alt="" style="width: 100%;">>
-                        <a class="destination-overlay text-white text-decoration-none" href="destinationdetail.html">
+                        <img class="img-fluid" src="{{ asset('img/surabaya2.png') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none" href="{{ route('city3') }}" onclick="history.pushState(null, null, '{{ route('city3') }}');">
                             <h4 class="text-white">Surabaya</h4>
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
-                        <img class="img-fluid" src="img/destination-6.jpg" alt="" style="width: 100%;">>
-                        <a class="destination-overlay text-white text-decoration-none" href="destinationdetail.html">
+                        <img class="img-fluid" src="{{ asset('img/denpasar2.png') }}" alt="" style="width: 100%;">>
+                        <a class="destination-overlay text-white text-decoration-none" href="{{ route('city4') }}" onclick="history.pushState(null, null, '{{ route('city4') }}');">
                             <h4 class="text-white">Denpasar</h4>
                         </a>
                     </div>

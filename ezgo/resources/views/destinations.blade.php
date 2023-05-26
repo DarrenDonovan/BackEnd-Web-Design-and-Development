@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-lg-6 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2" style="height: 300px;">
-                        <img class="img-fluid" src="{{ asset('img/denpasar.jpg') }}" alt="" style="width: 100%;">>
+                        <img class="img-fluid" src="{{ asset('img/denpasar3.png') }}" alt="" style="width: 100%;">>
                         <a class="destination-overlay text-white text-decoration-none obj" name="dpsr">
                             <h4 class="text-white">Denpasar</h4>
                         </a>
