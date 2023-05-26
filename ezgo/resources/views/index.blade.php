@@ -15,7 +15,7 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Ticketing</h4>
-                            <h1 class="display-3 text-white mb-md-4">Lorem ipsum dolor sit amet.</h1>
+                            <h1 class="display-3 text-white mb-md-4">Embrace Adventure with Effortless ticketing.</h1>
                             <a href="ticket.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Hotel Booking</h4>
-                            <h1 class="display-3 text-white mb-md-4">Lorem ipsum dolor sit amet.</h1>
+                            <h1 class="display-3 text-white mb-md-4">Find Your Perfect stay with seamless booking.</h1>
                             <a href="hotel.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Tour Packages</h4>
-                            <h1 class="display-3 text-white mb-md-4">Lorem ipsum dolor sit amet.</h1>
+                            <h1 class="display-3 text-white mb-md-4">Discover.Explore.Experience Unforgettable tour packages.</h1>
                             <a href="package.html" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
@@ -207,29 +207,26 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="package.html" style="text-decoration: none;">
+                    <a href="{{ route('tour') }}" onclick="history.pushState(null, null, '{{ route('tour') }}');" style="text-decoration: none;">
                         <div class="service-item bg-white text-center mb-2 py-5 px-4">
                             <i class="fa fa-2x fa-route mx-auto mb-4"></i>
-                            <h5 class="mb-2">Travel Package</h5>
-                            <p class="m-0" style="color: grey;">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
+                            <h5 class="mb-2">Tour Package</h5>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="Ticket.html" style="text-decoration: none;">
+                    <a href="{{ route('ticket') }}" onclick="history.pushState(null, null, '{{ route('ticket') }}');" style="text-decoration: none;">
                         <div class="service-item bg-white text-center mb-2 py-5 px-4">
                             <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
                             <h5 class="mb-2">Ticket Booking</h5>
-                            <p class="m-0" style="color: grey;">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <a href="hotel.html" style="text-decoration: none;">
+                    <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" style="text-decoration: none;">
                         <div class="service-item bg-white text-center mb-2 py-5 px-4">
                             <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
                             <h5 class="mb-2">Hotel Booking</h5>
-                            <p class="m-0" style="color: grey;">Justo sit justo eos amet tempor amet clita amet ipsum eos elitr. Amet lorem est amet labore</p>
                         </div>
                     </a>
                 </div>
