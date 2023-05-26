@@ -265,20 +265,278 @@
 @endsection
 
 @section('bdg')
-<html>
-    <table>
-        <tr>
-            <td><img src="{{ asset('img/cigadung.jpg') }}" alt="" width="300" height="300" class="city2" name="cgd"></td>
-            <td><img src="{{ asset('img/kiara.jpg') }}" alt="" width="300" height="300" class="city2" name="kar"></td>
-            <td><img src="{{ asset('img/kuliner.jpeg') }}" alt="" width="300" height="300" class="city2" name="kln"></td>
-        </tr>
-        <tr>
-            <td><img src="{{ asset('img/siliwangi.jpg') }}" alt="" width="300" height="300" class="city2" name="slw"></td>
-            <td><img src="{{ asset('img/tangga.jpg') }}" alt="" width="300" height="300" class="city2" name="tng"></td>
-            <td><img src="{{ asset('img/wetland.jpeg') }}" alt="" width="300" height="300" class="city2" name="wtl"></td>
-        </tr>
-    </table>
-</html>
+    <!-- Destination Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
+                <h1>BANDUNG</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal1">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/tangkuban perahu.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none">
+                            <h5 class="text-white">Tangkuban Perahu</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal2">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/kawah putih.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Kawah Putih</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal3">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/gedung sate.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Gedung Sate</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/saung.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Saung Angklung Udjo</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal5">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/dusun bambu.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Dusun Bambu</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal6">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/museum geo.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Museum Geologi</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
+
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Tangkuban Perahu</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/tangkuban perahu.png') }}" class="mw-100" alt="Monas">
+                    </div>
+                    <div>
+                        <p>Situated approximately 30 kilometers north of Bandung, 
+                            Tangkuban Perahu is an active volcano that offers a 
+                            remarkable natural spectacle. Its name translates to 
+                            "overturned boat" in Sundanese, owing to its unique 
+                            shape resembling an upturned boat. Visitors can explore 
+                            the crater's rim and witness the sulfuric steam vents 
+                            emitting a mystical atmosphere.
+                            The panoramic views from the summit encompass verdant 
+                            landscapes and neighboring peaks. Nature enthusiasts 
+                            can also enjoy hiking trails that wind through lush 
+                            forests, adding an adventurous touch to the experience. 
+                            Tangkuban Perahu is not only a geological wonder but also 
+                            a place to immerse oneself in the allure of nature's power 
+                            and beauty.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Kawah Putih</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/kawah putih.png') }}" class="mw-100" alt="Pasar Baru">
+                    </div>
+                    <div>
+                        <p>Located to the south of Bandung, Kawah Putih is a captivating 
+                            volcanic crater lake that beckons visitors with its surreal 
+                            ambiance. The lake's turquoise-colored waters are a sight to 
+                            behold, contrasting against the surrounding white sandy shores 
+                            and mist-shrouded trees. As you step into this ethereal environment, 
+                            a cool breeze caresses your face, creating a serene atmosphere.
+                            Exploring the crater's edge allows for panoramic vistas of the 
+                            otherworldly landscape, perfect for photography enthusiasts. 
+                            Embracing the tranquility, visitors can take leisurely walks 
+                            around the lake or simply sit and absorb the enchanting scenery. 
+                            Kawah Putih is an idyllic destination where nature's artistry takes 
+                            center stage, inviting visitors to pause and appreciate the 
+                            captivating wonders of the earth.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Gedung Sate</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/gedung sate.png') }}" class="mw-100" alt="Taman Mini Indonesia Indah">
+                    </div>
+                    <div>
+                        <p>A symbol of Bandung's architectural heritage, Gedung Sate 
+                            stands as an iconic landmark in the city. This grand 
+                            government building showcases an exquisite fusion of 
+                            Dutch and Indonesian architectural styles. Its most 
+                            distinctive feature is the satay-shaped tower that crowns 
+                            the structure, giving it a unique and recognizable silhouette.
+                            Visitors can marvel at the building's ornate details and 
+                            explore the Gedung Sate Museum located inside. The museum 
+                            offers fascinating insights into the history of West Java, 
+                            displaying historical artifacts and exhibits related to the 
+                            region's culture and development. Gedung Sate serves as a 
+                            testament to Bandung's rich past and its harmonious blend of 
+                            diverse architectural influences.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Saung Angklung Udjo</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/saung.png') }}" class="mw-100" alt="Taman Ragunan">
+                    </div>
+                    <div>
+                        <p>Step into the world of Sundanese culture at Saung 
+                            Angklung Udjo, a cultural center that celebrates 
+                            the traditional music and arts of West Java. The 
+                            highlight of this experience is the angklung, a 
+                            traditional bamboo musical instrument. Visitors 
+                            can enjoy captivating performances where the 
+                            angklung orchestra produces melodious tunes 
+                            accompanied by traditional dances and puppet shows.
+                            What makes this experience truly special is 
+                            the interactive nature of the performances. Guests 
+                            are encouraged to join in and learn how to play the 
+                            angklung themselves, creating an engaging and memorable 
+                            experience. Saung Angklung Udjo offers a delightful 
+                            opportunity to immerse oneself in the vibrant Sundanese 
+                            traditions, leaving visitors with a deeper appreciation 
+                            for the cultural heritage of the region.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Dusun Bambu</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/dusun bambu.png') }}" class="mw-100" alt="Dunia Fantasi">
+                    </div>
+                    <div>
+                        <p>Tucked away amidst the natural beauty of Bandung, Dusun Bambu 
+                            is an enchanting eco-tourism resort that offers a serene retreat 
+                            from the city. The resort features traditional Sundanese architecture 
+                            and is set against the backdrop of lush bamboo groves and picturesque 
+                            gardens. Visitors can take leisurely walks through the bamboo forest, 
+                            enjoying the soothing sound of rustling leaves and the fresh mountain air.
+                            The resort offers a range of recreational activities, including cycling, 
+                            fishing, and paddle boating on the serene lake. Culinary delights await 
+                            at the on-site restaurants, serving authentic Sundanese cuisine made with 
+                            locally sourced ingredients. Dusun Bambu provides a harmonious blend of 
+                            nature and culture, allowing visitors to relax, reconnect with nature, 
+                            and savor the flavors of the region.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Museum Geologi</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/museum geo.png') }}" class="mw-100" alt="Kota Tua">
+                    </div>
+                    <div>
+                        <p>Delve into the fascinating world of geology at the Bandung Geological 
+                            Museum, a captivating institution that showcases the geological 
+                            history of Indonesia. The museum houses an extensive collection of 
+                            minerals, rocks, fossils, and volcanic artifacts, providing a comprehensive 
+                            understanding of the country's diverse landscapes and geological processes.
+                            Visitors can explore the exhibits, which include impressive geological 
+                            formations and interactive displays that bring the science to life. The 
+                            museum also offers educational programs and workshops, making it a great 
+                            destination for students and geology enthusiasts. The Bandung Geological 
+                            Museum is a treasure trove of knowledge and a place where visitors can 
+                            marvel at the wonders of the Earth's geological past.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
 @endsection
 
 @section('srby')
