@@ -16,12 +16,7 @@
     <title>Ezgo City Page</title>
 </head>
 <body id="html">
-    <h1>City</h1>
     @include('components.navbar')
-
-    <?php
-        echo $num;
-    ?>
     
     @switch($num)
         @case(1)
@@ -37,6 +32,7 @@
             @break
     @endswitch
 
+    @include('components.footer')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>

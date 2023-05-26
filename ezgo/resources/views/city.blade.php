@@ -540,20 +540,265 @@
 @endsection
 
 @section('srby')
-<html>
-    <table>
-        <tr>
-            <td><img src="{{ asset('img/10november.jpg') }}" alt="" width="300" height="300" class="city3" name="10n"></td>
-            <td><img src="{{ asset('img/arab.jpg') }}" alt="" width="300" height="300" class="city3" name="arb"></td>
-            <td><img src="{{ asset('img/kelenteng.jpg') }}" alt="" width="300" height="300" class="city3" name="klt"></td>
-        </tr>
-        <tr>
-            <td><img src="{{ asset('img/pakuwon.jpg') }}" alt="" width="300" height="300" class="city3" name="pkw"></td>
-            <td><img src="{{ asset('img/sampoerna.jpg') }}" alt="" width="300" height="300" class="city3" name="smp"></td>
-            <td><img src="{{ asset('img/tugu.jpg') }}" alt="" width="300" height="300" class="city3" name="tgu"></td>
-        </tr>
-    </table>
-</html>
+<!-- Destination Start -->
+<div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Destination</h6>
+                <h1>SURABAYA</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal1">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/jembatan suramadu.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none">
+                            <h5 class="text-white">Jembatan Suramadu</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal2">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/sampoerna.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Museum Sampoerna</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal3">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/kapal selam.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Monumen Kapal Selam</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/surabaya zoo.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Surabaya Zoo</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal5">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/taman bungkul.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Taman Bungkul</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal6">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="{{ asset('img/north quay.png') }}" alt="">
+                        <div class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Surabaya North Quay</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
+
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Jembatan Suramadu</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/jembatan suramadu.png') }}" class="mw-100" alt="Monas">
+                    </div>
+                    <div>
+                        <p>Spanning across the Madura Strait, the Suramadu National Bridge 
+                            is an architectural marvel that connects Surabaya with the island 
+                            of Madura. This iconic bridge stretches for 5.4 kilometers, making 
+                            it the longest bridge in Indonesia. The bridge not only serves as 
+                            a vital transportation link but also offers breathtaking views of 
+                            the surrounding ocean and landscapes.
+                            Visitors can stroll along the pedestrian lanes, enjoying the 
+                            refreshing sea breeze and admiring the impressive engineering 
+                            feat that blends seamlessly with the natural beauty of the region. 
+                            Sunset views from the bridge are particularly mesmerizing, creating 
+                            a magical atmosphere for photography enthusiasts and nature lovers 
+                            alike.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Museum Sampoerna</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/sampoerna.png') }}" class="mw-100" alt="Pasar Baru">
+                    </div>
+                    <div>
+                        <p>Immerse yourself in the rich history of Indonesia's cigarette industry 
+                            at the House of Sampoerna. This meticulously restored Dutch colonial 
+                            building, dating back to 1862, now serves as a museum and cultural 
+                            center. Visitors can explore the exhibits, which provide a fascinating 
+                            glimpse into the history and artistry of clove cigarettes.
+                            The museum showcases antique cigarette-making machinery, vintage 
+                            advertisements, and interactive displays that offer insights into the 
+                            traditional manufacturing process. One of the highlights is witnessing 
+                            skilled workers hand-roll cigarettes with impressive precision. The House 
+                            of Sampoerna also features a gallery displaying contemporary art and hosts 
+                            various cultural events, making it a dynamic space that celebrates both 
+                            heritage and creativity.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Monumen Kapal Selam</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/kapal selam.png') }}" class="mw-100" alt="Taman Mini Indonesia Indah">
+                    </div>
+                    <div>
+                        <p>Delve into Indonesia's naval history by visiting the Surabaya Submarine Monument, 
+                            a unique attraction that pays tribute to the country's submarine fleet. The monument 
+                            itself is a retired Russian submarine, KRI Pasopati 410, which has been transformed 
+                            into a museum. Step inside the submarine and explore its narrow passageways, crew 
+                            quarters, and control room, gaining a firsthand experience of life aboard a submarine.
+                            The museum provides detailed information about Indonesia's maritime defense and 
+                            showcases historical artifacts and photographs. The Surabaya Submarine Monument 
+                            offers a captivating and educational experience for visitors interested in naval 
+                            heritage and the maritime achievements of Indonesia.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Surabaya Zoo</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/surabaya zoo.png') }}" class="mw-100" alt="Taman Ragunan">
+                    </div>
+                    <div>
+                        <p>As one of the largest zoos in Southeast Asia, Surabaya Zoo is a must-visit 
+                            destination for animal lovers. The zoo is home to a diverse range of animal 
+                            species, including elephants, lions, tigers, orangutans, and various bird 
+                            species. Visitors can observe these magnificent creatures up close and learn 
+                            about their natural habitats through informative signage and exhibits.
+                            The zoo also offers unique experiences, such as feeding and interacting with 
+                            some of the animals under the supervision of trained staff. Surabaya Zoo places 
+                            a strong emphasis on conservation and education, aiming to raise awareness about 
+                            the importance of wildlife preservation and ecological balance. With its expansive 
+                            grounds, beautiful landscaping, and the opportunity to witness incredible wildlife, 
+                            Surabaya Zoo promises an unforgettable experience for the whole family.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Taman Bungkul</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/taman bungkul.png') }}" class="mw-100" alt="Dunia Fantasi">
+                    </div>
+                    <div>
+                        <p>Escape the hustle and bustle of the city at Taman Bungkul, a charming urban park 
+                            nestled in the heart of Surabaya. Spanning over 9 hectares, this green oasis 
+                            offers a tranquil retreat where visitors can relax and unwind. The park features 
+                            lush gardens, scenic walking paths, and a serene lake where visitors can rent 
+                            paddle boats. Taman Bungkul is a popular spot for joggers, cyclists, and families 
+                            looking to enjoy picnics amidst the natural surroundings.
+                            The park also hosts various cultural events, concerts, and food festivals, 
+                            providing a vibrant and lively atmosphere. With its well-maintained facilities, 
+                            playgrounds, and cozy cafes, Taman Bungkul invites visitors to rejuvenate and 
+                            reconnect with nature in the heart of the bustling city.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
+    <!-- Modal  Start-->
+    <div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog d-flex align-items-center" role="document" style="min-width: 80%;">
+            <div class="modal-content" style="width: 200%;">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">Surabaya North Quay</h4>
+                </div>
+                <div class="modal-body">
+                    <div style="text-align: center;">
+                        <img src="{{ asset('img/north quay.png') }}" class="mw-100" alt="Kota Tua">
+                    </div>
+                    <div>
+                        <p>Experience the vibrant maritime atmosphere of Surabaya at the Surabaya 
+                            North Quay. This modern waterfront promenade offers a blend of recreational 
+                            activities, dining options, and stunning views of the bustling harbor. 
+                            Visitors can take leisurely walks along the promenade, enjoying the refreshing 
+                            sea breeze and watching ships come and go.
+                            The area is dotted with various cafes and restaurants where visitors can 
+                            indulge in delicious seafood and local cuisine while overlooking the 
+                            waterfront. Surabaya North Quay is also a popular spot for fishing 
+                            enthusiasts, providing designated areas for fishing and a chance to catch 
+                            a variety of fish species. The vibrant atmosphere, combined with the panoramic 
+                            views of the harbor and the city skyline, creates a dynamic and lively ambiance 
+                            that captures the essence of Surabaya's maritime heritage.</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal End -->
 @endsection
 
 @section('dpsr')
