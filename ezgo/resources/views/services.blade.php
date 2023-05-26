@@ -9,25 +9,45 @@
     <title>Ezgo Services Page</title>
 </head>
 <body>
-    <h1>Services</h1>
     @include('components.navbar')
 
-    <table>
-        <tr>
-            <td><img src="{{ asset('img/ticket.jpg') }}" alt="" width="300" height="300" class="product" name="tix"></td>
-            <td><img src="{{ asset('img/hotel.jpg') }}" alt="" width="300" height="300" class="product" name="htl"></td>
-            <td><img src="{{ asset('img/tour.jpg') }}" alt="" width="300" height="300" class="product" name="tur"></td>
-        </tr>
-    </table>
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h6>
+                <h1>Tours & Travel Services</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="{{ route('tour') }}" onclick="history.pushState(null, null, '{{ route('tour') }}');" style="text-decoration: none;">
+                        <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                            <i class="fa fa-2x fa-route mx-auto mb-4"></i>
+                            <h5 class="mb-2">Tour Package</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="{{ route('ticket') }}" onclick="history.pushState(null, null, '{{ route('ticket') }}');" style="text-decoration: none;">
+                        <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                            <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
+                            <h5 class="mb-2">Ticket Booking</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" style="text-decoration: none;">
+                        <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                            <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
+                            <h5 class="mb-2">Hotel Booking</h5>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <script>
-        const products = {
-            ticket: '{{ route('ticket') }}',
-            hotel: '{{ route('hotel') }}',
-            tour: '{{ route('tour') }}',
-        };
-    </script>
-    <script src="{{ asset('js/services.js') }}"></script>
+    @include('components.footer')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
