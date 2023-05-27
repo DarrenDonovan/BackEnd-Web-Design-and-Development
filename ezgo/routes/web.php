@@ -120,3 +120,12 @@ Route::get('/home/destinations/denpasar', function(){
         ->view('city', ['post' => $post])
         ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('city4');
+
+//products
+
+Route::post('/check', 'App\Http\Controllers\ProductController@Modal');
+
+Route::post('/sessionGet', 'App\Http\Controllers\Controller@SessionGet');
+
+Route::post('/imag', 'App\Http\Controllers\Controller@img');
+

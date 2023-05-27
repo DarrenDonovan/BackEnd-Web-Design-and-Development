@@ -16,7 +16,7 @@
                         <div class="p-3" style="max-width: 900px;">
                             <h4 class="text-white text-uppercase mb-md-3">Ticketing</h4>
                             <h1 class="display-3 text-white mb-md-4">Embrace Adventure with Effortless ticketing.</h1>
-                            <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('hotel') }}');" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
+                            <a href="{{ route('hotel') }}" onclick="history.pushState(null, null, '{{ route('ticket') }}');" class="btn btn-primary py-md-3 px-md-5 mt-2">Book Now</a>
                         </div>
                     </div>
                 </div>

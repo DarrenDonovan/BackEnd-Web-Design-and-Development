@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezgo Product Page</title>
 </head>
@@ -24,7 +25,7 @@
     </div>
     <!-- Header End -->
 
-    @yield($type.'-bar')
+    @yield('bar')
 
     <!-- Service Start -->
     <div class="container-fluid py-5">
@@ -34,16 +35,19 @@
                 <h1><?php echo $title2; ?></h1>
             </div>
             <div class="row">
-                    @yield($type.'-row')
+                    @yield('row')
             </div>
         </div>
     </div>
     <!-- Service End -->
+
+    @yield('modal')
 
     @include('components.footer')
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/products.js') }}"></script>
 </body>
 </html>

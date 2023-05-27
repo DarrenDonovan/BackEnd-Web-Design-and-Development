@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Support\Facades\Session;
 use App\Models\Customers;
 
 class Controller extends BaseController
@@ -51,4 +52,14 @@ class Controller extends BaseController
                 break;
         }
     }
+
+    public function SessionGet(Request $req){
+        $item = session()->get($req->input('name'));
+        return response()->json(['success' => true, 'item' => $item]);
+    }  
+
+    public function img(Request $req){
+        $pic = asset('img/'.$req->input('name'));
+        return response()->json(['success' => true, 'pic' => $pic]);
+    }  
 }
