@@ -137,3 +137,7 @@ Route::post('/purchase', 'App\Http\Controllers\ProductController@Purchase');
 
 Route::post('/update', 'App\Http\Controllers\Controller@update')->name('update');
 
+Route::post('/details', 'App\Http\Controllers\Controller@detail')->name('details');
+
+
+

@@ -248,7 +248,7 @@ function sort(kode) {
 
             console.log(dest1Num);
 
-            switch (destNum) {
+            switch (dest1Num) {
                 case "1":
                     key.push("destID");
                     arr.push("jkt");

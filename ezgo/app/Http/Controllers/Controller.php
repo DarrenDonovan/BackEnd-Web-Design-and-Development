@@ -92,4 +92,44 @@ class Controller extends BaseController
                     return redirect()->back();            
         }
     }
+
+    public function detail(Request $req){
+        $id = $req->input('id');
+        $kode = $req->input('kode');
+        $orderid = $req->input('od');
+
+        $itemRet = new \stdClass();;
+
+        switch($kode){
+            case 1:
+                $item = DB::table('Tickets')->where('ticketID', $id)->first();
+                $od = DB::table('OrderDetails')->where('orderdetailsID', $orderid)->first();
+                $itemRet->id = $item->productID;
+                $itemRet->name = $item->tcName;
+                $itemRet->total = $od->total;
+                $itemRet->price = $item->tcSellingPrice;
+                $itemRet->totPrice = $od->totalPrice;
+                break;
+            case 2:
+                $item = DB::table('Hotel')->where('hotelID', $id)->first();
+                $od = DB::table('OrderDetails')->where('orderdetailsID', $orderid)->first();
+                $itemRet->id = $item->productID;
+                $itemRet->name = $item->hName;
+                $itemRet->total = $od->total;
+                $itemRet->price = $item->hPrice;
+                $itemRet->totPrice = $od->totalPrice;
+                break;
+            case 3:
+                $item = DB::table('Tour')->where('tourID', $id)->first();
+                $od = DB::table('OrderDetails')->where('orderdetailsID', $orderid)->first();
+                $itemRet->id = $item->productID;
+                $itemRet->name = $item->tpName;
+                $itemRet->total = $od->total;
+                $itemRet->price = $item->tpPrice;
+                $itemRet->totPrice = $od->totalPrice;
+                break;
+        }
+
+        return response()->json(['success' => true, 'item' => $itemRet]);
+    }
 }
