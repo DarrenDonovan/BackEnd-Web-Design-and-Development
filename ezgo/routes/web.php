@@ -131,3 +131,5 @@ Route::post('/sessionGet', 'App\Http\Controllers\Controller@SessionGet');
 
 Route::post('/imag', 'App\Http\Controllers\Controller@img');
 
+Route::post('/purchase', 'App\Http\Controllers\ProductController@Purchase');
+

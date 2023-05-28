@@ -42,6 +42,10 @@ function fetchData(buttonId, code) {
                                 ).onclick = function (event) {
                                     increment(event, item.tcSellingPrice);
                                 };
+                                document.getElementById("buton").onclick =
+                                    function (event) {
+                                        purchase(item.ticketID, 1);
+                                    };
                                 break;
                             case 2:
                                 fetchImage(item.hImage).then(function (pic) {
@@ -64,6 +68,10 @@ function fetchData(buttonId, code) {
                                 ).onclick = function (event) {
                                     increment(event, item.hPrice);
                                 };
+                                document.getElementById("buton").onclick =
+                                    function (event) {
+                                        purchase(item.hotelID, 2);
+                                    };
                                 break;
                             case 3:
                                 fetchImage(item.tpImage).then(function (pic) {
@@ -87,6 +95,10 @@ function fetchData(buttonId, code) {
                                 ).onclick = function (event) {
                                     increment(event, item.tpPrice);
                                 };
+                                document.getElementById("buton").onclick =
+                                    function (event) {
+                                        purchase(item.tourID, 3);
+                                    };
                                 break;
                         }
                     })
@@ -95,6 +107,46 @@ function fetchData(buttonId, code) {
                     });
             } else {
                 console.log("error response :(");
+            }
+        },
+        error: function (xhr) {
+            console.log("error send :(");
+        },
+    });
+}
+
+function purchase(id, kode) {
+    let bought = document.getElementById("numedit").value;
+    let price = parseInt(document.getElementById("price").innerText);
+
+    let token = $('meta[name="csrf-token"]').attr("content");
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": token,
+        },
+    });
+    $.ajax({
+        url: "/purchase",
+        type: "POST",
+        data: { id: id, kode: kode, total: bought, price: price },
+        success: function (response) {
+            if (response.success) {
+                alert("Item has been purchased!");
+                $("#myModal").modal("hide");
+            } else {
+                console.log("error response :(");
+                switch (response.code) {
+                    case 1:
+                        alert(
+                            "Sorry we don't have enough stock to fulfill your order!"
+                        );
+                        break;
+                    case 2:
+                        alert(
+                            "Unfortunately there's been an error and we are currently unable to complete your order"
+                        );
+                        break;
+                }
             }
         },
         error: function (xhr) {
@@ -171,7 +223,7 @@ function increment(event, harga) {
 }
 
 function decrement(event, harga) {
-    if (document.getElementById("numedit").value > 1) {
+    if (document.getElementById("numedit").value > 0) {
         document.getElementById("numedit").value--;
         let priceNow = parseInt(document.getElementById("price").textContent);
         priceNow -= parseInt(harga);

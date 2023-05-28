@@ -165,4 +165,111 @@ class ProductController extends BaseController
 
         return response()->json(['success' => true, 'rows' => $rows]);
     }
+
+    public function Purchase(Request $req){
+        $id = $req->input('id');
+        $kode = $req->input('kode');
+        $total = $req->input('total');
+        $price = $req->input('price');
+
+        $code;
+
+        switch($kode){
+            case 1:
+                $item = DB::table('Tickets')->where('ticketID', $id)->first();
+
+                if($total <= $item->tcAmount){
+                    if(DB::table('Orders')->insert([
+                        'custID' => session()->get('userID'),
+                        'destID' => $item->destID
+                    ])){
+                        $Order = DB::table('Orders')->orderBy('orderID', 'desc')->first();
+    
+                        if(DB::table('OrderDetails')->insert([
+                            'orderID' => $Order->orderID,
+                            'productID' => $item->productID,
+                            'total' => $total,
+                            'totalPrice' => $price
+                        ])){
+                            $hasil = $item->tcAmount - $total;
+    
+                            if(DB::table('Tickets')
+                            ->where('ticketID', $item->ticketID)
+                            ->update(['tcAmount' => $hasil])){
+                                return response()->json(['success' => true]);
+                            }
+                        }
+                    }
+
+                    $code = 2;
+                }else{
+                    $code = 1;
+                }
+                break;
+            case 2:
+                $item = DB::table('Hotel')->where('hotelID', $id)->first();
+
+                if($total <= $item->hAmount){
+                    if(DB::table('Orders')->insert([
+                        'custID' => session()->get('userID'),
+                        'destID' => $item->destID
+                    ])){
+                        $Order = DB::table('Orders')->orderBy('orderID', 'desc')->first();
+    
+                        if(DB::table('OrderDetails')->insert([
+                            'orderID' => $Order->orderID,
+                            'productID' => $item->productID,
+                            'total' => $total,
+                            'totalPrice' => $price
+                        ])){
+                            $hasil = $item->hAmount - $total;
+    
+                            if(DB::table('Hotel')
+                            ->where('hotelID', $item->hotelID)
+                            ->update(['hAmount' => $hasil])){
+                                return response()->json(['success' => true]);
+                            }
+                        }
+                    }
+
+                    $code = 2;
+                }else{
+                    $code = 1;
+                }
+                break;
+            case 3:
+                $item = DB::table('Tour')->where('tourID', $id)->first();
+
+                if($total <= $item->tpSlot){
+                    if(DB::table('Orders')->insert([
+                        'custID' => session()->get('userID'),
+                        'destID' => $item->destID
+                    ])){
+                        $Order = DB::table('Orders')->orderBy('orderID', 'desc')->first();
+    
+                        if(DB::table('OrderDetails')->insert([
+                            'orderID' => $Order->orderID,
+                            'productID' => $item->productID,
+                            'total' => $total,
+                            'totalPrice' => $price
+                        ])){
+                            $hasil = $item->tpSlot - $total;
+    
+                            if(DB::table('Tour')
+                            ->where('tourID', $item->tourID)
+                            ->update(['tpSlot' => $hasil])){
+                                return response()->json(['success' => true]);
+                            }
+                        }
+                    }
+
+                    $code = 2;
+                }else{
+                    $code = 1;
+                }
+                break;
+        }
+
+        return response()->json(['success' => false, 'code' => $code]);
+    }
 }

@@ -298,7 +298,7 @@ use Illuminate\Support\Facades\DB;
                                     <tr>
                                         <td>Quantity</td>
                                         <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
-                                            <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                            <input type="number" min="0" value="0" readonly required class="text-center" id="numedit" style="width: 50px;"> 
                                             <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
                                     </tr>
                                     <tr>
@@ -322,7 +322,7 @@ use Illuminate\Support\Facades\DB;
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Buy</button>
+                            <button type="button" class="btn btn-primary" id="buton">Buy</button>
                         </div>
                     </div>
                 </div>
@@ -353,7 +353,7 @@ use Illuminate\Support\Facades\DB;
                                         <tr>
                                             <td>Duration (DAYS)</td>
                                             <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
-                                                <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                                <input type="number" min="0" value="0" readonly required class="text-center" id="numedit" style="width: 50px;"> 
                                                 <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
                                         </tr>
                                         <tr>
@@ -373,7 +373,7 @@ use Illuminate\Support\Facades\DB;
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary">Buy</button>
+                                <button type="button" class="btn btn-primary" id="buton">Buy</button>
                             </div>
                         </div>
                     </div>
@@ -406,7 +406,7 @@ use Illuminate\Support\Facades\DB;
                                         <tr>
                                             <td>Persons</td>
                                             <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
-                                                <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                                <input type="number" min="0" value="0" readonly required class="text-center" id="numedit" style="width: 50px;"> 
                                                 <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
                                         </tr>
                                         <tr>
@@ -426,7 +426,7 @@ use Illuminate\Support\Facades\DB;
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                                <button type="button" class="btn btn-primary">Buy</button>
+                                <button type="button" class="btn btn-primary" id="buton">Buy</button>
                             </div>
                         </div>
                     </div>
