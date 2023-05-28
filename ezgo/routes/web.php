@@ -125,6 +125,8 @@ Route::get('/home/destinations/denpasar', function(){
 
 Route::post('/check', 'App\Http\Controllers\ProductController@Modal');
 
+Route::post('/sort', 'App\Http\Controllers\ProductController@Sort');
+
 Route::post('/sessionGet', 'App\Http\Controllers\Controller@SessionGet');
 
 Route::post('/imag', 'App\Http\Controllers\Controller@img');

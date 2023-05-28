@@ -38,4 +38,131 @@ class ProductController extends BaseController
         session()->put('item', $item);
         return response()->json(['success' => true]);
     }
+
+    public function Sort(Request $req){
+        $kode = $req->input('code');
+        $key = $req->input('key');
+        $arr = $req->input('arr');
+        $rows = [];
+        $keyCount;
+
+        if (!empty($key)) {
+            $keyCount = count($key);
+        } else {
+            $keyCount = 0;
+        }
+
+        error_log($keyCount);
+
+        switch($kode){
+            case 1:
+                switch($keyCount){
+                    case 0:
+                        try {
+                            $rows = DB::table('Tickets')->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 1:
+                        try {
+                            $rows = DB::table('Tickets')->where($key[0], $arr[0])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 2:
+                        try {
+                            $rows = DB::table('Tickets')
+                                    ->where($key[0], $arr[0])
+                                    ->where($key[1], $arr[1])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                }
+
+                foreach($rows as $row){
+                    $row->TimeDep = \Carbon\Carbon::parse($row->tcDeparture)->format('H:i');
+                    $row->Date = \Carbon\Carbon::parse($row->tcDate)->format('Y-m-d');
+                    list($hours, $minutes) = explode('.', $row->tcTravelTime);
+                    $row->TimeArr = \Carbon\Carbon::parse($row->TimeDep)
+                        ->addHours($hours)
+                        ->addMinutes($minutes)
+                        ->format('H:i');
+                    $row->tcImage = asset('img/'.$row->tcImage);
+                }
+
+                break;
+            case 2:
+                switch($keyCount){
+                    case 0:
+                        try {
+                            $rows = DB::table('Hotel')->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 1:
+                        try {
+                            $rows = DB::table('Hotel')->where($key[0], $arr[0])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 2:
+                        try {
+                            $rows = DB::table('Hotel')
+                                    ->where($key[0], $arr[0])
+                                    ->where($key[1], $arr[1])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                }
+
+                foreach($rows as $row){
+                    $row->Date = \Carbon\Carbon::parse($row->hDate)->format('Y-m-d');
+                    $row->hImage = asset('img/'.$row->hImage);
+                }
+
+                break;
+            case 3:
+                switch($keyCount){
+                    case 0:
+                        try {
+                            $rows = DB::table('Tour')->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 1:
+                        try {
+                            $rows = DB::table('Tour')->where($key[0], $arr[0])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 2:
+                        try {
+                            $rows = DB::table('Tour')
+                                    ->where($key[0], $arr[0])
+                                    ->where($key[1], $arr[1])->get()->toArray();
+                        } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                }
+
+                foreach($rows as $row){
+                    $row->Date = \Carbon\Carbon::parse($row->tpDate)->format('Y-m-d');
+                    $row->tpImage = asset('img/'.$row->tpImage);
+                    $row->TimeDep = \Carbon\Carbon::parse($row->tpMeeting)->format('H:i');
+                }
+
+                break;
+        }
+
+        return response()->json(['success' => true, 'rows' => $rows]);
+    }
 }

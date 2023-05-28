@@ -34,7 +34,7 @@
                 <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Services</h6>
                 <h1><?php echo $title2; ?></h1>
             </div>
-            <div class="row">
+            <div class="row" id="konten">
                     @yield('row')
             </div>
         </div>

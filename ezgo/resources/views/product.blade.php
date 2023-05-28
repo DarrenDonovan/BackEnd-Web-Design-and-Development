@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
             } catch (Exception $e) {
                 dd($e->getMessage());
             }
+
             break;
         case 2:
             $title = "Hotels";
@@ -53,10 +54,10 @@ use Illuminate\Support\Facades\DB;
                         <div class="row align-items-center" style="min-height: 60px;">
                             <div class="col-md-10">
                                 <div class="row">
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>From</option>
+                                            <select class="custom-select px-4" style="height: 47px;" id="dest">
+                                                <option value="0" >Destination</option>
                                                 <option value="1">Jakarta</option>
                                                 <option value="2">Bandung</option>
                                                 <option value="3">Surabaya</option>
@@ -64,41 +65,20 @@ use Illuminate\Support\Facades\DB;
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
+                                    <div class="col-md-4">
                                         <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Destination</option>
-                                                <option value="1">Jakarta</option>
-                                                <option value="2">Bandung</option>
-                                                <option value="3">Surabaya</option>
-                                                <option value="4">Denpasar</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Transportation</option>
+                                            <select class="custom-select px-4" style="height: 47px;" id="trans">
+                                                <option value="0">Transportation</option>
                                                 <option value="1">Train</option>
-                                                <option value="2">Bus</option>
+                                                <option value="2">Ship</option>
                                                 <option value="3">Flight</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Sort By</option>
-                                                <option value="1">Popularity</option>
-                                                <option value="2">Price</option>
-                                                <option value="3">Rating</option>
                                             </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Search</button>
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;" onclick="sort(1)">Search</button>
                             </div>
                         </div>
                     </div>
@@ -116,8 +96,8 @@ use Illuminate\Support\Facades\DB;
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Location</option>
+                                            <select class="custom-select px-4" style="height: 47px;" id="dest">
+                                                <option value="0">Location</option>
                                                 <option value="1">Jakarta</option>
                                                 <option value="2">Bandung</option>
                                                 <option value="3">Surabaya</option>
@@ -127,15 +107,8 @@ use Illuminate\Support\Facades\DB;
                                     </div>
                                     <div class="col-md-3">
                                         <div class="mb-3 mb-md-0">
-                                            <div class="date" id="date2" data-target-input="nearest">
-                                                <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Check In" data-target="#date2" data-toggle="datetimepicker"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Duration</option>
+                                            <select class="custom-select px-4" style="height: 47px;" id="duration">
+                                                <option value="0">Duration</option>
                                                 <option value="1">1 Day</option>
                                                 <option value="2">2 Day</option>
                                                 <option value="3">3 Day</option>
@@ -146,20 +119,10 @@ use Illuminate\Support\Facades\DB;
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Sort By</option>
-                                                <option value="1">Popularity</option>
-                                                <option value="2">Price</option>
-                                                <option value="3">Rating</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Search</button>
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;" onclick="sort(2)">Search</button>
                             </div>
                         </div>
                     </div>
@@ -180,7 +143,7 @@ use Illuminate\Support\Facades\DB;
                                     </div>
                                     <div class="col-md-3">
                                         <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
+                                            <select class="custom-select px-4" style="height: 47px;" id="dest">
                                                 <option selected>Destination</option>
                                                 <option value="1">Jakarta</option>
                                                 <option value="2">Bandung</option>
@@ -189,23 +152,10 @@ use Illuminate\Support\Facades\DB;
                                             </select>
                                         </div>
                                     </div>
-                                    <div class="col-md-3">
-                                        <h5 style="padding-top: 12px; text-align: center;">Sort By</h5>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="mb-3 mb-md-0">
-                                            <select class="custom-select px-4" style="height: 47px;">
-                                                <option selected>Sort By</option>
-                                                <option value="1">Popularity</option>
-                                                <option value="2">Price</option>
-                                                <option value="3">Rating</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
-                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Search</button>
+                                <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;" onclick="sort(3)">Search</button>
                             </div>
                         </div>
                     </div>
