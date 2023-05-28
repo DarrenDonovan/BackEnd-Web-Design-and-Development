@@ -322,6 +322,7 @@ use Illuminate\Support\Facades\DB;
 @section('modal')
     @switch($num)
         @case(1)
+        <!-- Modal  Start-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -333,36 +334,30 @@ use Illuminate\Support\Facades\DB;
                                 <thead>
                                     <tr>
                                         <td><img src="" id="tcImage" alt="Hotel Image" class="mw-100"></td>
-                                        <table>
-                                            <tr><td id="productID"></td></tr>
-                                            <tr><td id="tcName"></td></tr>
-                                            <tr><td id="tcFromDestination"></td></tr>
-                                        </table>
+                                        <td>
+                                            <table>
+                                                <tr><td id="productID"></td></tr>
+                                                <tr><td id="tcName"></td></tr>
+                                                <tr><td id="tcFromDestination"></td></tr>
+                                            </table>
+                                        </td>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>Quantity</td>
-                                        <br>
-                                        <td>
-                                            <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button>
-                                                <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;">
-                                            <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button>
-                                        </td>
+                                        <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
+                                            <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                            <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
                                     </tr>
-                                    <br>
-                                    <br>
                                     <tr>
                                         <td></td>
                                         <td><span id="TimeDepArr">0</span></td>
                                     </tr>
-                                    <br>
                                     <tr>
                                         <td>Total:</td>
                                         <td>Rp. <span id="price">0</span></td>
                                     </tr>
-                                    <br>
-                                    <br>
                                     <tr>
                                         <td>Payment Method</td>
                                     </tr>
@@ -381,10 +376,111 @@ use Illuminate\Support\Facades\DB;
                     </div>
                 </div>
             </div>
+            <!-- Modal End -->
             @break
         @case(2)
+            <!-- Modal  Start-->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{ $title2 }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td><img src="" id="hImage" class="mw-100" alt="Hotel Image"></td>
+                                            <table>
+                                                <tr><td id="productID"></td></tr>
+                                                <tr><td id="hName"></td></tr>
+                                                <tr><td id="hFromDestination"></td></tr>
+                                            </table>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Duration (DAYS)</td>
+                                            <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
+                                                <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                                <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total:</td>
+                                            <td>Rp. <span id="price">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Payment Method</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div style="text-align: center;">
+                                    <Button type="button" class="btn btn-primary">Cash</Button>
+                                    <Button type="button" class="btn btn-primary" style="margin-inline: 20px;">Credit</Button>
+                                    <Button type="button" class="btn btn-primary">Debit</Button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal End -->
             @break
         @case(3)
+            <!-- Modal  Start-->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="myModalLabel">{{ $title2 }}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td><img src="" id="tpImage" alt="Hotel Image" class="mw-100"></td>
+                                            <td>
+                                                <table>
+                                                    <tr><td id="productID"></td></tr>
+                                                    <tr><td id="tpName"></td></tr>
+                                                    <tr><td id="tpFromDestination"></td></tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Persons</td>
+                                            <td><button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="decrementBtn" onclick="">-</button> 
+                                                <input type="number" min="1" value="1" readonly required class="text-center" id="numedit" style="width: 50px;"> 
+                                                <button type="button" class="btn-primary" style="border-radius: 50%; height: 30px; width: 30px; border: 0;" id="incrementBtn" onclick="">+</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Total:</td>
+                                            <td>Rp. <span id="price">0</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Payment Method</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="text-center">
+                                    <Button type="button" class="btn btn-primary">Cash</Button>
+                                    <Button type="button" class="btn btn-primary" style="margin-inline: 20px;">Credit</Button>
+                                    <Button type="button" class="btn btn-primary">Debit</Button>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                                <button type="button" class="btn btn-primary">Buy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal End -->
             @break
     @endswitch
 @endsection
