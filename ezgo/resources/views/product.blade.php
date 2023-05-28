@@ -270,7 +270,7 @@ use Illuminate\Support\Facades\DB;
 
                 <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal">
                     <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="img/package-2.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/'.$row->hImage) }}" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ $row->hName }}</small>
@@ -293,21 +293,22 @@ use Illuminate\Support\Facades\DB;
             @foreach ($rows as $row)
                 <?php 
                     $Date = \Carbon\Carbon::parse($row->tpDate)->format('Y-m-d');
+                    $TimeDep = \Carbon\Carbon::parse($row->tpMeeting)->format('H:i');
                 ?>
 
                 <div class="col-lg-4 col-md-6 mb-4" data-toggle="modal" data-target="#myModal">
                     <div class="package-item bg-white mb-2">
-                    <img class="img-fluid" src="img/package-2.jpg" alt="">
+                    <img class="img-fluid" src="{{ asset('img/'.$row->tpImage) }}" alt="">
                         <div class="p-4">
                             <div class="d-flex justify-content-between mb-3">
                                 <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>{{ $row->tpName }}</small>
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $row->tpSlot }} Persons</small>
-                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ $row->$Date }}</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ $Date }}</small>
                             </div>
                             <a class="h5 text-decoration-none" href="" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->tourID}}', 3)">Discover amazing places of the world with us</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
-                                    <h6 class="m-0"><small>{{ $row->tpMeeting }}</small></h6>
+                                    <h6 class="m-0"><small>{{ $TimeDep }}</small></h6>
                                     <h5 class="m-0">Rp. {{ $row->tpPrice }}</h5>
                                 </div>
                             </div>

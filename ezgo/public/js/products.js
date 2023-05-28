@@ -52,7 +52,7 @@ function fetchData(buttonId, code) {
                                 document.getElementById("hName").innerText =
                                     item.hName;
                                 document.getElementById(
-                                    "tcFromDestination"
+                                    "hFromDestination"
                                 ).innerText = item.hAddress;
                                 document.getElementById(
                                     "decrementBtn"
@@ -67,7 +67,8 @@ function fetchData(buttonId, code) {
                                 break;
                             case 3:
                                 fetchImage(item.tpImage).then(function (pic) {
-                                    document.getElementById("hImage").src = pic;
+                                    document.getElementById("tpImage").src =
+                                        pic;
                                 });
                                 document.getElementById("productID").innerText =
                                     item.productID;
@@ -75,7 +76,7 @@ function fetchData(buttonId, code) {
                                     item.tpName;
                                 document.getElementById(
                                     "tpFromDestination"
-                                ).innerText = item.tpMeeting;
+                                ).innerText = item.Date;
                                 document.getElementById(
                                     "decrementBtn"
                                 ).onclick = function (event) {
