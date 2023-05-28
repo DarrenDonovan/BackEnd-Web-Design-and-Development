@@ -24,7 +24,7 @@ $(document).ready(function () {
             success: function (response) {
                 switch (response.success) {
                     case 1:
-                        console.log("titid");
+                        console.log("titip");
                         window.location.href = "/home";
                         break;
                     case 2:
@@ -56,7 +56,7 @@ $(document).ready(function () {
             success: function (response) {
                 switch (response.success) {
                     case 1:
-                        console.log("titid");
+                        console.log("titip");
                         $(".usiror").css("display", "block");
                         break;
                     case 2:

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 use App\Models\Customers;
 
 class Controller extends BaseController
@@ -62,4 +63,33 @@ class Controller extends BaseController
         $pic = asset('img/'.$req->input('name'));
         return response()->json(['success' => true, 'pic' => $pic]);
     }  
+
+    public function update(Request $req){
+        $name = $req->input('name');
+        $address = $req->input('address');
+        $phone = $req->input('phone');
+        $email = $req->input('email');
+        $birthday = $req->input('birthday');
+        $img;
+        if ($req->hasFile('profilePicture')) {
+            $profilePicture = $req->file('profilePicture');
+            $img = $profilePicture->getClientOriginalName();
+            $profilePicture->move(public_path('img'), $img);
+        }
+
+        $id = session()->get('userID');
+
+        if(DB::table('Customer')
+                ->where('custID', $id)
+                ->update([
+                    'cName' => $name,
+                    'cAddress' => $address,
+                    'cPhone' => $phone,
+                    'cEmail' => $email,
+                    'cBirthDate' => $birthday,
+                    'cImage' => $img
+                ])){
+                    return redirect()->back();            
+        }
+    }
 }

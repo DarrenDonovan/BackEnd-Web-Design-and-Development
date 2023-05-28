@@ -133,3 +133,7 @@ Route::post('/imag', 'App\Http\Controllers\Controller@img');
 
 Route::post('/purchase', 'App\Http\Controllers\ProductController@Purchase');
 
+//account
+
+Route::post('/update', 'App\Http\Controllers\Controller@update')->name('update');
+
