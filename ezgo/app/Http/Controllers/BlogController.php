@@ -76,6 +76,22 @@ class BlogController extends BaseController{
             return redirect()->back();
         }
     }
+
+    public function jump(Request $req){
+        $data = DB::table('Blogs')
+                ->join('Customer', 'Blogs.custID', '=', 'Customer.custID')
+                ->where('Blogs.blogID', $req->id)
+                ->select('Blogs.*', 'Customer.*')
+                ->first();
+        $comment = DB::table('Comments')->where('blogID', $data->blogID)->get();
+        foreach($comment as $comm){
+            $comm->cName = DB::table('Customer')->where('custID', $comm->custID)->first()->cName;
+        }
+        $data->bImage = asset('img/'.$data->bImage);
+        
+        return response()->json(['success' => true, 'blog' => $data, 'comment' => $comment]);
+    }
+
 }
 
 ?>

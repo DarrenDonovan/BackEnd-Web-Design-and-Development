@@ -149,6 +149,8 @@ Route::post('/comment', 'App\Http\Controllers\BlogController@comment')->name('co
 
 Route::post('/add', 'App\Http\Controllers\BlogController@add')->name('add');
 
+Route::post('/jump', 'App\Http\Controllers\BlogController@jump')->name('jump');
+
 
 
 

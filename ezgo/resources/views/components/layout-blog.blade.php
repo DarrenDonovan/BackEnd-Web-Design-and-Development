@@ -75,28 +75,35 @@
     
                      <!-- Recent Post -->
                      <div class="mb-5 position-relative">
-                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
-                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                            <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                            <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
-                        <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
-                            <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
-                            <div class="pl-3">
-                                <h6 class="m-1">Diam lorem dolore justo eirmod lorem dolore</h6>
-                                <small>Jan 01, 2050</small>
-                            </div>
-                        </a>
+                        <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Top Liked</h4>
+                        <?php
+                            $highestBlogs = $blogs = DB::table('Blogs')->where('custID', $id)->orderByDesc('bLikes')->get()->take(3);
+                        ?>
+                        @foreach($highestBlogs as $highBlog)
+                            <?php
+                                $destination;
+                                switch($highBlog->destID){
+                                    case "jkt":
+                                        $destination = "Jakarta";
+                                        break;
+                                    case "bdg":
+                                        $destination = "Bandung";
+                                        break;
+                                    case "sby":
+                                        $destination = "Surabaya";
+                                        break;
+                                    case "dps":
+                                        $destination = "Denpasar";
+                                        break;
+                                }
+                            ?>
+                            <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="javascript:void(0);" onclick="jump('{{ $highBlog->blogID }}')">
+                                <div class="pl-3">
+                                    <h6 class="m-1">{{ $highBlog->bTitle }}</h6>
+                                    <small>{{ $destination }}</small>
+                                </div>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
