@@ -73,8 +73,8 @@
                         </div>
                     </div>
     
-                    <!-- Recent Post -->
-                    <div class="mb-5 position-relative">
+                     <!-- Recent Post -->
+                     <div class="mb-5 position-relative">
                         <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Recent Post</h4>
                         <a class="d-flex align-items-center text-decoration-none bg-white mb-3" href="">
                             <img class="img-fluid" src="img/blog-100x100.jpg" alt="">
@@ -135,12 +135,11 @@
                             <br>
                             <input type="file" id="imageBlog">
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                        </div>
                     </form>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
-                    </div>
                 </div>
-                
             </div>
         </div>
     </div>
