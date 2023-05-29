@@ -1,13 +1,11 @@
-document
-    .getElementById("showCommentsButton")
-    .addEventListener("click", function () {
-        var commentsdiv = document.getElementById("commentsdiv");
-        if (commentsdiv.style.display === "none") {
-            commentsdiv.style.display = "block";
-        } else {
-            commentsdiv.style.display = "none";
-        }
-    });
+function show(id) {
+    var commentsdiv = document.getElementById(id);
+    if (commentsdiv.style.display === "none") {
+        commentsdiv.style.display = "block";
+    } else {
+        commentsdiv.style.display = "none";
+    }
+}
 
 function sort(kode) {
     let dest;

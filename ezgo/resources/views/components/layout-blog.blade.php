@@ -9,7 +9,21 @@
 <body>
     @include('components.navbar')
 
-    <!-- Blog Start -->
+    <!-- Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase" id="blogTitle">My Blog</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Blog</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
     <div class="container-fluid py-5">
         <div class="container py-5">
             <div class="row">
@@ -17,6 +31,8 @@
                     <div id="konten">
                         @yield('blog')
                     </div>
+                </div>
+
     
                 <div class="col-lg-4 mt-5 mt-lg-0">
 
@@ -35,22 +51,22 @@
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
                                     <a class="text-dark" href="blogjkt.html"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Jakarta</a>
-                                    <span class="badge badge-primary badge-pill">150</span>
+                                    <span class="badge badge-primary badge-pill">{{ $jktNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
                                     <a class="text-dark" href="blogbdg.html"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Bandung</a>
-                                    <span class="badge badge-primary badge-pill">131</span>
+                                    <span class="badge badge-primary badge-pill">{{ $bdgNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
                                     <a class="text-dark" href="blogsby.html"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Surabaya</a>
-                                    <span class="badge badge-primary badge-pill">78</span>
+                                    <span class="badge badge-primary badge-pill">{{ $sbyNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
                                     <a class="text-dark" href="blogdnpsr.html"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Denpasar</a>
-                                    <span class="badge badge-primary badge-pill">56</span>
+                                    <span class="badge badge-primary badge-pill">{{ $dpsNum }}</span>
                                 </li>
                             </ul>
                         </div>

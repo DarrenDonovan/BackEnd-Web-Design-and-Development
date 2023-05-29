@@ -10280,3 +10280,43 @@ td {
     margin: 0;
     width: 10%;
 }
+
+.likecontainer {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.likebutton {
+    width: 40px;
+    height: 35px;
+    margin-left: 600px;
+    position: absolute;
+    border: none;
+}
+
+.likecount {
+    margin-left: 645px;
+    position: absolute;
+    text-align: center;
+    padding-top: 17px;
+}
+
+.likecontainer p,
+.likecontainer button {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.delbutton {
+    width: 40px;
+    height: 35px;
+    margin-left: 650px;
+    position: absolute;
+}
+
+#cash:focus,
+#debit:focus,
+#credit:focus {
+    color: #4b9dc9;
+}
