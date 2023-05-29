@@ -47,9 +47,34 @@ class BlogController extends BaseController{
             'ctContent' => $comment,
             'custID' => $user
         ])){
-            return response()->json(['success' => true, 'user' => $user]);
+            return redirect()->back();
+        }     
+    }
+
+    public function add(Request $req){
+        $user = session()->get('userID');
+        $title = $req->input('title');
+        $isi = $req->input('isi');
+        $dest = $req->input('dropdown');
+        $num = DB::table('Blogs')->where('custID', $user)->count();
+        $blogID = "blg".$user.($num + 1);
+        $img;
+        if ($req->hasFile('imageBlog')) {
+            $blogimg = $req->file('imageBlog');
+            $img = $blogimg->getClientOriginalName();
+            $blogimg->move(public_path('img'), $img);
         }
-        return response()->json(['success' => false]);        
+
+        if(DB::table('Blogs')->insert([
+            'blogID' => $blogID,
+            'custID' => $user,
+            'bContent' => $isi,
+            'bImage' => $img,
+            'bTitle' => $title,
+            'destID' => $dest
+        ])){
+            return redirect()->back();
+        }
     }
 }
 

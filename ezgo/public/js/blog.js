@@ -164,7 +164,11 @@ function sort(kode) {
 
 function like(id) {
     console.log("count" + id);
-    let value = parseInt(document.getElementById("count" + id).innerText);
+    let amount = document.getElementById("count" + id).value;
+    if (amount == null) {
+        amount = "0";
+    }
+    let value = parseInt(amount);
     value++;
 
     let token = $('meta[name="csrf-token"]').attr("content");
@@ -223,4 +227,8 @@ function comment(id) {
             console.log("error send :(");
         },
     });
+}
+
+function submitForm() {
+    $("#myModal").modal("hide");
 }

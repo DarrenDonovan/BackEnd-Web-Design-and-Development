@@ -147,5 +147,8 @@ Route::post('/like', 'App\Http\Controllers\BlogController@like')->name('like');
 
 Route::post('/comment', 'App\Http\Controllers\BlogController@comment')->name('comment');
 
+Route::post('/add', 'App\Http\Controllers\BlogController@add')->name('add');
+
+
 
 

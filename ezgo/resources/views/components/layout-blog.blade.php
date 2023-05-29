@@ -113,32 +113,33 @@
                     <h4 class="modal-title" id="myModalLabel">My Blog</h4>
                 </div>
                 <div class="modal-body">
-                    <form action="">
+                <form action="{{ route('add') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="ml-5 pl-5">
-                            <input type="text" class="w-85" placeholder="Blog Title">
+                            <input type="text" class="w-85" placeholder="Blog Title" id="title" name="title">
                             <div class="py-3">
-                                <textarea rows="5" cols="50" placeholder="Type Your Blog Here..." class="w-85"></textarea>
+                                <textarea rows="5" cols="50" placeholder="Type Your Blog Here..." class="w-85" id="isi" name="isi"></textarea>
                             </div>
                             <div>
                                 <label for="dropdown">Choose Your Category</label>
                                 <br>
-                            <select id="dropdown">
-                                <option value="Jakarta">Jakarta</option>
-                                <option value="Bandung">Bandung</option>
-                                <option value="Surabaya">Subaraya</option>
-                                <option value="Denpasar">Denpasar</option>
-                              </select>
+                                <select id="dropdown" name="dropdown">
+                                    <option value="jkt">Jakarta</option>
+                                    <option value="bdg">Bandung</option>
+                                    <option value="sby">Surabaya</option>
+                                    <option value="dps">Denpasar</option>
+                                </select>
                             </div>
                         </div>
                         <div class="p-2 mb-5 ml-5 pl-5">
                             <label for="imageBlog">Put Image to Your Blog</label>
                             <br>
-                            <input type="file" id="imageBlog">
+                            <input type="file" id="imageBlog" name="imageBlog">
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                            <button type="submit" class="btn btn-primary" onclick="submitForm()">OK</button>
                         </div>
-                    </form>
+                </form>
                 </div>
             </div>
         </div>
