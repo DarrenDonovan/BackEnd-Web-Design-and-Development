@@ -22,6 +22,20 @@ class BlogController extends BaseController{
                 $comm->cName = DB::table('Customer')->where('custID', $comm->custID)->first()->cName;
             }
             $data->bImage = asset('img/'.$data->bImage);
+            switch($data->destID){
+                case "jkt":
+                    $data->branch = "Jakarta";
+                    break;
+                case "bdg":
+                    $data->branch = "Bandung";
+                    break;
+                case "sby":
+                    $data->branch = "Surabaya";
+                    break;
+                case "dps":
+                    $data->branch = "Denpasar";
+                    break;
+            }
             array_push($comments, $comment);
         }
         return response()->json(['success' => true, 'blogs' => $datas, 'comments' => $comments]);
