@@ -13,15 +13,19 @@ function sort(kode) {
     switch (kode) {
         case 1:
             dest = "jkt";
+            document.getElementById("blogTitle").innerText = "Jakarta Blog";
             break;
         case 2:
             dest = "bdg";
+            document.getElementById("blogTitle").innerText = "Bandung Blog";
             break;
         case 3:
             dest = "sby";
+            document.getElementById("blogTitle").innerText = "Surabaya Blog";
             break;
         case 4:
             dest = "dps";
+            document.getElementById("blogTitle").innerText = "Denpasar Blog";
             break;
     }
 
@@ -131,6 +135,33 @@ function sort(kode) {
                     kontenDiv.innerHTML += html;
                     i++;
                 });
+            } else {
+                console.log("error response :(");
+            }
+        },
+        error: function (xhr) {
+            console.log("error send :(");
+        },
+    });
+}
+
+function like(id) {
+    let value = parseInt(document.getElementById("count").innerText);
+    value++;
+
+    let token = $('meta[name="csrf-token"]').attr("content");
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": token,
+        },
+    });
+    $.ajax({
+        url: "/like",
+        type: "POST",
+        data: { id: id },
+        success: function (response) {
+            if (response.success) {
+                document.getElementById("count").innerText = value;
             } else {
                 console.log("error response :(");
             }

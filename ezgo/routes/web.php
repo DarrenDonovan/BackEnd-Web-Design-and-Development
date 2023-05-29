@@ -143,5 +143,7 @@ Route::post('/details', 'App\Http\Controllers\Controller@detail')->name('details
 
 Route::post('/change', 'App\Http\Controllers\BlogController@change')->name('change');
 
+Route::post('/like', 'App\Http\Controllers\BlogController@like')->name('like');
+
 
 

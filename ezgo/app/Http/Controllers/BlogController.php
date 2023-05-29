@@ -13,6 +13,7 @@ class BlogController extends BaseController{
                 ->join('Customer', 'Blogs.custID', '=', 'Customer.custID')
                 ->where('Blogs.destID', $req->dest)
                 ->select('Blogs.*', 'Customer.*')
+                ->orderByDesc('bLikes')
                 ->get();
         $comments = [];
         foreach($datas as $data){
@@ -24,6 +25,16 @@ class BlogController extends BaseController{
             array_push($comments, $comment);
         }
         return response()->json(['success' => true, 'blogs' => $datas, 'comments' => $comments]);
+    }
+
+    public function like(Request $req){
+        $count = DB::table('Blogs')->where('blogID', $req->id)->first()->bLikes;
+        if(DB::table('Blogs')
+            ->where('blogID', $req->id)
+            ->update(['bLikes' => $count + 1])){
+                return response()->json(['success' => true]);
+        }
+        return response()->json(['success' => false]);
     }
 }
 
