@@ -77,7 +77,7 @@
                      <div class="mb-5 position-relative">
                         <h4 class="text-uppercase mb-4" style="letter-spacing: 5px;">Top Liked</h4>
                         <?php
-                            $highestBlogs = $blogs = DB::table('Blogs')->where('custID', $id)->orderByDesc('bLikes')->get()->take(3);
+                            $highestBlogs = $blogs = DB::table('Blogs')->orderByDesc('bLikes')->get()->take(3);
                         ?>
                         @foreach($highestBlogs as $highBlog)
                             <?php
