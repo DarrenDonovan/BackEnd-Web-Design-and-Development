@@ -65,6 +65,7 @@ class Controller extends BaseController
     }  
 
     public function update(Request $req){
+        $id = session()->get('userID');
         $name = $req->input('name');
         $address = $req->input('address');
         $phone = $req->input('phone');
@@ -75,9 +76,10 @@ class Controller extends BaseController
             $profilePicture = $req->file('profilePicture');
             $img = $profilePicture->getClientOriginalName();
             $profilePicture->move(public_path('img'), $img);
+        }else{
+            $pic = DB::table('Customer')->where('custID', $id)->first()->cImage;
+            $img = $pic;
         }
-
-        $id = session()->get('userID');
 
         if(DB::table('Customer')
                 ->where('custID', $id)

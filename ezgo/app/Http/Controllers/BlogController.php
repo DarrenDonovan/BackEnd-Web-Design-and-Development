@@ -47,7 +47,7 @@ class BlogController extends BaseController{
             'ctContent' => $comment,
             'custID' => $user
         ])){
-            return redirect()->back();
+            return response()->json(['success' => true, 'user' => $user]);
         }     
     }
 
@@ -58,7 +58,7 @@ class BlogController extends BaseController{
         $dest = $req->input('dropdown');
         $num = DB::table('Blogs')->where('custID', $user)->count();
         $blogID = "blg".$user.($num + 1);
-        $img;
+        $img = "";
         if ($req->hasFile('imageBlog')) {
             $blogimg = $req->file('imageBlog');
             $img = $blogimg->getClientOriginalName();
@@ -71,7 +71,8 @@ class BlogController extends BaseController{
             'bContent' => $isi,
             'bImage' => $img,
             'bTitle' => $title,
-            'destID' => $dest
+            'destID' => $dest,
+            'bLikes' => 0
         ])){
             return redirect()->back();
         }
