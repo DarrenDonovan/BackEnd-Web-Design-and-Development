@@ -139,5 +139,9 @@ Route::post('/update', 'App\Http\Controllers\Controller@update')->name('update')
 
 Route::post('/details', 'App\Http\Controllers\Controller@detail')->name('details');
 
+//blog
+
+Route::post('/change', 'App\Http\Controllers\BlogController@change')->name('change');
+
 
 
