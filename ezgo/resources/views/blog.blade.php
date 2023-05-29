@@ -64,9 +64,9 @@ $dpsNum = DB::table('Blogs')->where('destID', "dps")->count();
                     <!-- Blog Detail End -->
                     
                 <div class="position-relative mb-4">
-                    <input type="text" class="contenttext mb-4" placeholder="Add Comments Here">
+                    <input type="text" class="contenttext mb-4" placeholder="Add Comments Here" id="{{ 'cmt'.$blog->blogID }}">
                     <div class="button-container">
-                    <input type="button" value="Post" class="btn btn-primary">
+                    <input type="button" value="Post" class="btn btn-primary" onclick="comment('{{ $blog->blogID }}')">
                     <input type="button" value="Cancel">
                 </div>
                 </div>
@@ -80,7 +80,7 @@ $dpsNum = DB::table('Blogs')->where('destID', "dps")->count();
                 </div>
                 <div class="row pb-3" id="{{ $blog->blogID }}" style="display: none;"> 
                             <div class="col mb-4 pb-2">
-                                <div class="bg-white p-4">            
+                                <div class="bg-white p-4" id="{{ 'cmt'.$blog->blogID.'div' }}">            
                                     <h4>Comments</h4>
                                 @foreach($comments as $comment)
                                     <?php

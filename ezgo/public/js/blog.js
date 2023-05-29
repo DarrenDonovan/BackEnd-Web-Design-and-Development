@@ -95,10 +95,16 @@ function sort(kode) {
 
                     html += '<div class="position-relative mb-4">';
                     html +=
-                        '<input type="text" class="contenttext mb-4" placeholder="Add Comments Here">';
+                        '<input type="text" id="cmt' +
+                        blog.blogID +
+                        '" class="contenttext mb-4" placeholder="Add Comments Here">';
+
                     html += '<div class="button-container">';
                     html +=
-                        '<input type="button" value="Post" class="btn btn-primary">';
+                        '<input type="button" value="Post" onclick="comment(\'' +
+                        blog.blogID +
+                        '\')" class="btn btn-primary">';
+
                     html += '<input type="button" value="Cancel">';
                     html += "</div>";
                     html += "</div>";
@@ -122,7 +128,11 @@ function sort(kode) {
                         blog.blogID +
                         '" style="display: none;">';
                     html += '<div class="col mb-4 pb-2">';
-                    html += '<div class="bg-white p-4">';
+                    html +=
+                        '<div id="cmt' +
+                        blog.blogID +
+                        'div" class="bg-white p-4">';
+
                     html += "<h4>Comments</h4>";
 
                     response.comments[i].forEach(function (comment) {
@@ -170,6 +180,41 @@ function like(id) {
         success: function (response) {
             if (response.success) {
                 document.getElementById("count" + id).innerText = value;
+            } else {
+                console.log("error response :(");
+            }
+        },
+        error: function (xhr) {
+            console.log("error send :(");
+        },
+    });
+}
+
+function comment(id) {
+    console.log("cmt" + id);
+    let comment = document.getElementById("cmt" + id).value;
+
+    let token = $('meta[name="csrf-token"]').attr("content");
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": token,
+        },
+    });
+    $.ajax({
+        url: "/comment",
+        type: "POST",
+        data: { id: id, comment: comment },
+        success: function (response) {
+            if (response.success) {
+                let html = "<div>";
+                html +=
+                    '<p class="font-weight-bold pt-3">' +
+                    response.user +
+                    "</p>";
+                html += "<p>" + comment + "</p>";
+                html += "</div>";
+                document.getElementById("cmt" + id + "div").innerHTML += html;
+                document.getElementById("cmt" + id).value = "";
             } else {
                 console.log("error response :(");
             }

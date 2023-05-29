@@ -36,6 +36,21 @@ class BlogController extends BaseController{
         }
         return response()->json(['success' => false]);
     }
+
+    public function comment(Request $req){
+        $blog = $req->input('id');
+        $user = session()->get('userID');
+        $comment = $req->input('comment');
+
+        if(DB::table('Comments')->insert([
+            'blogID' => $blog,
+            'ctContent' => $comment,
+            'custID' => $user
+        ])){
+            return response()->json(['success' => true, 'user' => $user]);
+        }
+        return response()->json(['success' => false]);        
+    }
 }
 
 ?>
