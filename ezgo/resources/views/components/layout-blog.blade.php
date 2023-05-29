@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ezgo Blog Page</title>
 </head>
@@ -49,22 +50,22 @@
                         <div class="bg-white" style="padding: 30px;">
                             <ul class="list-inline m-0">
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="blogjkt.html"><i
+                                    <a class="text-dark" href="javascript:void(0)" onclick="sort(1)"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Jakarta</a>
                                     <span class="badge badge-primary badge-pill">{{ $jktNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="blogbdg.html"><i
+                                    <a class="text-dark" href="javascript:void(0)" onclick="sort(2)"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Bandung</a>
                                     <span class="badge badge-primary badge-pill">{{ $bdgNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="blogsby.html"><i
+                                    <a class="text-dark" href="javascript:void(0)" onclick="sort(3)"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Surabaya</a>
                                     <span class="badge badge-primary badge-pill">{{ $sbyNum }}</span>
                                 </li>
                                 <li class="mb-3 d-flex justify-content-between align-items-center">
-                                    <a class="text-dark" href="blogdnpsr.html"><i
+                                    <a class="text-dark" href="javascript:void(0)" onclick="sort(4)"><i
                                             class="fa fa-angle-right text-primary mr-2"></i>Denpasar</a>
                                     <span class="badge badge-primary badge-pill">{{ $dpsNum }}</span>
                                 </li>
