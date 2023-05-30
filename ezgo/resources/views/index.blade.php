@@ -224,7 +224,7 @@
                 <div class="col-lg-2 col-md-4 col-sm-6 pb-2">
                     <div class="team-item bg-white mb-4">
                         <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{{ asset('img/neon2.png') }}" alt="">
+                            <img class="img-fluid w-100" src="{{ asset('img/neon.jpg') }}" alt="">
                             <div class="team-social">
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
                                 <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
