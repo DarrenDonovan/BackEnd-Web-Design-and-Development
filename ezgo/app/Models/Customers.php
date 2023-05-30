@@ -23,6 +23,7 @@ class Customers extends Model
         $customer = DB::table('Customer')->where('custID', $username)->first();
         if ($customer && Hash::check($password, $customer->cPassword)) {
             session()->put('userID', $username);
+            $cookie = cookie('user', $customer->custID, 120 * 60);
             if($customer->custID == "admin"){
                 return 4;
             }
@@ -45,6 +46,7 @@ class Customers extends Model
                 'cName' => $nama
             ]);
             session()->put('userID', $username);
+            $cookie = cookie('user', $cust->custID, 120 * 60);
             return 2;
        }
     }

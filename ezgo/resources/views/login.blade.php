@@ -1,3 +1,14 @@
+<?php
+use Illuminate\Http\Request;
+
+$user = "";
+$request = Request::capture();
+$id = $request->cookie('user');
+if(!empty($id)){
+    $user = DB::table('Customer')->where('custID', $id)->first()->custID;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -86,6 +97,8 @@
                         placeholder="Username"
                         name="username"
                         id="username1"
+                        value="{{ $user }}"
+                        autocomplete="off"
                         required
                     />
                     <div
@@ -100,6 +113,7 @@
                         placeholder="Password"
                         name="password"
                         id="password"
+                        autocomplete="off"
                         required
                     />
                     <div
