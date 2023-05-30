@@ -23,7 +23,12 @@ class Customers extends Model
         $customer = DB::table('Customer')->where('custID', $username)->first();
         if ($customer && Hash::check($password, $customer->cPassword)) {
             session()->put('userID', $username);
-            $cookie = cookie('user', $customer->custID, 120 * 60);
+            $cookieName = 'user';
+            $cookieValue = $customer->custID;
+            $expiration = time() + (120 * 60); 
+            $cookiePath = '/';
+            $cookieDomain = '';
+            setcookie($cookieName, $cookieValue, $expiration, $cookiePath, $cookieDomain);
             if($customer->custID == "admin"){
                 return 4;
             }

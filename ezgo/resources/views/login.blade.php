@@ -1,12 +1,8 @@
 <?php
 use Illuminate\Http\Request;
 
-$user = "";
 $request = Request::capture();
-$id = $request->cookie('user');
-if(!empty($id)){
-    $user = DB::table('Customer')->where('custID', $id)->first()->custID;
-}
+$user = $request->cookie('user');
 ?>
 
 <!DOCTYPE html>
@@ -98,7 +94,6 @@ if(!empty($id)){
                         name="username"
                         id="username1"
                         value="{{ $user }}"
-                        autocomplete="off"
                         required
                     />
                     <div
