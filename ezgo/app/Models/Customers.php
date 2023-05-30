@@ -23,6 +23,9 @@ class Customers extends Model
         $customer = DB::table('Customer')->where('custID', $username)->first();
         if ($customer && Hash::check($password, $customer->cPassword)) {
             session()->put('userID', $username);
+            if($customer->custID == "admin"){
+                return 4;
+            }
             return 1;
         } elseif ($customer) {
             return 2;

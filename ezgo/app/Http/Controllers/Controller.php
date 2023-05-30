@@ -1,8 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
-
 
 use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -33,6 +30,9 @@ class Controller extends BaseController
                 break;
             case 3:
                 return response()->json(['success' => 3]);
+                break;
+            case 4:
+                return response()->json(['success' => 4]);
                 break;
         }
     }
@@ -133,5 +133,25 @@ class Controller extends BaseController
         }
 
         return response()->json(['success' => true, 'item' => $itemRet]);
+    }
+
+    public function DeleteItem(Request $req){
+        $code = $req->input('code');
+        $id = $req->input('id');
+
+        switch($code){
+            case 1:
+                if(DB::table('Comments')->where('blogID', $id)->delete()){
+                    if(DB::table('Blogs')->where('blogID', $id)->delete()){
+                        return response()->json(['success' => true]);
+                    }
+                }
+                break;
+            case 2:
+                if(DB::table('Comments')->where('commentID', $id)->delete()){
+                    return response()->json(['success' => true]);
+                }
+                break;
+        }
     }
 }

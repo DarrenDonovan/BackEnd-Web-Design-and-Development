@@ -24,16 +24,17 @@ $(document).ready(function () {
             success: function (response) {
                 switch (response.success) {
                     case 1:
-                        console.log("titip");
                         window.location.href = "/home";
                         break;
                     case 2:
-                        console.log("titio");
                         $(".useror").css("display", "block");
                         break;
                     case 3:
-                        console.log("titia");
                         $(".userir").css("display", "block");
+                        break;
+                    case 4:
+                        console.log("sep");
+                        window.location.href = "/admin";
                         break;
                 }
             },
@@ -56,11 +57,9 @@ $(document).ready(function () {
             success: function (response) {
                 switch (response.success) {
                     case 1:
-                        console.log("titip");
                         $(".usiror").css("display", "block");
                         break;
                     case 2:
-                        console.log("titio");
                         window.location.href = "/home";
                         break;
                 }

@@ -17,6 +17,17 @@ Route::get('/home', function(){
         ->cookie('currentUrl', $currentUrl, 6*60);
 })->name('home');
 
+Route::get('/admin', function(){
+    $currentUrl = url()->current();
+    return response()
+        ->view('admin')
+        ->cookie('currentUrl', $currentUrl, 6*60);
+})->name('admin');
+
+//admin page
+
+Route::post('/Del', 'App\Http\Controllers\Controller@DeleteItem')->name('Delete');
+
 //Main Page
 
 Route::get('/home/account', function(){
