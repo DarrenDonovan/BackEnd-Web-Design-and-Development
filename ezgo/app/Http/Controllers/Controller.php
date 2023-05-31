@@ -135,23 +135,31 @@ class Controller extends BaseController
         return response()->json(['success' => true, 'item' => $itemRet]);
     }
 
-    public function DeleteItem(Request $req){
+    public function Mod(Request $req){
         $code = $req->input('code');
         $id = $req->input('id');
 
-        switch($code){
+        switch ($code) {
             case 1:
-                if(DB::table('Comments')->where('blogID', $id)->delete()){
-                    if(DB::table('Blogs')->where('blogID', $id)->delete()){
-                        return response()->json(['success' => true]);
-                    }
+                return response()->json(['mail' => $id]);
+                $commentsExist = DB::table('Comments')->where('blogID', $id)->exists();
+$blogsExist = DB::table('Blogs')->where('blogID', $id)->exists();
+
+if ($commentsExist && $blogsExist) {
+                    return response()->json(['success' => true]);
                 }
                 break;
             case 2:
-                if(DB::table('Comments')->where('commentID', $id)->delete()){
+                return response()->json(['mail' => "2"]);
+                $commentsDeleted = DB::table('Comments')->where('commentID', $id)->delete();
+                
+                if ($commentsDeleted) {
                     return response()->json(['success' => true]);
                 }
                 break;
         }
+        
+        return response()->json(['success' => false]);
+        
     }
 }

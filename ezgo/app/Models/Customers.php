@@ -51,7 +51,7 @@ class Customers extends Model
                 'cName' => $nama
             ]);
             session()->put('userID', $username);
-            $cookie = cookie('user', $cust->custID, 120 * 60);
+            $cookie = cookie('user', $username, 120 * 60);
             return 2;
        }
     }

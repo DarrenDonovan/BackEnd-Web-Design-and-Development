@@ -148,6 +148,8 @@ function show(id) {
 function Delete(id, code) {
     let item = "";
 
+    console.log(id);
+
     switch (code) {
         case 1:
             item = "post";
@@ -164,10 +166,11 @@ function Delete(id, code) {
         },
     });
     $.ajax({
-        url: "/Del",
+        url: "/modding",
         type: "POST",
         data: { id: id, code: code },
         success: function (response) {
+            console.log(response.mail);
             if (response.success) {
                 alert(item + "has been deleted!");
                 location.reload();
@@ -175,8 +178,12 @@ function Delete(id, code) {
                 console.log("error response :(");
             }
         },
-        error: function (xhr) {
+        error: function (xhr, status, errorThrown) {
             console.log("error send :(");
+            console.log("Error sending request :(");
+            console.log("Status: " + xhr.status);
+            console.log("Response: " + xhr.responseText);
+            console.log("Error message: " + errorThrown);
         },
     });
 }

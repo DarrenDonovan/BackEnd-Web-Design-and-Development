@@ -26,7 +26,7 @@ Route::get('/admin', function(){
 
 //admin page
 
-Route::post('/Del', 'App\Http\Controllers\Controller@DeleteItem')->name('Delete');
+Route::post('/modding', 'App\Http\Controllers\Controller@Mod');
 
 //Main Page
 
