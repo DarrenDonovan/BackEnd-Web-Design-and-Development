@@ -54,7 +54,7 @@ return [
         'sqlsrv' => [
             'driver' => 'sqlsrv',
             'host' => env('DB_HOST', 'DELL\\SQLEXPRESS'),
-            'port' => env('DB_PORT', '49835'),
+            'port' => env('DB_PORT', '49843'),
             'database' => env('DB_DATABASE', 'EZGO'),
             'charset' => 'utf8',
             'prefix' => '',
