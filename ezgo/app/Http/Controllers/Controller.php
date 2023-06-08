@@ -141,16 +141,19 @@ class Controller extends BaseController
 
         switch ($code) {
             case 1:
-                return response()->json(['mail' => $id]);
-                $commentsExist = DB::table('Comments')->where('blogID', $id)->exists();
-$blogsExist = DB::table('Blogs')->where('blogID', $id)->exists();
 
-if ($commentsExist && $blogsExist) {
-                    return response()->json(['success' => true]);
+                $comments = DB::table('Comments')->where('blogID', $id)->get();
+                $blogs = DB::table('Blogs')->where('blogID', $id)->get();
+
+                if ($blogs->isNotEmpty()) {
+                    if($comments->isNotEmpty()){
+                        DB::table('Comments')->where('blogID', $id)->delete();
+                    }
+                    DB::table('Blogs')->where('blogID', $id)->delete();
+                    return response()->json(['mail' => $id, 'success' => true]);
                 }
                 break;
             case 2:
-                return response()->json(['mail' => "2"]);
                 $commentsDeleted = DB::table('Comments')->where('commentID', $id)->delete();
                 
                 if ($commentsDeleted) {
