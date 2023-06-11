@@ -60,6 +60,7 @@ class ProductController extends BaseController
                     case 0:
                         try {
                             $rows = DB::table('Tickets')->get()->toArray();
+                            session()->put('budget', 0);
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -70,6 +71,7 @@ class ProductController extends BaseController
                                 $rows = DB::table('Tickets')->where($key[0], $arr[0])->get()->toArray();
                             }else{
                                 $rows = DB::table('Tickets')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                                session()->put('budget', $arr[0]);
                             }
                         } catch (Exception $e) {
                             dd($e->getMessage());
@@ -85,6 +87,7 @@ class ProductController extends BaseController
                                 $rows = DB::table('Tickets')
                                     ->where($key[0], $arr[0])
                                     ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
+                                session()->put('budget', $arr[1]);
                             }
                         } catch (Exception $e) {
                             dd($e->getMessage());
@@ -96,6 +99,7 @@ class ProductController extends BaseController
                                 ->where($key[0], $arr[0])
                                 ->where($key[1], $arr[1])
                                 ->where($key[2], $arr[2])->get()->toArray();
+                            session()->put('budget', $arr[2]);
                         }catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -119,6 +123,7 @@ class ProductController extends BaseController
                     case 0:
                         try {
                             $rows = DB::table('Hotel')->get()->toArray();
+                            session()->put('budget', 0);
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -129,6 +134,7 @@ class ProductController extends BaseController
                                 $rows = DB::table('Hotel')->where($key[0], $arr[0])->get()->toArray();
                             }else{
                                 $rows = DB::table('Hotel')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                                session()->put('budget', $arr[0]);
                             }
                         } catch (Exception $e) {
                             dd($e->getMessage());
@@ -144,6 +150,7 @@ class ProductController extends BaseController
                                 $rows = DB::table('Hotel')
                                     ->where($key[0], $arr[0])
                                     ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
+                                    session()->put('budget', $arr[1]);
                             }
                         } catch (Exception $e) {
                             dd($e->getMessage());
@@ -155,6 +162,7 @@ class ProductController extends BaseController
                                 ->where($key[0], $arr[0])
                                 ->where($key[1], $arr[1])
                                 ->where($key[2], $arr[2])->get()->toArray();
+                            session()->put('budget', $arr[2]);
                         }catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -172,6 +180,7 @@ class ProductController extends BaseController
                     case 0:
                         try {
                             $rows = DB::table('Tour')->get()->toArray();
+                            session()->put('budget', 0);
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -182,6 +191,7 @@ class ProductController extends BaseController
                                 $rows = DB::table('Tour')->where($key[0], $arr[0])->get()->toArray();
                             }else{
                                 $rows = DB::table('Tour')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                                session()->put('budget', $arr[0]);
                             }
                         } catch (Exception $e) {
                             dd($e->getMessage());
@@ -192,6 +202,7 @@ class ProductController extends BaseController
                             $rows = DB::table('Tour')
                                 ->where($key[0], $arr[0])
                                 ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
+                            session()->put('budget', $arr[1]);
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -315,5 +326,85 @@ class ProductController extends BaseController
         }
 
         return response()->json(['success' => false, 'code' => $code]);
+    }
+
+    public function Recom(Request $req){
+        $biaya = Session()->get('budget');
+        $type = $req->input('type');
+        $dest = $req->input('dest');
+        $id = $req->input('id');
+        $operator = "<=";
+
+        if($biaya == 0){
+            $operator = ">=";
+        }
+
+        switch($type){
+            case 1:
+                try {
+                    $where = "tcSellingPrice ".$operator." ?";
+
+                    $rows = DB::table('Tickets')
+                        ->where('destID', $dest)
+                        ->whereRaw("ticketID != ?", $id)
+                        ->whereRaw($where, [$biaya])->take(3)->get()->toArray();
+
+                    foreach($rows as $row){
+                        $row->Image = asset('img/'.$row->tcImage);
+                        $row->Name = $row->tcName;
+                        $row->Price = $row->tcSellingPrice;
+                        $row->Tag = $row->ticketID;
+                    }
+
+                    return response()->json(['success' => true, 'rows' => $rows]);
+                } catch (Exception $e) {
+                    dd($e->getMessage());
+                }
+                break;
+            case 2:
+                try {
+                    $where = "hPrice ".$operator." ?";
+
+                    $rows = DB::table('Hotel')
+                        ->where('destID', $dest)
+                        ->whereRaw("hotelID != ?", $id)
+                        ->whereRaw($where, $biaya)->take(3)->get()->toArray();
+
+                    foreach($rows as $row){
+                        $row->Image = asset('img/'.$row->hImage);
+                        $row->Name = $row->hName;
+                        $row->Price = $row->hPrice;
+                        $row->Tag = $row->hotelID;
+                    }
+
+                    return response()->json(['success' => true, 'rows' => $rows]);
+                } catch (Exception $e) {
+                    dd($e->getMessage());
+                }
+                break;
+            case 3:
+                try {
+                    $where = "tpPrice ".$operator." ?";
+
+                    $rows = DB::table('Tour')
+                        ->where('destID', $dest)
+                        ->whereRaw("tourID != ?", $id)
+                        ->whereRaw($where, $biaya)->take(3)->get()->toArray();
+
+                    foreach($rows as $row){
+                        $row->Image = asset('img/'.$row->tpImage);
+                        $row->Name = $row->tpName;
+                        $row->Price = $row->tpPrice;
+                        $row->Tag = $row->tourID;
+                    }
+
+                    return response()->json(['success' => true, 'rows' => $rows]);
+                } catch (Exception $e) {
+                    dd($e->getMessage());
+                }
+                break;
+        }
+
+        return response()->json(['success' => false]);
     }
 }

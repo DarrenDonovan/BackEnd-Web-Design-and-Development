@@ -40,6 +40,8 @@ use Illuminate\Support\Facades\DB;
             }
             break;
     }
+
+    session()->put('budget', 0);
 ?>
 
 @extends('components.layout-products')
@@ -226,7 +228,7 @@ use Illuminate\Support\Facades\DB;
                                 </div>
                             </div>
                             <div style="width: 10%; display: flex; align-items: center; justify-content: center;" class="text-center">
-                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->ticketID}}', 1)">Purchase</button>
+                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->ticketID}}', 1); recommend('{{$row->destID}}', 1, '{{$row->ticketID}}');">Purchase</button>
                             </div>                              
                         </div>
                     </div>
@@ -248,7 +250,7 @@ use Illuminate\Support\Facades\DB;
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $row->hAmount }} days</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ $row->hRoomType }}</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->hotelID}}', 2)">Discover amazing places of the world with us</a>
+                            <a class="h5 text-decoration-none" href="" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->hotelID}}', 2); recommend('{{$row->destID}}', 2, '{{$row->hotelID}}');">Discover amazing places of the world with us</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><small>{{ $Date }}</small></h6>
@@ -276,7 +278,7 @@ use Illuminate\Support\Facades\DB;
                                 <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>{{ $row->tpSlot }} Persons</small>
                                 <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>{{ $Date }}</small>
                             </div>
-                            <a class="h5 text-decoration-none" href="" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->tourID}}', 3)">Discover amazing places of the world with us</a>
+                            <a class="h5 text-decoration-none" href="" data-toggle="modal" data-target="#myModal" onclick="fetchData('{{$row->tourID}}', 3); recommend('{{$row->destID}}', 3, '{{$row->tourID}}');">Discover amazing places of the world with us</a>
                             <div class="border-top mt-4 pt-4">
                                 <div class="d-flex justify-content-between">
                                     <h6 class="m-0"><small>{{ $TimeDep }}</small></h6>
@@ -341,9 +343,16 @@ use Illuminate\Support\Facades\DB;
                                 <Button type="button" class="btn btn-primary">Debit</Button>
                             </div>
                         </div>
-                        <div class="modal-footer">
+                        <p class="font-weight-bold" style="margin-left: 15px;">Recommendations</p>
+                            <div class="recommenddiv"  style="text-align: center;" id="recContain"> 
+                            </div>
+                        <div style="text-align: center; margin: 10px; margin-bottom: 15px;">
+                            <br>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-primary" id="buton">Buy</button>
+                        </div>
+                        <div class="modal-footer">
+
                         </div>
                     </div>
                 </div>
@@ -391,6 +400,9 @@ use Illuminate\Support\Facades\DB;
                                     <Button type="button" class="btn btn-primary" style="margin-inline: 20px;">Credit</Button>
                                     <Button type="button" class="btn btn-primary">Debit</Button>
                                 </div>
+                            </div>
+                            <p class="font-weight-bold" style="margin-left: 15px;">Recommendations</p>
+                            <div class="recommenddiv"  style="text-align: center;" id="recContain"> 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -444,6 +456,9 @@ use Illuminate\Support\Facades\DB;
                                     <Button type="button" class="btn btn-primary" style="margin-inline: 20px;">Credit</Button>
                                     <Button type="button" class="btn btn-primary">Debit</Button>
                                 </div>
+                            </div>
+                            <p class="font-weight-bold" style="margin-left: 15px;">Recommendations</p>
+                            <div class="recommenddiv"  style="text-align: center;" id="recContain"> 
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

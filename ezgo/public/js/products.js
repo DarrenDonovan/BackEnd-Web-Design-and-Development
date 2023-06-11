@@ -115,6 +115,43 @@ function fetchData(buttonId, code) {
     });
 }
 
+function recommend(dest, type, id) {
+    let token = $('meta[name="csrf-token"]').attr("content");
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": token,
+        },
+    });
+    $.ajax({
+        url: "/recom",
+        type: "POST",
+        data: { dest: dest, type: type, id: id },
+        success: function (response) {
+            if (response.success) {
+                let rec = document.getElementById("recContain");
+                rec.innerHTML = "";
+                response.rows.forEach(function (row) {
+                    let html = "<div>";
+                    html += "<p>" + row.Name + "</p>";
+                    html += '<img src="' + row.Image + '" style="width: 75%;">';
+                    html += "<p>" + row.Price + "</p>";
+                    html +=
+                        '<a href="javascript:void(0)" onclick="changeModal(\'' +
+                        row.Tag +
+                        "')\">Buy Now</a>";
+                    html += "</div>";
+                    rec.innerHTML += html;
+                });
+            } else {
+                console.log("error response :(");
+            }
+        },
+        error: function (xhr) {
+            console.log("error send :(");
+        },
+    });
+}
+
 function purchase(id, kode) {
     let bought = document.getElementById("numedit").value;
     let price = parseInt(document.getElementById("price").innerText);

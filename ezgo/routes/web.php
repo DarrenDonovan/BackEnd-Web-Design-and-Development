@@ -144,6 +144,8 @@ Route::post('/imag', 'App\Http\Controllers\Controller@img');
 
 Route::post('/purchase', 'App\Http\Controllers\ProductController@Purchase');
 
+Route::post('/recom', 'App\Http\Controllers\ProductController@recom');
+
 //account
 
 Route::post('/update', 'App\Http\Controllers\Controller@update')->name('update');
