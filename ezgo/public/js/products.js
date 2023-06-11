@@ -168,8 +168,8 @@ function purchase(id, kode) {
         data: { id: id, kode: kode, total: bought, price: price },
         success: function (response) {
             if (response.success) {
-                alert("Item has been purchased!");
                 $("#myModal").modal("hide");
+                $("#myModal2").modal("show");
             } else {
                 console.log("error response :(");
                 switch (response.code) {

@@ -43,6 +43,24 @@
 
     @yield('modal')
 
+    <!-- Transaction Successful Modal-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel2">Purchase</h4>
+            </div>
+            <div class="modal-body">
+            <p>Your Purchase is Successful</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
     @include('components.footer')
 
     <!-- JavaScript Libraries -->
