@@ -242,9 +242,11 @@ function sort(kode) {
         case 1:
             let dest1 = document.getElementById("dest");
             let trans = document.getElementById("trans");
+            let budg1 = document.getElementById("budget");
 
             let dest1Num = dest1.options[dest.selectedIndex].value;
             let transNum = trans.options[trans.selectedIndex].value;
+            let budg1Num = budg1.value.trim();
 
             console.log(dest1Num);
 
@@ -281,13 +283,21 @@ function sort(kode) {
                     arr.push("fly");
                     break;
             }
+
+            if (budg1Num != "") {
+                key.push("tcSellingPrice");
+                arr.push(parseInt(budg1Num));
+            }
+
             break;
         case 2:
             let dest2 = document.getElementById("dest");
             let duration = document.getElementById("duration");
+            let budg2 = document.getElementById("budget");
 
             let dest2Num = dest2.options[dest2.selectedIndex].value;
             let duraNum = duration.options[duration.selectedIndex].value;
+            let budg2Num = budg2.value.trim();
 
             console.log(dest2Num);
 
@@ -315,10 +325,18 @@ function sort(kode) {
                 arr.push(parseInt(duraNum));
             }
 
+            if (budg2Num != "") {
+                key.push("hPrice");
+                arr.push(parseInt(budg2Num));
+            }
+
             break;
         case 3:
             let dest3 = document.getElementById("dest");
+            let budg3 = document.getElementById("budget");
+
             let dest3Num = dest3.options[dest3.selectedIndex].value;
+            let budg3Num = budg3.value.trim();
 
             console.log(dest3Num);
 
@@ -340,6 +358,12 @@ function sort(kode) {
                     arr.push("dps");
                     break;
             }
+
+            if (budg3Num != "") {
+                key.push("tpPrice");
+                arr.push(parseInt(budg3Num));
+            }
+
             break;
     }
 

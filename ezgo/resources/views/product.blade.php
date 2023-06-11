@@ -75,6 +75,13 @@ use Illuminate\Support\Facades\DB;
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3 mb-md-0">
+                                            <div class="budget">
+                                                <input type="text" class="form-control p-4" placeholder="Your Budget" id="budget" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -119,6 +126,13 @@ use Illuminate\Support\Facades\DB;
                                             </select>
                                         </div>
                                     </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3 mb-md-0">
+                                            <div class="budget">
+                                                <input type="text" class="form-control p-4" placeholder="Your Budget" id="budget"/>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-2">
@@ -150,6 +164,13 @@ use Illuminate\Support\Facades\DB;
                                                 <option value="3">Surabaya</option>
                                                 <option value="4">Denpasar</option>
                                             </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="mb-3 mb-md-0">
+                                            <div class="budget">
+                                                <input type="text" class="form-control p-4" placeholder="Your Budget" id="budget"/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

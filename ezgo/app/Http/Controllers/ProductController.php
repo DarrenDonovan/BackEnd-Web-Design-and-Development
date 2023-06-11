@@ -66,17 +66,37 @@ class ProductController extends BaseController
                         break;
                     case 1:
                         try {
-                            $rows = DB::table('Tickets')->where($key[0], $arr[0])->get()->toArray();
+                            if($key[0] != "tcSellingPrice"){
+                                $rows = DB::table('Tickets')->where($key[0], $arr[0])->get()->toArray();
+                            }else{
+                                $rows = DB::table('Tickets')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                            }
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
                         break;
                     case 2:
                         try {
-                            $rows = DB::table('Tickets')
+                            if($key[1] != "tcSellingPrice"){
+                                $rows = DB::table('Tickets')
                                     ->where($key[0], $arr[0])
                                     ->where($key[1], $arr[1])->get()->toArray();
+                            }else{
+                                $rows = DB::table('Tickets')
+                                    ->where($key[0], $arr[0])
+                                    ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
+                            }
                         } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 3:
+                        try{
+                            $rows = DB::table('Tickets')
+                                ->where($key[0], $arr[0])
+                                ->where($key[1], $arr[1])
+                                ->where($key[2], $arr[2])->get()->toArray();
+                        }catch (Exception $e) {
                             dd($e->getMessage());
                         }
                         break;
@@ -105,17 +125,37 @@ class ProductController extends BaseController
                         break;
                     case 1:
                         try {
-                            $rows = DB::table('Hotel')->where($key[0], $arr[0])->get()->toArray();
+                            if($key[0] != "hPrice"){
+                                $rows = DB::table('Hotel')->where($key[0], $arr[0])->get()->toArray();
+                            }else{
+                                $rows = DB::table('Hotel')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                            }
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
                         break;
                     case 2:
                         try {
-                            $rows = DB::table('Hotel')
+                            if($key[1] != "hPrice"){
+                                $rows = DB::table('Hotel')
                                     ->where($key[0], $arr[0])
                                     ->where($key[1], $arr[1])->get()->toArray();
+                            }else{
+                                $rows = DB::table('Hotel')
+                                    ->where($key[0], $arr[0])
+                                    ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
+                            }
                         } catch (Exception $e) {
+                            dd($e->getMessage());
+                        }
+                        break;
+                    case 3:
+                        try{
+                            $rows = DB::table('Hotel')
+                                ->where($key[0], $arr[0])
+                                ->where($key[1], $arr[1])
+                                ->where($key[2], $arr[2])->get()->toArray();
+                        }catch (Exception $e) {
                             dd($e->getMessage());
                         }
                         break;
@@ -138,7 +178,11 @@ class ProductController extends BaseController
                         break;
                     case 1:
                         try {
-                            $rows = DB::table('Tour')->where($key[0], $arr[0])->get()->toArray();
+                            if($key[0] != "tpPrice"){
+                                $rows = DB::table('Tour')->where($key[0], $arr[0])->get()->toArray();
+                            }else{
+                                $rows = DB::table('Tour')->whereRaw("$key[0] <= ?", [$arr[0]])->get()->toArray();
+                            }
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
@@ -146,8 +190,8 @@ class ProductController extends BaseController
                     case 2:
                         try {
                             $rows = DB::table('Tour')
-                                    ->where($key[0], $arr[0])
-                                    ->where($key[1], $arr[1])->get()->toArray();
+                                ->where($key[0], $arr[0])
+                                ->whereRaw("$key[1] <= ?", [$arr[1]])->get()->toArray();
                         } catch (Exception $e) {
                             dd($e->getMessage());
                         }
