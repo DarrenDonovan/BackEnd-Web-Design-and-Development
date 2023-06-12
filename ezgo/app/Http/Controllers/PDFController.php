@@ -19,16 +19,12 @@ class PDFController extends Controller
         $rng = mt_rand(0, 999999);
         $pdfPath = public_path('pdf/' . $rng . $order . '.pdf');
         file_put_contents($pdfPath, $pdf->output());
-        // Get the file contents
         $fileContents = file_get_contents($pdfPath);
-
-        // Set the appropriate headers for the response
         $headers = [
             'Content-Type' => 'application/pdf',
             'Content-Disposition' => 'attachment; filename=struk.pdf',
         ];
 
-        // Return the file as a response
         return response($fileContents, 200, $headers);
     }
 }
