@@ -48,9 +48,9 @@ function download(orderid, kode) {
         type: "POST",
         data: { id: orderid, code: kode },
         xhrFields: {
-            responseType: "blob", // Set the response type to 'blob'
+            responseType: "blob",
         },
-        success: function (response, status, xhr) {
+        success: function (response) {
             var blob = new Blob([response], { type: "application/pdf" });
             var link = document.createElement("a");
             link.href = window.URL.createObjectURL(blob);
@@ -61,12 +61,4 @@ function download(orderid, kode) {
             console.log("error send :(");
         },
     });
-}
-
-function getFilenameFromResponse(xhr) {
-    var contentDispositionHeader = xhr.getResponseHeader("Content-Disposition");
-    var filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
-    var matches = filenameRegex.exec(contentDispositionHeader);
-    var filename = matches[1].replace(/['"]/g, "");
-    return decodeURIComponent(filename);
 }
