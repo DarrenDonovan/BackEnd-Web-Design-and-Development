@@ -157,6 +157,24 @@
         </div>
     </div>
 
+    <!-- Delete Successful Modal-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel2">Purchase</h4>
+            </div>
+            <div class="modal-body">
+            <p>Delete Success</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- Modal End -->
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/admin.js') }}"></script>

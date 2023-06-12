@@ -108,7 +108,7 @@ function sort(kode) {
                         html += '<div class="likecontainer pb-4">';
                         html +=
                             '<button class="delbutton btn btn-outline-danger"onclick="Delete(\'' +
-                            comment.blogID +
+                            comment.commentID +
                             "', 2)\">";
                         html +=
                             '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">';
@@ -146,18 +146,7 @@ function show(id) {
 }
 
 function Delete(id, code) {
-    let item = "";
-
     console.log(id);
-
-    switch (code) {
-        case 1:
-            item = "post";
-            break;
-        case 2:
-            item = "comment";
-            break;
-    }
 
     let token = $('meta[name="csrf-token"]').attr("content");
     $.ajaxSetup({
@@ -172,7 +161,7 @@ function Delete(id, code) {
         success: function (response) {
             console.log(response.mail);
             if (response.success) {
-                alert(item + "has been deleted!");
+                $("#myModal2").modal("show");
                 location.reload();
             } else {
                 console.log("error response :(");
