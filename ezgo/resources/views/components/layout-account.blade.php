@@ -117,6 +117,7 @@
             </tr>
           </table>
             <button class="buttoncancel" data-dismiss="modal">OK</button>
+            <button class="buttoncancel" id="download">Download History</button>
           </div>
         </div>
       </div>

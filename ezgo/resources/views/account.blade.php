@@ -52,7 +52,7 @@
 
         <div class="row pl-3 mb-4 mt-2 pt-3" style="border: 1px solid black; border-radius: 10px;">
             <h5 class="purchaseno">{{ $prodID }}</h5>
-            <button class="btn-purchasedetail" data-toggle="modal" data-target="#historyModal" onclick="detail('{{ $itemID }}', {{ $row->orderdetailsID }}, {{ $kode }})">Details</button>
+            <button class="btn-purchasedetail" data-toggle="modal" data-target="#historyModal" onclick="detail('{{ $itemID }}', {{ $row->orderdetailsID }}, {{ $kode }}, {{ $row->orderID }})">Details</button>
             <br>
             <p class="destination">{{ $prodName }}</p>
         </div>
