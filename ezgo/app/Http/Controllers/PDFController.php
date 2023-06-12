@@ -16,8 +16,19 @@ class PDFController extends Controller
         $pdf = new Dompdf();
         $pdf->loadHtml($htmlContent);
         $pdf->render();
-        $pdfPath = public_path('pdf/reservation_' . $order . '.pdf');
+        $rng = mt_rand(0, 999999);
+        $pdfPath = public_path('pdf/' . $rng . $order . '.pdf');
         file_put_contents($pdfPath, $pdf->output());
-        return response()->download($pdfPath, 'struk.pdf');
+        // Get the file contents
+        $fileContents = file_get_contents($pdfPath);
+
+        // Set the appropriate headers for the response
+        $headers = [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename=struk.pdf',
+        ];
+
+        // Return the file as a response
+        return response($fileContents, 200, $headers);
     }
 }

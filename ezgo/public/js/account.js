@@ -47,12 +47,14 @@ function download(orderid, kode) {
         url: "/download",
         type: "POST",
         data: { id: orderid, code: kode },
+        xhrFields: {
+            responseType: "blob", // Set the response type to 'blob'
+        },
         success: function (response, status, xhr) {
-            var filename = getFilenameFromResponse(xhr); // Extract the filename from the response headers
-            var blob = new Blob([response], { type: "application/pdf" }); // Create a blob from the response
+            var blob = new Blob([response], { type: "application/pdf" });
             var link = document.createElement("a");
             link.href = window.URL.createObjectURL(blob);
-            link.download = filename;
+            link.download = "struk.pdf";
             link.click();
         },
         error: function (xhr) {
