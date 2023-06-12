@@ -354,6 +354,7 @@ class ProductController extends BaseController
                         $row->Name = $row->tcName;
                         $row->Price = $row->tcSellingPrice;
                         $row->Tag = $row->ticketID;
+                        $row->Code = 1;
                     }
 
                     return response()->json(['success' => true, 'rows' => $rows]);
@@ -375,6 +376,7 @@ class ProductController extends BaseController
                         $row->Name = $row->hName;
                         $row->Price = $row->hPrice;
                         $row->Tag = $row->hotelID;
+                        $row->Code = 2;
                     }
 
                     return response()->json(['success' => true, 'rows' => $rows]);
@@ -396,6 +398,7 @@ class ProductController extends BaseController
                         $row->Name = $row->tpName;
                         $row->Price = $row->tpPrice;
                         $row->Tag = $row->tourID;
+                        $row->Code = 3;
                     }
 
                     return response()->json(['success' => true, 'rows' => $rows]);

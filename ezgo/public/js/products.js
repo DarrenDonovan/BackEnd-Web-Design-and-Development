@@ -136,9 +136,11 @@ function recommend(dest, type, id) {
                     html += '<img src="' + row.Image + '" style="width: 75%;">';
                     html += "<p>" + row.Price + "</p>";
                     html +=
-                        '<a href="javascript:void(0)" onclick="changeModal(\'' +
+                        '<a href="javascript:void(0)" onclick="fetchData(\'' +
                         row.Tag +
-                        "')\">Buy Now</a>";
+                        "', " +
+                        row.Code +
+                        ')">Buy Now</a>';
                     html += "</div>";
                     rec.innerHTML += html;
                 });
