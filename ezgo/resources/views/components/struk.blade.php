@@ -37,8 +37,8 @@
     <div
       style="
         border: 1px solid grey;
-        height: 29.7cm;
-        width: 21cm;
+        height: 24.7cm;
+        width: 17cm;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
